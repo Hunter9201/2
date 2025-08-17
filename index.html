@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lion Hunter | LDC Study Hub – Laws, Cases, Workshops</title>
+  <meta name="description" content="Lion Hunter helps LDC students succeed: statutes, workshop cases, summaries, past exams, oral prep, discussions, and more.">
+  <link rel="canonical" href="https://www.ldclionhunter.com/">
+
+  <!-- SEO / Verification -->
+  <meta name="google-site-verification" content="google47c9c1017e180e8f" />
+  <meta name="keywords" content="Lion Hunter, LDC Uganda, legal education, advocacy, case summaries, statutes, workshops" />
+
+  <!-- Social -->
+  <meta property="og:site_name" content="Lion Hunter">
+  <meta property="og:title" content="LDC Study Hub – Laws, Cases, Workshops">
+  <meta property="og:description" content="Statutes, workshop cases, summaries, past exams, oral prep, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://i.ibb.co/zVxt3D2Y/LDC-LEGAL-COMPANION.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Icons -->
+  <link rel="icon" href="https://i.postimg.cc/k4QT4G8c/Lion.jpg?v=7" type="image/jpeg" sizes="any">
+  <link rel="shortcut icon" href="https://i.postimg.cc/k4QT4G8c/Lion.jpg?v=7" type="image/jpeg">
+  <link rel="apple-touch-icon" href="https://i.postimg.cc/k4QT4G8c/Lion.jpg?v=7">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f7fafc; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0;
+      --brand:#0ea5e9; --brand-2:#0369a1; --card:#ffffff; --warn:#f59e0b;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;height:auto}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .muted{color:var(--muted)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-weight:800}
+    .btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
+    .btn.primary:hover{background:var(--brand-2);color:#fff;text-decoration:none}
+    .pill{display:inline-block;font-size:12px;padding:2px 8px;border:1px solid var(--line);border-radius:999px;background:var(--card);margin-right:6px}
+
+    /* Header / nav */
+    header{position:sticky;top:0;z-index:40;background:var(--card);border-bottom:1px solid var(--line)}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .badge{width:36px;height:36px;border-radius:10px;background:var(--brand);color:#fff;display:grid;place-items:center}
+    nav a{margin:0 6px;padding:6px 10px;border-radius:8px;color:#0f172a;font-weight:700}
+    nav a.active, nav a:hover{background:var(--brand);color:#fff;text-decoration:none}
+    .hamb{display:none;border:1px solid var(--line);padding:8px 10px;border-radius:10px;background:var(--card);color:var(--ink)}
+    #menu{display:flex;flex-wrap:wrap;align-items:center}
+    @media (max-width:920px){
+      .hamb{display:inline-flex}
+      #menu{display:none;flex-direction:column;align-items:flex-start;gap:6px;padding:8px 0}
+      #menu.open{display:flex}
+      nav a{margin:0}
+    }
+
+    /* Calendar alert (exact wording & button) */
+    #calendar-alert{
+      background:linear-gradient(90deg,#283e51,#4b79a1);
+      color:#fff;border-radius:8px;margin:12px auto;width:95%;max-width:1100px;
+      padding:12px 16px;font-size:.95rem;font-weight:600;
+      box-shadow:0 2px 8px rgba(0,0,0,.12);
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+    }
+    #calendar-alert a{background:#ffeb3b;color:#222;padding:6px 12px;text-decoration:none;border-radius:8px;font-weight:800;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+    #calendar-alert small{opacity:.9}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:28px 0}
+    .hero h1{margin:.3rem 0;font-size:clamp(26px,3vw,40px)}
+    .hero p{color:var(--muted);max-width:60ch}
+    .search{display:flex;gap:8px;align-items:center;margin:10px 0}
+    .search input{flex:1;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink)}
+    .imgwrap{position:relative}
+
+    /* Timetable overlay (from first code) */
+    .login-hero-btn,
+    .timetable-badge{
+      position:absolute;left:14px;z-index:2;
+      background: var(--brand); color:#fff; padding:8px 12px;
+      border-radius:999px; font-weight:800; font-size:14px;
+      display:inline-flex; gap:8px; align-items:center;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.16); text-decoration:none; cursor:pointer;
+    }
+    .login-hero-btn{ top:14px; }
+    .timetable-badge{ top:56px; }
+    .timetable-dot{ width:8px; height:8px; border-radius:50%; background:#f59e0b; display:inline-block; }
+
+    .timetable-pop{
+      position:absolute; top:94px; left:14px; z-index:3;
+      width:300px; background:#ffffff; border:1px solid var(--line);
+      border-radius:12px; box-shadow:0 22px 48px rgba(0,0,0,.22);
+      padding:10px; display:none;
+    }
+    .timetable-pop:before{
+      content:""; position:absolute; top:-8px; left:22px; width:14px; height:14px;
+      background:#fff; border-left:1px solid var(--line); border-top:1px solid var(--line); transform:rotate(45deg);
+    }
+    .timetable-pop h4{ margin:4px 8px 8px; font-size:14px; font-weight:800; color:#111827; }
+    .timetable-list{ max-height:260px; overflow:auto; margin:0; padding:4px; }
+    .timetable-item{ display:flex; justify-content:space-between; align-items:center; gap:10px; padding:8px 10px; border-radius:8px; transition:background .15s ease; }
+    .timetable-item:hover{ background:#f9fafb; }
+    .timetable-item span{ font-size:13px; color:#111827; font-weight:600; }
+    .timetable-item a{ font-size:12px; text-decoration:none; padding:6px 10px; border-radius:8px; background:var(--brand); color:#fff; font-weight:800; }
+
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      .login-hero-btn{ top:12px; left:12px; }
+      .timetable-badge{ top:54px; left:12px; }
+      .timetable-pop{ left:12px; width:280px; }
+    }
+
+    /* Sections & cards */
+    section{padding:28px 0}
+    section h2{margin:.2rem 0 .8rem}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .col-4{grid-column:span 4}
+    @media (max-width:920px){ .grid{grid-template-columns:1fr} .col-4{grid-column:span 1}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+    .list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+    .item{border:1px dashed var(--line);border-radius:12px;padding:12px;background:var(--card)}
+
+    /* Show/Hide helper */
+    .hide{display:none !important}
+
+    footer{border-top:1px solid var(--line);padding:24px 0;background:var(--card);margin-top:24px}
+
+    /* LION BOT */
+    #lionBtn{
+      position:fixed; right:20px; bottom:20px; width:56px; height:56px;
+      border-radius:50%; background:#fbbf24; color:#111; font-size:28px; line-height:56px;
+      display:flex; align-items:center; justify-content:center;
+      border:2px solid #1111; box-shadow:0 12px 24px rgba(0,0,0,.18);
+      cursor:pointer; z-index:60;
+    }
+    #lionBtn:hover{ filter:brightness(1.05); }
+    #lionChat{
+      position:fixed; right:20px; bottom:88px; width:320px; max-height:420px;
+      border-radius:14px; overflow:hidden; border:1px solid var(--line); background:#fff;
+      box-shadow:0 18px 36px rgba(0,0,0,.22); z-index:60; display:none;
+    }
+    .lion-head{ background:#fbbf24; color:#111; font-weight:900; padding:10px 12px; }
+    .lion-body{ padding:10px; display:flex; flex-direction:column; gap:8px; height:300px; overflow:auto; }
+    .lion-row{ max-width:86%; padding:8px 10px; border-radius:12px; font-size:14px; }
+    .lion-a{ align-self:flex-start; background:#f3f4f6; color:#111; border:1px solid #ececec; border-bottom-left-radius:4px; }
+    .lion-u{ align-self:flex-end; background:#0ea5e9; color:#fff; border:1px solid #0581bd; border-bottom-right-radius:4px; }
+    .lion-send{ border-top:1px solid var(--line); padding:10px; display:flex; gap:8px; }
+    .lion-send textarea{ flex:1; resize:none; height:40px; padding:8px; border:1px solid var(--line); border-radius:10px; font-family:inherit; font-size:14px;}
+    .lion-send button{ padding:8px 12px; border-radius:10px; border:1px solid var(--brand); background:var(--brand); color:#fff; font-weight:800; }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KCLCFN2CV4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date()); gtag('config', 'G-KCLCFN2CV4');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script>
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}
+    ;t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i
+    ;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "srhjtupxnp");
+  </script>
+</head>
+<body>
+  <a href="#main" class="sr-only" style="position:absolute;left:-9999px;top:auto">Skip to content</a>
+
+  <!-- Calendar alert: exact wording and button -->
+  <div id="calendar-alert">
+    <div>
+      📅 Check out for a discussion<br><small>Lion Hunt | Nonstop Discussions</small>
+    </div>
+    <a id="goCalendar" href="Discussions.html">View Calendar</a>
+  </div>
+
+  <!-- Header & nav -->
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="badge">🦁</span><span>Lion Hunter</span></div>
+      <button class="hamb" id="hamb" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">☰</button>
+    </div>
+    <div class="container">
+      <nav id="menu" aria-label="Primary">
+        <a href="#start" data-show="all" class="active">Start</a>
+        <a href="#laws" data-show="laws">Laws</a>
+        <a href="#cases" data-show="cases">Cases</a>
+        <a href="#summaries" data-show="summaries">Summaries</a>
+        <a href="#workshops" data-show="workshops">Workshops</a>
+        <a href="#exams" data-show="exams">Exams</a>
+        <a href="#ia" data-show="ia">I.A</a>
+        <a href="#category-b" data-show="category-b">Category B</a>
+        <a href="#trial-advocacy" data-show="trial-advocacy">Trial Advocacy</a>
+        <a href="#documents" data-show="documents">Documents</a>
+        <a href="#bar-bites" data-show="bar-bites">Bar Bites</a>
+        <a href="#audio" data-show="audio">Audio</a>
+        <a href="#discussions" data-show="discussions">Discussions</a>
+        <a href="#services" data-show="services">Legal Services</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- HERO -->
+    <section id="start" class="section-block" data-section="start">
+      <div class="hero">
+        <div>
+          <h1>LDC Study Hub — clear, organized, and practical.</h1>
+          <p>Find statutes, workshop cases, concise summaries, past exams, and join live discussions. Use the menu to view one section at a time.</p>
+
+          <div class="search">
+            <input type="search" id="q" placeholder="Search cases, laws, topics…" aria-label="Search site" autocomplete="off">
+            <button class="btn" id="qGo">Search</button>
+          </div>
+          <p class="muted">Tip: Click a tab (e.g. <b>Laws</b>) to show only that section. The timetable on the image shows weekly links.</p>
+        </div>
+
+        <!-- Image with timetable/login overlay -->
+        <div class="imgwrap">
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop"
+               alt="Students studying with law books" loading="lazy" decoding="async">
+          <a href="#" class="login-hero-btn" id="loginBtn">Login</a>
+          <div class="timetable-badge" id="timetableBtn" aria-haspopup="true" aria-expanded="false">
+            <span class="timetable-dot"></span> Timetables
+          </div>
+          <div class="timetable-pop" id="timetablePop" role="dialog" aria-label="Weekly timetables">
+            <h4>Weekly Timetables</h4>
+            <div class="timetable-list" id="timetableList"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAWS -->
+    <section id="laws" class="section-block" data-section="laws">
+      <h2>Laws <span class="pill">Statutes & Acts</span></h2>
+      <p class="muted">External files open in a new tab and are clearly labeled.</p>
+      <div class="list">
+        <article class="item" data-title="Civil Procedure Act" data-tags="civil procedure statute">
+          <h4>Civil Procedure Act</h4>
+          <p class="muted">Primary statute governing civil proceedings.</p>
+          <p><a class="btn" href="https://example.com/civil-procedure-act.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+        </article>
+        <article class="item" data-title="Evidence Act" data-tags="evidence statute criminal">
+          <h4>Evidence Act</h4>
+          <p class="muted">Rules on admissibility and proof.</p>
+          <p><a class="btn" href="https://example.com/evidence-act.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+        </article>
+        <article class="item" data-title="Criminal Procedure Code" data-tags="criminal procedure statute">
+          <h4>Criminal Procedure Code</h4>
+          <p class="muted">Preview and open in Google Drive.</p>
+          <details>
+            <summary>Preview (embedded)</summary>
+            <div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:8px">
+              <iframe loading="lazy" style="width:100%;height:100%;border:0"
+                src="https://drive.google.com/file/d/FILE_ID/preview" allow="autoplay"></iframe>
+            </div>
+          </details>
+          <p><a class="btn" href="https://drive.google.com/file/d/FILE_ID/view" target="_blank" rel="noopener">Open in Drive</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CASES -->
+    <section id="cases" class="section-block" data-section="cases">
+      <h2>Cases <span class="pill">Full Text</span></h2>
+      <div class="list">
+        <article class="item" data-title="Donoghue v Stevenson" data-tags="civil tort negligence">
+          <h4>Donoghue v Stevenson [1932]</h4>
+          <p><a class="btn" href="https://example.com/donoghue-v-stevenson.html" target="_blank" rel="noopener">Read case</a></p>
+        </article>
+        <article class="item" data-title="Carlill v Carbolic Smoke Ball" data-tags="contract offer acceptance">
+          <h4>Carlill v Carbolic Smoke Ball [1893]</h4>
+          <p><a class="btn" href="https://example.com/carlill.pdf" target="_blank" rel="noopener">Read case</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SUMMARIES -->
+    <section id="summaries" class="section-block" data-section="summaries">
+      <h2>Summaries <span class="pill">Quick Reads</span></h2>
+      <div class="list">
+        <article class="item" data-title="Tort: Negligence summary" data-tags="tort negligence civil">
+          <h4>Tort: Negligence — Quick Summary</h4>
+          <p><a class="btn" href="https://example.com/neg-summary.pdf" target="_blank" rel="noopener">Download PDF</a></p>
+        </article>
+        <article class="item" data-title="Civil Procedure roadmap" data-tags="civil procedure flowchart">
+          <h4>Civil Procedure: Roadmap</h4>
+          <p><a class="btn" href="https://example.com/cpc-roadmap.png" target="_blank" rel="noopener">Open image</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- WORKSHOPS -->
+    <section id="workshops" class="section-block" data-section="workshops">
+      <h2>Workshops <span class="pill">Practice</span></h2>
+      <div class="list">
+        <article class="item" data-title="Workshop 1 Drafting" data-tags="civil drafting procedure">
+          <h4>Workshop 1: Drafting</h4>
+          <p><a class="btn" href="https://example.com/workshop1.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+        </article>
+        <article class="item" data-title="Workshop 2 Evidence" data-tags="evidence objections criminal">
+          <h4>Workshop 2: Evidence</h4>
+          <p><a class="btn" href="https://example.com/workshop2.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXAMS -->
+    <section id="exams" class="section-block" data-section="exams">
+      <h2>Exams <span class="pill">Past Papers</span></h2>
+      <div class="list">
+        <article class="item" data-title="Criminal Law 2022" data-tags="criminal exam">
+          <h4>Criminal Law — 2022</h4>
+          <p><a class="btn" href="https://example.com/crim-2022.pdf" target="_blank" rel="noopener">Download</a></p>
+        </article>
+        <article class="item" data-title="Civil Procedure 2021" data-tags="civil exam procedure">
+          <h4>Civil Procedure — 2021</h4>
+          <p><a class="btn" href="https://example.com/civproc-2021.pdf" target="_blank" rel="noopener">Download</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- I.A -->
+    <section id="ia" class="section-block" data-section="ia">
+      <h2>I.A <span class="pill">Individual Assessment</span></h2>
+      <div class="list">
+        <article class="item" data-title="Friday Hunter #1" data-tags="IA civil drafting">
+          <h4>Friday Hunter #1</h4>
+          <p class="muted">Weekly IA practice: pleadings & drafting.</p>
+          <p><a class="btn" href="https://example.com/ia-week1.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+        </article>
+        <article class="item" data-title="Friday Hunter #2" data-tags="IA evidence objections">
+          <h4>Friday Hunter #2</h4>
+          <p class="muted">Evidence objections and responses.</p>
+          <p><a class="btn" href="https://example.com/ia-week2.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Category B -->
+    <section id="category-b" class="section-block" data-section="category-b">
+      <h2>Category B <span class="pill">Legal Writing & Conduct</span></h2>
+      <div class="list">
+        <article class="item" data-title="Professional Conduct Notes" data-tags="category b professional conduct ethics">
+          <h4>Professional Conduct Notes</h4>
+          <p><a class="btn" href="https://example.com/prof-conduct.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+        </article>
+        <article class="item" data-title="ADR Quick Guide" data-tags="category b adr mediation arbitration">
+          <h4>ADR Quick Guide</h4>
+          <p><a class="btn" href="https://example.com/adr-quick-guide.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Trial Advocacy -->
+    <section id="trial-advocacy" class="section-block" data-section="trial-advocacy">
+      <h2>Trial Advocacy <span class="pill">Skills</span></h2>
+      <div class="list">
+        <article class="item" data-title="Examination in Chief" data-tags="trial advocacy EIC courtroom">
+          <h4>Examination-in-Chief Toolkit</h4>
+          <p><a class="btn" href="https://example.com/eic-toolkit.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+        </article>
+        <article class="item" data-title="Cross Examination" data-tags="trial advocacy cross-examination impeachment">
+          <h4>Cross-Examination Cheatsheet</h4>
+          <p><a class="btn" href="https://example.com/cross-exam.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Documents -->
+    <section id="documents" class="section-block" data-section="documents">
+      <h2>Documents <span class="pill">Templates</span></h2>
+      <div class="list">
+        <article class="item" data-title="Pleadings Bundle" data-tags="documents pleadings templates civil">
+          <h4>Pleadings Bundle (Civil)</h4>
+          <p><a class="btn" href="https://example.com/pleadings-bundle.zip" target="_blank" rel="noopener">Download ZIP</a></p>
+        </article>
+        <article class="item" data-title="Corporate Forms" data-tags="documents corporate registers resolutions">
+          <h4>Corporate Forms Pack</h4>
+          <p><a class="btn" href="https://example.com/corporate-forms.zip" target="_blank" rel="noopener">Download ZIP</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Bar Bites -->
+    <section id="bar-bites" class="section-block" data-section="bar-bites">
+      <h2>Bar Bites <span class="pill">Motivation</span></h2>
+      <div class="list">
+        <article class="item" data-title="Mindset for the Bar" data-tags="bar bites motivation study">
+          <h4>Mindset for the Bar</h4>
+          <p class="muted">Short reads to keep you sharp and steady.</p>
+          <p><a class="btn" href="https://example.com/bar-bites-mindset.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+        </article>
+        <article class="item" data-title="Time Boxing" data-tags="bar bites productivity planning">
+          <h4>Time-Boxing Your Week</h4>
+          <p><a class="btn" href="https://example.com/time-boxing.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- AUDIO -->
+    <section id="audio" class="section-block" data-section="audio">
+      <h2>Audio <span class="pill">Bar Bites</span></h2>
+      <div class="list">
+        <article class="item" data-title="Hearsay exceptions" data-tags="evidence audio criminal">
+          <h4>Hearsay exceptions (6 min)</h4>
+          <audio controls preload="none">
+            <source src="https://example.com/hearsay.mp3" type="audio/mpeg">
+          </audio>
+        </article>
+        <article class="item">
+          <h4>Coming soon</h4>
+          <p class="muted">Uploads resume <b>Oct 15</b>. Get notified: <a href="mailto:you@example.com?subject=Notify%20me%20when%20audio%20is%20live">email us</a>.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- DISCUSSIONS -->
+    <section id="discussions" class="section-block" data-section="discussions">
+      <h2>Discussions <span class="pill">Lion Den</span></h2>
+      <div class="grid">
+        <div class="card col-4">
+          <h3>Upcoming session</h3>
+          <!-- ✅ Now points to your old calendar page -->
+          <p><a class="btn primary" href="Discussions.html">Join next session</a></p>
+        </div>
+        <div class="card col-4">
+          <h3>Calendar</h3>
+          <div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:10px;overflow:hidden">
+            <iframe loading="lazy" style="border:0;width:100%;height:100%"
+              src="https://calendar.google.com/calendar/embed?src=YOUR_CAL_ID"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section-block" data-section="services">
+      <h2>Legal Services</h2>
+      <div class="card">
+        <h3>What we offer</h3>
+        <ul>
+          <li>Document review & drafting (contracts, pleadings)</li>
+          <li>Legal research & memo writing</li>
+          <li>Consultations (by appointment)</li>
+        </ul>
+        <p><a class="btn" href="mailto:you@example.com?subject=Consultation%20request">Book a consult</a></p>
+      </div>
+    </section>
+
+    <!-- SEARCH -->
+    <section id="search" class="section-block" data-section="search">
+      <h2>Search results</h2>
+      <p id="resultCount" class="muted">Type a search above to filter content across sections.</p>
+      <div id="resultList" class="list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Lion Hunter. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- LION BOT -->
+  <button id="lionBtn" title="Chat with Lion Bot">🦁</button>
+  <div id="lionChat" aria-live="polite" aria-label="Lion Bot chat">
+    <div class="lion-head">Lion Bot</div>
+    <div class="lion-body" id="lionMsgs"></div>
+    <div class="lion-send">
+      <textarea id="lionInput" placeholder="Type a message…"></textarea>
+      <button id="lionSend">Send</button>
+    </div>
+  </div>
+
+  <script>
+    /* Mobile menu */
+    const hamb = document.getElementById('hamb');
+    const menu = document.getElementById('menu');
+    hamb?.addEventListener('click', ()=>{
+      const open = menu.classList.toggle('open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    /* Section filter */
+    const sections = Array.from(document.querySelectorAll('main .section-block'));
+    function showOnly(idOrAll){
+      const showAll = (idOrAll === 'all');
+      sections.forEach(sec=>{
+        if(showAll){ sec.classList.remove('hide'); }
+        else{ sec.classList.toggle('hide', sec.id !== idOrAll); }
+      });
+      document.querySelectorAll('#menu a').forEach(a=>{
+        const tgt = a.dataset.show || 'all';
+        a.classList.toggle('active', (showAll && tgt==='all') || (!showAll && tgt===idOrAll));
+      });
+      menu.classList.remove('open');
+      hamb.setAttribute('aria-expanded','false');
+      if(!showAll){
+        document.getElementById(idOrAll)?.scrollIntoView({behavior:'smooth', block:'start'});
+      } else {
+        window.scrollTo({top:0, behavior:'smooth'});
+      }
+    }
+    menu.addEventListener('click', (e)=>{
+      const a = e.target.closest('a'); if(!a) return;
+      const show = a.dataset.show || 'all';
+      e.preventDefault();
+      showOnly(show);
+      if(show === 'all') history.replaceState(null, '', '#start');
+      else history.replaceState(null, '', '#'+show);
+    });
+    const initialHash = (location.hash || '').replace('#','');
+    if(initialHash && document.getElementById(initialHash)){
+      showOnly(initialHash);
+    }else{
+      showOnly('all');
+    }
+
+    /* Search */
+    const q = document.getElementById('q');
+    const qGo = document.getElementById('qGo');
+    const resultList = document.getElementById('resultList');
+    const resultCount = document.getElementById('resultCount');
+    const ALL = Array.from(document.querySelectorAll('.item')).map(el=>({
+      el, title:(el.dataset.title||'').toLowerCase(), tags:(el.dataset.tags||'').toLowerCase(), html:el.outerHTML
+    }));
+    function doSearch(){
+      const term = (q.value||'').trim().toLowerCase();
+      if(!term){
+        resultList.innerHTML = '';
+        resultCount.textContent = 'Type a search above to filter content across sections.';
+        showOnly('all'); return;
+      }
+      const matches = ALL.filter(x => x.title.includes(term) || x.tags.includes(term));
+      resultList.innerHTML = matches.map(m => m.html).join('') || '<p class="muted">No matches. Try another keyword.</p>';
+      resultCount.textContent = `${matches.length} result${matches.length===1?'':'s'} for "${term}"`;
+      showOnly('search');
+    }
+    qGo.addEventListener('click', (e)=>{ e.preventDefault(); doSearch(); });
+    q.addEventListener('keydown', (e)=>{ if(e.key==='Enter') doSearch(); });
+
+    // External link safety & year
+    document.querySelectorAll('a[target="_blank"]').forEach(a=>a.setAttribute('rel','noopener'));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* Timetable popup */
+    const WEEK_LINKS = [
+      { label: "Week 1 (Family)",    url: "https://drive.google.com/drive/folders/1p4CqiLEgrcY0m-yCBDDB0zbLBQh5nZia?usp=sharing" },
+      { label: "Week 2 (Civil)",     url: "https://docs.google.com/spreadsheets/d/EXAMPLE2/preview" },
+      { label: "Week 3 (Corporate)", url: "https://drive.google.com/file/d/EXAMPLE3/preview" },
+      { label: "Week 4 (Criminal)",  url: "https://docs.google.com/document/d/EXAMPLE4/preview" },
+      { label: "Week 5 (Land)",      url: "https://docs.google.com/document/d/EXAMPLE5/preview" }
+    ];
+    const timetableBtn  = document.getElementById('timetableBtn');
+    const timetablePop  = document.getElementById('timetablePop');
+    const timetableWrap = document.querySelector('.imgwrap');
+    const timetableList = document.getElementById('timetableList');
+    if (timetableList) {
+      WEEK_LINKS.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'timetable-item';
+        const title = document.createElement('span'); title.textContent = item.label;
+        const open = document.createElement('a'); open.textContent = 'Open';
+        open.href = item.url; open.target = '_blank'; open.rel = 'noopener';
+        row.appendChild(title); row.appendChild(open);
+        timetableList.appendChild(row);
+      });
+    }
+    function openTimetable(){
+      timetablePop.style.display = 'block';
+      timetableBtn.setAttribute('aria-expanded','true');
+      document.addEventListener('click', onClickAway, {capture:true});
+      document.addEventListener('keydown', onEsc);
+    }
+    function closeTimetable(){
+      timetablePop.style.display = 'none';
+      timetableBtn.setAttribute('aria-expanded','false');
+      document.removeEventListener('click', onClickAway, {capture:true});
+      document.removeEventListener('keydown', onEsc);
+    }
+    function onClickAway(e){ if(!timetableWrap.contains(e.target)) closeTimetable(); }
+    function onEsc(e){ if(e.key==='Escape') closeTimetable(); }
+    timetableBtn?.addEventListener('click', e=>{
+      e.stopPropagation();
+      (timetablePop.style.display === 'block') ? closeTimetable() : openTimetable();
+    });
+
+    /* Login placeholder */
+    document.getElementById('loginBtn')?.addEventListener('click', (e)=>{
+      e.preventDefault();
+      alert("🔒 Premium services coming soon!");
+    });
+
+    /* LION BOT (simple local) */
+    const lionBtn  = document.getElementById('lionBtn');
+    const lionChat = document.getElementById('lionChat');
+    const lionMsgs = document.getElementById('lionMsgs');
+    const lionInp  = document.getElementById('lionInput');
+    const lionSend = document.getElementById('lionSend');
+
+    function addMsg(text, cls){
+      const div = document.createElement('div');
+      div.className = `lion-row ${cls}`;
+      div.textContent = text;
+      lionMsgs.appendChild(div);
+      lionMsgs.scrollTop = lionMsgs.scrollHeight;
+    }
+
+    lionBtn.addEventListener('click', ()=>{
+      const open = lionChat.style.display === 'block';
+      lionChat.style.display = open ? 'none' : 'block';
+      if(!open) lionInp.focus();
+    });
+
+    lionSend.addEventListener('click', ()=>{
+      const text = (lionInp.value || '').trim();
+      if(!text) return;
+      addMsg(text, 'lion-u'); lionInp.value = '';
+      setTimeout(()=>{
+        addMsg("Roar! 🦁 Thanks for your message. Ask me about Laws, I.A, or Trial Advocacy — full AI chat coming soon.", 'lion-a');
+      }, 300);
+    });
+
+    lionInp.addEventListener('keydown', e=>{
+      if(e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); lionSend.click(); }
+    });
+  </script>
+</body>
+</html>
