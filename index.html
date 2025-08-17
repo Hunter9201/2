@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>Lion Hunter | LDC Study Hub – Laws, Cases, Workshops</title>
   <meta name="description" content="Lion Hunter helps LDC students succeed: statutes, workshop cases, summaries, past exams, oral prep, discussions, and more.">
   <link rel="canonical" href="https://www.ldclionhunter.com/">
@@ -35,7 +35,9 @@
       --brand:#0ea5e9; --brand-2:#0369a1; --card:#ffffff; --warn:#f59e0b;
     }
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
     img{max-width:100%;height:auto}
@@ -47,14 +49,15 @@
     .pill{display:inline-block;font-size:12px;padding:2px 8px;border:1px solid var(--line);border-radius:999px;background:var(--card);margin-right:6px}
 
     /* Header / nav */
-    header{position:sticky;top:0;z-index:40;background:var(--card);border-bottom:1px solid var(--line)}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0}
+    header{position:sticky;top:0;z-index:40;background:var(--card);border-bottom:1px solid var(--line);backdrop-filter:saturate(1.2) blur(3px)}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800}
     .badge{width:36px;height:36px;border-radius:10px;background:var(--brand);color:#fff;display:grid;place-items:center}
-    nav a{margin:0 6px;padding:6px 10px;border-radius:8px;color:#0f172a;font-weight:700}
+    nav{overflow:auto;-webkit-overflow-scrolling:touch}
+    nav a{margin:0 6px;padding:6px 10px;border-radius:8px;color:#0f172a;font-weight:700;white-space:nowrap}
     nav a.active, nav a:hover{background:var(--brand);color:#fff;text-decoration:none}
     .hamb{display:none;border:1px solid var(--line);padding:8px 10px;border-radius:10px;background:var(--card);color:var(--ink)}
-    #menu{display:flex;flex-wrap:wrap;align-items:center}
+    #menu{display:flex;flex-wrap:nowrap;align-items:center}
     @media (max-width:920px){
       .hamb{display:inline-flex}
       #menu{display:none;flex-direction:column;align-items:flex-start;gap:6px;padding:8px 0}
@@ -62,41 +65,42 @@
       nav a{margin:0}
     }
 
-    /* Calendar alert (exact wording & button) */
+    /* Calendar alert */
     #calendar-alert{
       background:linear-gradient(90deg,#283e51,#4b79a1);
-      color:#fff;border-radius:8px;margin:12px auto;width:95%;max-width:1100px;
-      padding:12px 16px;font-size:.95rem;font-weight:600;
+      color:#fff;border-radius:12px;margin:10px auto;width:95%;max-width:1100px;
+      padding:10px 12px;font-size:.95rem;font-weight:600;
       box-shadow:0 2px 8px rgba(0,0,0,.12);
       display:flex;align-items:center;justify-content:space-between;gap:10px;
     }
-    #calendar-alert a{background:#ffeb3b;color:#222;padding:6px 12px;text-decoration:none;border-radius:8px;font-weight:800;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+    #calendar-alert a{background:#ffeb3b;color:#222;padding:8px 12px;text-decoration:none;border-radius:10px;font-weight:800;box-shadow:0 1px 4px rgba(0,0,0,.2)}
     #calendar-alert small{opacity:.9}
 
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:28px 0}
-    .hero h1{margin:.3rem 0;font-size:clamp(26px,3vw,40px)}
+    /* Hero (trimmed for mobile) */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:20px 0}
+    .hero h1{margin:.3rem 0;font-size:clamp(22px,3.5vw,38px)}
     .hero p{color:var(--muted);max-width:60ch}
     .search{display:flex;gap:8px;align-items:center;margin:10px 0}
     .search input{flex:1;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink)}
     .imgwrap{position:relative}
+    .imgwrap img{width:100%;max-height:260px;object-fit:cover;border-radius:12px}
 
-    /* Timetable overlay (from first code) */
+    /* Timetable overlay */
     .login-hero-btn,
     .timetable-badge{
-      position:absolute;left:14px;z-index:2;
+      position:absolute;left:12px;z-index:2;
       background: var(--brand); color:#fff; padding:8px 12px;
       border-radius:999px; font-weight:800; font-size:14px;
       display:inline-flex; gap:8px; align-items:center;
       box-shadow:0 10px 24px rgba(0,0,0,.18);
       border:1px solid rgba(255,255,255,.16); text-decoration:none; cursor:pointer;
     }
-    .login-hero-btn{ top:14px; }
-    .timetable-badge{ top:56px; }
+    .login-hero-btn{ top:12px; }
+    .timetable-badge{ top:52px; }
     .timetable-dot{ width:8px; height:8px; border-radius:50%; background:#f59e0b; display:inline-block; }
 
     .timetable-pop{
-      position:absolute; top:94px; left:14px; z-index:3;
+      position:absolute; top:92px; left:12px; z-index:3;
       width:300px; background:#ffffff; border:1px solid var(--line);
       border-radius:12px; box-shadow:0 22px 48px rgba(0,0,0,.22);
       padding:10px; display:none;
@@ -114,42 +118,64 @@
 
     @media (max-width:920px){
       .hero{grid-template-columns:1fr}
-      .login-hero-btn{ top:12px; left:12px; }
-      .timetable-badge{ top:54px; left:12px; }
-      .timetable-pop{ left:12px; width:280px; }
+      .timetable-pop{ left:12px; width:88vw; max-width:340px; }
     }
 
-    /* Sections & cards */
-    section{padding:28px 0}
+    /* Sections & cards (content sections hidden until opened) */
+    section{padding:22px 0}
     section h2{margin:.2rem 0 .8rem}
+    .list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+    .item{border:1px dashed var(--line);border-radius:12px;padding:12px;background:var(--card)}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
     .col-4{grid-column:span 4}
     @media (max-width:920px){ .grid{grid-template-columns:1fr} .col-4{grid-column:span 1}}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
-    .list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
-    .item{border:1px dashed var(--line);border-radius:12px;padding:12px;background:var(--card)}
+
+    /* App grid (iPhone-like icons) */
+    #apps{padding:8px 0 28px}
+    .apps-title{display:flex;align-items:center;justify-content:space-between;margin:6px 0 10px}
+    .app-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    @media (max-width:380px){ .app-grid{grid-template-columns:repeat(3,1fr)} }
+    .app{
+      display:flex;flex-direction:column;align-items:center;gap:6px;
+      background:transparent;border:0;cursor:pointer;
+    }
+    .app:focus-visible{outline:3px solid #94d9ff;border-radius:18px}
+    .app-ico{
+      width:72px;height:72px;border-radius:20px;display:grid;place-items:center;
+      color:#fff;font-size:28px;font-weight:900;
+      background:linear-gradient(160deg,#0ea5e9,#0369a1);
+      box-shadow:0 6px 16px rgba(0,0,0,.15), inset 0 0 0 1px rgba(255,255,255,.15);
+    }
+    .app span{font-size:12px;color:#111;text-align:center;max-width:80px}
 
     /* Show/Hide helper */
     .hide{display:none !important}
 
-    footer{border-top:1px solid var(--line);padding:24px 0;background:var(--card);margin-top:24px}
+    footer{border-top:1px solid var(--line);padding:18px 0;background:var(--card);margin-top:10px}
 
     /* LION BOT */
     #lionBtn{
-      position:fixed; right:20px; bottom:20px; width:56px; height:56px;
-      border-radius:50%; background:#fbbf24; color:#111; font-size:28px; line-height:56px;
+      position:fixed; right:16px; bottom:calc(18px + env(safe-area-inset-bottom,0));
+      width:56px; height:56px;
+      border-radius:50%; background:#fbbf24; color:#111; font-size:28px;
       display:flex; align-items:center; justify-content:center;
       border:2px solid #1111; box-shadow:0 12px 24px rgba(0,0,0,.18);
       cursor:pointer; z-index:60;
     }
     #lionBtn:hover{ filter:brightness(1.05); }
     #lionChat{
-      position:fixed; right:20px; bottom:88px; width:320px; max-height:420px;
+      position:fixed; right:12px; bottom:calc(86px + env(safe-area-inset-bottom,0));
+      width:min(92vw,360px); max-height:65vh;
       border-radius:14px; overflow:hidden; border:1px solid var(--line); background:#fff;
       box-shadow:0 18px 36px rgba(0,0,0,.22); z-index:60; display:none;
     }
     .lion-head{ background:#fbbf24; color:#111; font-weight:900; padding:10px 12px; }
-    .lion-body{ padding:10px; display:flex; flex-direction:column; gap:8px; height:300px; overflow:auto; }
+    .lion-body{ padding:10px; display:flex; flex-direction:column; gap:8px; height:300px; max-height:50vh; overflow:auto; }
     .lion-row{ max-width:86%; padding:8px 10px; border-radius:12px; font-size:14px; }
     .lion-a{ align-self:flex-start; background:#f3f4f6; color:#111; border:1px solid #ececec; border-bottom-left-radius:4px; }
     .lion-u{ align-self:flex-end; background:#0ea5e9; color:#fff; border:1px solid #0581bd; border-bottom-right-radius:4px; }
@@ -177,7 +203,7 @@
 <body>
   <a href="#main" class="sr-only" style="position:absolute;left:-9999px;top:auto">Skip to content</a>
 
-  <!-- Calendar alert: exact wording and button -->
+  <!-- Calendar alert -->
   <div id="calendar-alert">
     <div>
       📅 Check out for a discussion<br><small>Lion Hunt | Nonstop Discussions</small>
@@ -193,7 +219,7 @@
     </div>
     <div class="container">
       <nav id="menu" aria-label="Primary">
-        <a href="#start" data-show="all" class="active">Start</a>
+        <a href="#start" data-show="start" class="active">Start</a>
         <a href="#laws" data-show="laws">Laws</a>
         <a href="#cases" data-show="cases">Cases</a>
         <a href="#summaries" data-show="summaries">Summaries</a>
@@ -212,22 +238,20 @@
   </header>
 
   <main id="main" class="container">
-    <!-- HERO -->
+    <!-- START / HERO (kept compact) -->
     <section id="start" class="section-block" data-section="start">
       <div class="hero">
         <div>
           <h1>LDC Study Hub — clear, organized, and practical.</h1>
-          <p>Find statutes, workshop cases, concise summaries, past exams, and join live discussions. Use the menu to view one section at a time.</p>
-
+          <p>Find statutes, workshop cases, concise summaries, past exams, and join live discussions. Use the tiles below to open a section.</p>
           <div class="search">
             <input type="search" id="q" placeholder="Search cases, laws, topics…" aria-label="Search site" autocomplete="off">
             <button class="btn" id="qGo">Search</button>
           </div>
-          <p class="muted">Tip: Click a tab (e.g. <b>Laws</b>) to show only that section. The timetable on the image shows weekly links.</p>
         </div>
 
         <!-- Image with timetable/login overlay -->
-        <div class="imgwrap">
+        <div class="imgwrap" aria-label="Hero image with timetable">
           <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop"
                alt="Students studying with law books" loading="lazy" decoding="async">
           <a href="#" class="login-hero-btn" id="loginBtn">Login</a>
@@ -242,7 +266,47 @@
       </div>
     </section>
 
-    <!-- LAWS -->
+    <!-- DISCUSSIONS (Calendar shows fully by default) -->
+    <section id="discussions" class="section-block" data-section="discussions">
+      <h2>Discussions <span class="pill">Lion Den</span></h2>
+      <div class="grid">
+        <div class="card col-4">
+          <h3>Upcoming session</h3>
+          <p><a class="btn primary" href="Discussions.html">Join next session</a></p>
+        </div>
+        <div class="card col-4">
+          <h3>Calendar</h3>
+          <div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:10px;overflow:hidden">
+            <iframe loading="lazy" style="border:0;width:100%;height:100%"
+              src="https://calendar.google.com/calendar/embed?src=YOUR_CAL_ID"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- iPhone-like APP GRID (always visible on Start / initial) -->
+    <section id="apps" aria-label="Quick launch">
+      <div class="apps-title">
+        <h3 style="margin:0">Quick Launch</h3>
+        <a href="#discussions" class="btn" onclick="showOnly('discussions');return false;">Open Calendar</a>
+      </div>
+      <div class="app-grid">
+        <button class="app" data-go="laws"><div class="app-ico">📚</div><span>Laws</span></button>
+        <button class="app" data-go="cases"><div class="app-ico">⚖️</div><span>Cases</span></button>
+        <button class="app" data-go="summaries"><div class="app-ico">📝</div><span>Summaries</span></button>
+        <button class="app" data-go="workshops"><div class="app-ico">🧪</div><span>Workshops</span></button>
+        <button class="app" data-go="exams"><div class="app-ico">🧠</div><span>Exams</span></button>
+        <button class="app" data-go="ia"><div class="app-ico">🎯</div><span>I.A</span></button>
+        <button class="app" data-go="category-b"><div class="app-ico">🏷️</div><span>Category B</span></button>
+        <button class="app" data-go="trial-advocacy"><div class="app-ico">🎤</div><span>Trial Advocacy</span></button>
+        <button class="app" data-go="documents"><div class="app-ico">📂</div><span>Documents</span></button>
+        <button class="app" data-go="bar-bites"><div class="app-ico">🍫</div><span>Bar Bites</span></button>
+        <button class="app" data-go="audio"><div class="app-ico">🎧</div><span>Audio</span></button>
+        <button class="app" data-go="services"><div class="app-ico">🛠️</div><span>Legal Services</span></button>
+      </div>
+    </section>
+
+    <!-- CONTENT SECTIONS (hidden until opened) -->
     <section id="laws" class="section-block" data-section="laws">
       <h2>Laws <span class="pill">Statutes & Acts</span></h2>
       <p class="muted">External files open in a new tab and are clearly labeled.</p>
@@ -272,7 +336,6 @@
       </div>
     </section>
 
-    <!-- CASES -->
     <section id="cases" class="section-block" data-section="cases">
       <h2>Cases <span class="pill">Full Text</span></h2>
       <div class="list">
@@ -287,7 +350,6 @@
       </div>
     </section>
 
-    <!-- SUMMARIES -->
     <section id="summaries" class="section-block" data-section="summaries">
       <h2>Summaries <span class="pill">Quick Reads</span></h2>
       <div class="list">
@@ -302,7 +364,6 @@
       </div>
     </section>
 
-    <!-- WORKSHOPS -->
     <section id="workshops" class="section-block" data-section="workshops">
       <h2>Workshops <span class="pill">Practice</span></h2>
       <div class="list">
@@ -317,7 +378,6 @@
       </div>
     </section>
 
-    <!-- EXAMS -->
     <section id="exams" class="section-block" data-section="exams">
       <h2>Exams <span class="pill">Past Papers</span></h2>
       <div class="list">
@@ -332,7 +392,6 @@
       </div>
     </section>
 
-    <!-- I.A -->
     <section id="ia" class="section-block" data-section="ia">
       <h2>I.A <span class="pill">Individual Assessment</span></h2>
       <div class="list">
@@ -349,7 +408,6 @@
       </div>
     </section>
 
-    <!-- Category B -->
     <section id="category-b" class="section-block" data-section="category-b">
       <h2>Category B <span class="pill">Legal Writing & Conduct</span></h2>
       <div class="list">
@@ -364,7 +422,6 @@
       </div>
     </section>
 
-    <!-- Trial Advocacy -->
     <section id="trial-advocacy" class="section-block" data-section="trial-advocacy">
       <h2>Trial Advocacy <span class="pill">Skills</span></h2>
       <div class="list">
@@ -379,7 +436,6 @@
       </div>
     </section>
 
-    <!-- Documents -->
     <section id="documents" class="section-block" data-section="documents">
       <h2>Documents <span class="pill">Templates</span></h2>
       <div class="list">
@@ -394,7 +450,6 @@
       </div>
     </section>
 
-    <!-- Bar Bites -->
     <section id="bar-bites" class="section-block" data-section="bar-bites">
       <h2>Bar Bites <span class="pill">Motivation</span></h2>
       <div class="list">
@@ -410,7 +465,6 @@
       </div>
     </section>
 
-    <!-- AUDIO -->
     <section id="audio" class="section-block" data-section="audio">
       <h2>Audio <span class="pill">Bar Bites</span></h2>
       <div class="list">
@@ -427,26 +481,6 @@
       </div>
     </section>
 
-    <!-- DISCUSSIONS -->
-    <section id="discussions" class="section-block" data-section="discussions">
-      <h2>Discussions <span class="pill">Lion Den</span></h2>
-      <div class="grid">
-        <div class="card col-4">
-          <h3>Upcoming session</h3>
-          <!-- ✅ Now points to your old calendar page -->
-          <p><a class="btn primary" href="Discussions.html">Join next session</a></p>
-        </div>
-        <div class="card col-4">
-          <h3>Calendar</h3>
-          <div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:10px;overflow:hidden">
-            <iframe loading="lazy" style="border:0;width:100%;height:100%"
-              src="https://calendar.google.com/calendar/embed?src=YOUR_CAL_ID"></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
     <section id="services" class="section-block" data-section="services">
       <h2>Legal Services</h2>
       <div class="card">
@@ -494,39 +528,73 @@
       hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 
-    /* Section filter */
+    /* Section filter:
+       - Initial: show ONLY 'discussions' + the app grid
+       - 'Start': show hero + app grid (hide content sections)
+       - Else: show only that section (hide app grid for focus)
+    */
     const sections = Array.from(document.querySelectorAll('main .section-block'));
-    function showOnly(idOrAll){
-      const showAll = (idOrAll === 'all');
-      sections.forEach(sec=>{
-        if(showAll){ sec.classList.remove('hide'); }
-        else{ sec.classList.toggle('hide', sec.id !== idOrAll); }
-      });
+    const apps = document.getElementById('apps');
+
+    function setActiveLink(targetId){
       document.querySelectorAll('#menu a').forEach(a=>{
-        const tgt = a.dataset.show || 'all';
-        a.classList.toggle('active', (showAll && tgt==='all') || (!showAll && tgt===idOrAll));
+        const tgt = a.dataset.show || '';
+        a.classList.toggle('active', tgt === targetId || (targetId==='start' && tgt==='start'));
       });
+    }
+
+    function showOnly(id){
+      // hide all content sections first
+      sections.forEach(sec => sec.classList.add('hide'));
+
+      if(id === 'start'){
+        document.getElementById('start')?.classList.remove('hide');
+        document.getElementById('discussions')?.classList.add('hide'); // keep only dashboard feel
+        apps.style.display = 'block';
+        setActiveLink('start');
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+
+      // Normal section view
+      const target = document.getElementById(id);
+      if(target){ target.classList.remove('hide'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+      apps.style.display = 'none'; // focus mode
+      setActiveLink(id);
+
+      // Close mobile menu
       menu.classList.remove('open');
       hamb.setAttribute('aria-expanded','false');
-      if(!showAll){
-        document.getElementById(idOrAll)?.scrollIntoView({behavior:'smooth', block:'start'});
-      } else {
-        window.scrollTo({top:0, behavior:'smooth'});
-      }
     }
+
+    // Quick launch tiles
+    document.querySelectorAll('#apps .app').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const go = btn.getAttribute('data-go');
+        showOnly(go);
+        history.replaceState(null, '', '#'+go);
+      });
+    });
+
+    // Hook up nav clicks
     menu.addEventListener('click', (e)=>{
       const a = e.target.closest('a'); if(!a) return;
-      const show = a.dataset.show || 'all';
+      const show = a.dataset.show || 'start';
       e.preventDefault();
       showOnly(show);
-      if(show === 'all') history.replaceState(null, '', '#start');
-      else history.replaceState(null, '', '#'+show);
+      history.replaceState(null, '', '#'+show);
     });
+
+    // Initial view: only Calendar + App Grid (no long scroll)
+    sections.forEach(s => s.classList.add('hide'));
+    document.getElementById('discussions')?.classList.remove('hide');
+    apps.style.display = 'block';
+    setActiveLink('discussions');
+
+    // Respect hash on load (except we keep dashboard for 'start')
     const initialHash = (location.hash || '').replace('#','');
     if(initialHash && document.getElementById(initialHash)){
       showOnly(initialHash);
-    }else{
-      showOnly('all');
     }
 
     /* Search */
@@ -542,7 +610,7 @@
       if(!term){
         resultList.innerHTML = '';
         resultCount.textContent = 'Type a search above to filter content across sections.';
-        showOnly('all'); return;
+        showOnly('start'); return;
       }
       const matches = ALL.filter(x => x.title.includes(term) || x.tags.includes(term));
       resultList.innerHTML = matches.map(m => m.html).join('') || '<p class="muted">No matches. Try another keyword.</p>';
