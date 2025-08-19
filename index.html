@@ -1,710 +1,334 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Lion Hunter | LDC Study Hub – Laws, Cases, Workshops</title>
-  <meta name="description" content="Lion Hunter helps LDC students succeed: statutes, workshop cases, summaries, past exams, oral prep, discussions, and more.">
-  <link rel="canonical" href="https://www.ldclionhunter.com/">
-
-  <!-- SEO / Verification -->
-  <meta name="google-site-verification" content="google47c9c1017e180e8f" />
-  <meta name="keywords" content="Lion Hunter, LDC Uganda, legal education, advocacy, case summaries, statutes, workshops" />
-
-  <!-- Social -->
-  <meta property="og:site_name" content="Lion Hunter">
-  <meta property="og:title" content="LDC Study Hub – Laws, Cases, Workshops">
-  <meta property="og:description" content="Statutes, workshop cases, summaries, past exams, oral prep, and more.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://i.ibb.co/zVxt3D2Y/LDC-LEGAL-COMPANION.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Icons -->
-  <link rel="icon" href="https://i.postimg.cc/k4QT4G8c/Lion.jpg?v=7" type="image/jpeg" sizes="any">
-  <link rel="shortcut icon" href="https://i.postimg.cc/k4QT4G8c/Lion.jpg?v=7" type="image/jpeg">
-  <link rel="apple-touch-icon" href="https://i.postimg.cc/k4QT4G8c/Lion.jpg?v=7">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mutesi Elizabeth  – Laundry & Home Cleaning</title>
+  <meta name="description" content="Umutesi Car Accessories : Quality Car Assessories . Order quickly via WhatsApp." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://i.postimg.cc/qR4KSLvG/CAR.jpg" type="image/jpeg" sizes="any">
+  <link rel="shortcut icon" href="https://i.postimg.cc/9fwKYW53/Orjii-Supplies.jpg?v=6" type="image/jpeg">
+  <link rel="apple-touch-icon" href="https://i.postimg.cc/9fwKYW53/Orjii-Supplies.jpg?v=6">
 
   <style>
     :root{
-      --bg:#f7fafc; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0;
-      --brand:#0ea5e9; --brand-2:#0369a1; --card:#ffffff; --warn:#f59e0b;
+      --brand:#0ea5e9;
+      --brand-d:#0284c7;
+      --ink:#0f172a;
+      --muted:#64748b;
+      --line:#e2e8f0;
+      --bg:#f8fafc;
+      --wa:#25D366;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+    body {font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin:0; background:var(--bg); color:var(--ink);}
+    header {position:sticky; top:0; background:#fff; border-bottom:1px solid var(--line); z-index:50;}
+    .nav {display:flex; justify-content:space-between; align-items:center; padding:12px 18px;}
+    .brand {font-weight:800; font-size:20px; display:flex; align-items:center; gap:10px;}
+    .brand .logo {width:36px;height:36px;background:var(--brand);display:grid;place-items:center;color:#fff;border-radius:8px;}
+    .nav-actions {display:flex; gap:10px;}
+    .button {padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:600; border:1px solid var(--line); cursor:pointer; background:#fff; color:var(--ink);}
+    .primary {background:var(--brand); color:#fff; border-color:var(--brand)}
+    .primary:hover{background:var(--brand-d); border-color:var(--brand-d)}
+    .hero {display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center; padding:20px;}
+    .hero img{border-radius:12px; width:100%; height:100%; object-fit:cover;}
+    .controls{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:0 20px}
+    .muted{color:var(--muted); font-size:12px}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; padding:20px;}
+    .card{background:#fff; border:1px solid var(--line); border-radius:12px; display:flex; flex-direction:column; overflow:hidden; transition:transform .2s;}
+    .card:hover{transform:translateY(-3px);}
+    .card img{width:100%; height:200px; object-fit:cover; background:#f1f5f9}
+    .card .body{padding:12px;}
+    .price{font-weight:800; margin:6px 0;}
+    .qty{margin:8px 0;}
+    .moq{display:inline-block; font-size:11px; background:#d1fae5; color:#065f46; border:1px solid #a7f3d0; border-radius:999px; padding:2px 8px; margin-left:6px}
+    footer{margin-top:40px; border-top:1px solid var(--line); padding:20px; background:#fff;}
 
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    img{max-width:100%;height:auto}
-    .container{max-width:1200px;margin:0 auto;padding:0 16px}
-    .muted{color:var(--muted)}
-    .btn{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-weight:800}
-    .btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
-    .btn.primary:hover{background:var(--brand-2);color:#fff;text-decoration:none}
-    .pill{display:inline-block;font-size:12px;padding:2px 8px;border:1px solid var(--line);border-radius:999px;background:var(--card);margin-right:6px}
+    /* Drawer (cart) */
+    .drawer{position:fixed; top:0; right:-400px; width:360px; max-width:90vw; height:100vh; background:#fff; border-left:1px solid var(--line); transition:right .2s; z-index:100; display:flex; flex-direction:column;}
+    .drawer.open{right:0;}
+    .drawer header{padding:12px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between;}
+    .drawer main{flex:1; overflow:auto; padding:12px;}
+    .drawer footer{padding:12px; border-top:1px solid var(--line); position:relative; background:#fff;}
 
-    /* Header / nav */
-    header{position:sticky;top:0;z-index:40;background:var(--card);border-bottom:1px solid var(--line);backdrop-filter:saturate(1.2) blur(3px)}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .badge{width:36px;height:36px;border-radius:10px;background:var(--brand);color:#fff;display:grid;place-items:center}
-    nav{overflow:auto;-webkit-overflow-scrolling:touch}
-    nav a{margin:0 6px;padding:6px 10px;border-radius:8px;color:#0f172a;font-weight:700;white-space:nowrap}
-    nav a.active, nav a:hover{background:var(--brand);color:#fff;text-decoration:none}
-    .hamb{display:none;border:1px solid var(--line);padding:8px 10px;border-radius:10px;background:var(--card);color:var(--ink)}
-    #menu{display:flex;flex-wrap:nowrap;align-items:center}
-    @media (max-width:920px){
-      .hamb{display:inline-flex}
-      #menu{display:none;flex-direction:column;align-items:flex-start;gap:6px;padding:8px 0}
-      #menu.open{display:flex}
-      nav a{margin:0}
+    /* Mode toggle – clearer and more accessible */
+    .mode-tabs{
+      position:relative; display:inline-flex; align-items:center; gap:6px;
+      background:#0f172a0d; border:1px solid #cbd5e1; padding:6px; border-radius:999px;
     }
-
-    /* Calendar alert */
-    #calendar-alert{
-      background:linear-gradient(90deg,#283e51,#4b79a1);
-      color:#fff;border-radius:12px;margin:10px auto;width:95%;max-width:1100px;
-      padding:10px 12px;font-size:.95rem;font-weight:600;
-      box-shadow:0 2px 8px rgba(0,0,0,.12);
-      display:flex;align-items:center;justify-content:space-between;gap:10px;
+    .mode-tabs .thumb{
+      position:absolute; top:6px; bottom:6px; width:50%;
+      border-radius:999px; background:var(--brand); z-index:0;
+      transition:transform .25s ease, background-color .25s ease;
     }
-    #calendar-alert a{background:#ffeb3b;color:#222;padding:8px 12px;text-decoration:none;border-radius:10px;font-weight:800;box-shadow:0 1px 4px rgba(0,0,0,.2)}
-    #calendar-alert small{opacity:.9}
-
-    /* Hero (trimmed for mobile) */
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:20px 0}
-    .hero h1{margin:.3rem 0;font-size:clamp(22px,3.5vw,38px)}
-    .hero p{color:var(--muted);max-width:60ch}
-    .search{display:flex;gap:8px;align-items:center;margin:10px 0}
-    .search input{flex:1;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink)}
-    .imgwrap{position:relative}
-    .imgwrap img{width:100%;max-height:260px;object-fit:cover;border-radius:12px}
-
-    /* Timetable overlay */
-    .login-hero-btn,
-    .timetable-badge{
-      position:absolute;left:12px;z-index:2;
-      background: var(--brand); color:#fff; padding:8px 12px;
-      border-radius:999px; font-weight:800; font-size:14px;
-      display:inline-flex; gap:8px; align-items:center;
-      box-shadow:0 10px 24px rgba(0,0,0,.18);
-      border:1px solid rgba(255,255,255,.16); text-decoration:none; cursor:pointer;
+    [data-mode="retail"]    .mode-tabs .thumb{ transform:translateX(0%);   background:var(--brand); }
+    [data-mode="wholesale"] .mode-tabs .thumb{ transform:translateX(100%); background:#16a34a; }
+    .mode-tabs button{
+      position:relative; z-index:1; border:0; background:transparent;
+      padding:10px 18px; border-radius:999px; font-weight:800; font-size:15px;
+      color:var(--ink); display:inline-flex; align-items:center; gap:8px; cursor:pointer;
     }
-    .login-hero-btn{ top:12px; }
-    .timetable-badge{ top:52px; }
-    .timetable-dot{ width:8px; height:8px; border-radius:50%; background:#f59e0b; display:inline-block; }
+    .mode-tabs button[aria-pressed="true"]{ color:#fff; }
+    .mode-tabs button:focus-visible{ outline:none; box-shadow:0 0 0 3px rgba(14,165,233,.45); }
 
-    .timetable-pop{
-      position:absolute; top:92px; left:12px; z-index:3;
-      width:300px; background:#ffffff; border:1px solid var(--line);
-      border-radius:12px; box-shadow:0 22px 48px rgba(0,0,0,.22);
-      padding:10px; display:none;
+    /* Floating WhatsApp checkout button */
+    .fab {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;               /* updated dynamically to sit above the drawer footer */
+      display: none;              /* shown when cart has items + drawer is open */
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background:var(--wa);
+      color:#fff;
+      font-weight:800;
+      text-decoration:none;
+      box-shadow:0 10px 20px rgba(2,6,23,.18);
+      z-index:120;
     }
-    .timetable-pop:before{
-      content:""; position:absolute; top:-8px; left:22px; width:14px; height:14px;
-      background:#fff; border-left:1px solid var(--line); border-top:1px solid var(--line); transform:rotate(45deg);
-    }
-    .timetable-pop h4{ margin:4px 8px 8px; font-size:14px; font-weight:800; color:#111827; }
-    .timetable-list{ max-height:260px; overflow:auto; margin:0; padding:4px; }
-    .timetable-item{ display:flex; justify-content:space-between; align-items:center; gap:10px; padding:8px 10px; border-radius:8px; transition:background .15s ease; }
-    .timetable-item:hover{ background:#f9fafb; }
-    .timetable-item span{ font-size:13px; color:#111827; font-weight:600; }
-    .timetable-item a{ font-size:12px; text-decoration:none; padding:6px 10px; border-radius:8px; background:var(--brand); color:#fff; font-weight:800; }
-
-    @media (max-width:920px){
-      .hero{grid-template-columns:1fr}
-      .timetable-pop{ left:12px; width:88vw; max-width:340px; }
-    }
-
-    /* Sections & cards (content sections hidden until opened) */
-    section{padding:22px 0}
-    section h2{margin:.2rem 0 .8rem}
-    .list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
-    .item{border:1px dashed var(--line);border-radius:12px;padding:12px;background:var(--card)}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .col-4{grid-column:span 4}
-    @media (max-width:920px){ .grid{grid-template-columns:1fr} .col-4{grid-column:span 1}}
-
-    /* App grid (iPhone-like icons) */
-    #apps{padding:8px 0 28px}
-    .apps-title{display:flex;align-items:center;justify-content:space-between;margin:6px 0 10px}
-    .app-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
-    }
-    @media (max-width:380px){ .app-grid{grid-template-columns:repeat(3,1fr)} }
-    .app{
-      display:flex;flex-direction:column;align-items:center;gap:6px;
-      background:transparent;border:0;cursor:pointer;
-    }
-    .app:focus-visible{outline:3px solid #94d9ff;border-radius:18px}
-    .app-ico{
-      width:72px;height:72px;border-radius:20px;display:grid;place-items:center;
-      color:#fff;font-size:28px;font-weight:900;
-      background:linear-gradient(160deg,#0ea5e9,#0369a1);
-      box-shadow:0 6px 16px rgba(0,0,0,.15), inset 0 0 0 1px rgba(255,255,255,.15);
-    }
-    .app span{font-size:12px;color:#111;text-align:center;max-width:80px}
-
-    /* Show/Hide helper */
-    .hide{display:none !important}
-
-    footer{border-top:1px solid var(--line);padding:18px 0;background:var(--card);margin-top:10px}
-
-    /* LION BOT */
-    #lionBtn{
-      position:fixed; right:16px; bottom:calc(18px + env(safe-area-inset-bottom,0));
-      width:56px; height:56px;
-      border-radius:50%; background:#fbbf24; color:#111; font-size:28px;
-      display:flex; align-items:center; justify-content:center;
-      border:2px solid #1111; box-shadow:0 12px 24px rgba(0,0,0,.18);
-      cursor:pointer; z-index:60;
-    }
-    #lionBtn:hover{ filter:brightness(1.05); }
-    #lionChat{
-      position:fixed; right:12px; bottom:calc(86px + env(safe-area-inset-bottom,0));
-      width:min(92vw,360px); max-height:65vh;
-      border-radius:14px; overflow:hidden; border:1px solid var(--line); background:#fff;
-      box-shadow:0 18px 36px rgba(0,0,0,.22); z-index:60; display:none;
-    }
-    .lion-head{ background:#fbbf24; color:#111; font-weight:900; padding:10px 12px; }
-    .lion-body{ padding:10px; display:flex; flex-direction:column; gap:8px; height:300px; max-height:50vh; overflow:auto; }
-    .lion-row{ max-width:86%; padding:8px 10px; border-radius:12px; font-size:14px; }
-    .lion-a{ align-self:flex-start; background:#f3f4f6; color:#111; border:1px solid #ececec; border-bottom-left-radius:4px; }
-    .lion-u{ align-self:flex-end; background:#0ea5e9; color:#fff; border:1px solid #0581bd; border-bottom-right-radius:4px; }
-    .lion-send{ border-top:1px solid var(--line); padding:10px; display:flex; gap:8px; }
-    .lion-send textarea{ flex:1; resize:none; height:40px; padding:8px; border:1px solid var(--line); border-radius:10px; font-family:inherit; font-size:14px;}
-    .lion-send button{ padding:8px 12px; border-radius:10px; border:1px solid var(--brand); background:var(--brand); color:#fff; font-weight:800; }
+    .fab:hover { filter:brightness(.96); }
+    .fab svg { width:20px; height:20px; }
+    @media (max-width: 860px){ .hero{grid-template-columns:1fr;}}
   </style>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KCLCFN2CV4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'G-KCLCFN2CV4');
-  </script>
-
-  <!-- Microsoft Clarity -->
-  <script>
-    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}
-    ;t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i
-    ;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "srhjtupxnp");
-  </script>
 </head>
-<body>
-  <a href="#main" class="sr-only" style="position:absolute;left:-9999px;top:auto">Skip to content</a>
-
-  <!-- Calendar alert -->
-  <div id="calendar-alert">
-    <div>
-      📅 Check out for a discussion<br><small>Lion Hunt | Nonstop Discussions</small>
-    </div>
-    <a id="goCalendar" href="Discussions.html">View Calendar</a>
-  </div>
-
-  <!-- Header & nav -->
+<body data-mode="retail">
   <header>
-    <div class="container nav">
-      <div class="brand"><span class="badge">🦁</span><span>Lion Hunter</span></div>
-      <button class="hamb" id="hamb" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">☰</button>
-    </div>
-    <div class="container">
-      <nav id="menu" aria-label="Primary">
-        <a href="#start" data-show="start" class="active">Start</a>
-        <a href="#laws" data-show="laws">Laws</a>
-        <a href="#cases" data-show="cases">Cases</a>
-        <a href="#summaries" data-show="summaries">Summaries</a>
-        <a href="#workshops" data-show="workshops">Workshops</a>
-        <a href="#exams" data-show="exams">Exams</a>
-        <a href="#ia" data-show="ia">I.A</a>
-        <a href="#category-b" data-show="category-b">Category B</a>
-        <a href="#trial-advocacy" data-show="trial-advocacy">Trial Advocacy</a>
-        <a href="#documents" data-show="documents">Documents</a>
-        <a href="#bar-bites" data-show="bar-bites">Bar Bites</a>
-        <a href="#audio" data-show="audio">Audio</a>
-        <a href="#discussions" data-show="discussions">Discussions</a>
-        <a href="#services" data-show="services">Legal Services</a>
-      </nav>
+    <div class="nav">
+      <div class="brand"><div class="logo">O</div> Liz Car Assessories </div>
+      <div class="nav-actions">
+        <a href="#catalog" class="button primary">Browse Products</a>
+        <button id="cartBtn" class="button">Cart <span id="cartCount" style="background:#fb7185; color:#fff; border-radius:50%; padding:2px 6px; font-size:12px; display:none;">0</span></button>
+      </div>
     </div>
   </header>
 
-  <main id="main" class="container">
-    <!-- START / HERO (kept compact) -->
-    <section id="start" class="section-block" data-section="start">
-      <div class="hero">
-        <div>
-          <h1>LDC Study Hub — clear, organized, and practical.</h1>
-          <p>Find statutes, workshop cases, concise summaries, past exams, and join live discussions. Use the tiles below to open a section.</p>
-          <div class="search">
-            <input type="search" id="q" placeholder="Search cases, laws, topics…" aria-label="Search site" autocomplete="off">
-            <button class="btn" id="qGo">Search</button>
-          </div>
-        </div>
+  <section class="hero">
+    <div>
+      <h1>Liz Quality Car Assessories</h1>
+      <p>Retail & Wholesale supplies. Car Storage Bags , Back Sit hooks , Car Cup Costers, Silicon Cup Holder , and more. Quick delivery in Kampala & beyond.</p>
+      <a href="#catalog" class="button primary">Shop Now</a>
+    </div>
+    <!-- Hero image -->
+    <img src="https://i.postimg.cc/FzHzvCch/liz-car-Assessories.png" alt="Orji Supplies team" loading="eager" width="1200" height="700">
+  </section>
 
-        <!-- Image with timetable/login overlay -->
-        <div class="imgwrap" aria-label="Hero image with timetable">
-          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop"
-               alt="Students studying with law books" loading="lazy" decoding="async">
-          <a href="#" class="login-hero-btn" id="loginBtn">Login</a>
-          <div class="timetable-badge" id="timetableBtn" aria-haspopup="true" aria-expanded="false">
-            <span class="timetable-dot"></span> Timetables
-          </div>
-          <div class="timetable-pop" id="timetablePop" role="dialog" aria-label="Weekly timetables">
-            <h4>Weekly Timetables</h4>
-            <div class="timetable-list" id="timetableList"></div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <section id="catalog">
+    <div class="controls">
+      <div><strong>Catalog</strong> <span class="muted">– choose buying mode</span></div>
 
-    <!-- DISCUSSIONS (Calendar shows fully by default) -->
-    <section id="discussions" class="section-block" data-section="discussions">
-      <h2>Discussions <span class="pill">Lion Den</span></h2>
-      <div class="grid">
-        <div class="card col-4">
-          <h3>Upcoming session</h3>
-          <p><a class="btn primary" href="Discussions.html">Join next session</a></p>
-        </div>
-        <div class="card col-4">
-          <h3>Calendar</h3>
-          <div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:10px;overflow:hidden">
-            <iframe loading="lazy" style="border:0;width:100%;height:100%"
-              src="https://calendar.google.com/calendar/embed?src=YOUR_CAL_ID"></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
+      <!-- Improved Retail / Wholesale toggle -->
+      <div class="mode-tabs" id="modeTabs" aria-label="Buying mode" role="group">
+        <span class="thumb" aria-hidden="true"></span>
 
-    <!-- iPhone-like APP GRID (always visible on Start / initial) -->
-    <section id="apps" aria-label="Quick launch">
-      <div class="apps-title">
-        <h3 style="margin:0">Quick Launch</h3>
-        <a href="#discussions" class="btn" onclick="showOnly('discussions');return false;">Open Calendar</a>
-      </div>
-      <div class="app-grid">
-        <button class="app" data-go="laws"><div class="app-ico">📚</div><span>Laws</span></button>
-        <button class="app" data-go="cases"><div class="app-ico">⚖️</div><span>Cases</span></button>
-        <button class="app" data-go="summaries"><div class="app-ico">📝</div><span>Summaries</span></button>
-        <button class="app" data-go="workshops"><div class="app-ico">🧪</div><span>Workshops</span></button>
-        <button class="app" data-go="exams"><div class="app-ico">🧠</div><span>Exams</span></button>
-        <button class="app" data-go="ia"><div class="app-ico">🎯</div><span>I.A</span></button>
-        <button class="app" data-go="category-b"><div class="app-ico">🏷️</div><span>Category B</span></button>
-        <button class="app" data-go="trial-advocacy"><div class="app-ico">🎤</div><span>Trial Advocacy</span></button>
-        <button class="app" data-go="documents"><div class="app-ico">📂</div><span>Documents</span></button>
-        <button class="app" data-go="bar-bites"><div class="app-ico">🍫</div><span>Bar Bites</span></button>
-        <button class="app" data-go="audio"><div class="app-ico">🎧</div><span>Audio</span></button>
-        <button class="app" data-go="services"><div class="app-ico">🛠️</div><span>Legal Services</span></button>
-      </div>
-    </section>
+        <button type="button" data-mode="retail" aria-pressed="true" title="Buy single units at retail price">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor" d="M7 7V6a5 5 0 0110 0v1h2a1 1 0 011 1v11a2 2 0 01-2 2H6a2 2 0 01-2-2V8a1 1 0 011-1h2zm2 0h6V6a3 3 0 00-6 0v1z"/>
+          </svg>
+          Retail
+        </button>
 
-    <!-- CONTENT SECTIONS (hidden until opened) -->
-    <section id="laws" class="section-block" data-section="laws">
-      <h2>Laws <span class="pill">Statutes & Acts</span></h2>
-      <p class="muted">External files open in a new tab and are clearly labeled.</p>
-      <div class="list">
-        <article class="item" data-title="Civil Procedure Act" data-tags="civil procedure statute">
-          <h4>Civil Procedure Act</h4>
-          <p class="muted">Primary statute governing civil proceedings.</p>
-          <p><a class="btn" href="https://example.com/civil-procedure-act.pdf" target="_blank" rel="noopener">Open PDF</a></p>
-        </article>
-        <article class="item" data-title="Evidence Act" data-tags="evidence statute criminal">
-          <h4>Evidence Act</h4>
-          <p class="muted">Rules on admissibility and proof.</p>
-          <p><a class="btn" href="https://example.com/evidence-act.pdf" target="_blank" rel="noopener">Open PDF</a></p>
-        </article>
-        <article class="item" data-title="Criminal Procedure Code" data-tags="criminal procedure statute">
-          <h4>Criminal Procedure Code</h4>
-          <p class="muted">Preview and open in Google Drive.</p>
-          <details>
-            <summary>Preview (embedded)</summary>
-            <div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:8px">
-              <iframe loading="lazy" style="width:100%;height:100%;border:0"
-                src="https://drive.google.com/file/d/FILE_ID/preview" allow="autoplay"></iframe>
-            </div>
-          </details>
-          <p><a class="btn" href="https://drive.google.com/file/d/FILE_ID/view" target="_blank" rel="noopener">Open in Drive</a></p>
-        </article>
+        <button type="button" data-mode="wholesale" aria-pressed="false" title="Buy in bulk at wholesale price">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor" d="M3 8l9-5 9 5-9 5-9-5zm9 7l9-5v9l-9 5-9-5v-9l9 5z"/>
+          </svg>
+          Wholesale
+        </button>
       </div>
-    </section>
+    </div>
 
-    <section id="cases" class="section-block" data-section="cases">
-      <h2>Cases <span class="pill">Full Text</span></h2>
-      <div class="list">
-        <article class="item" data-title="Donoghue v Stevenson" data-tags="civil tort negligence">
-          <h4>Donoghue v Stevenson [1932]</h4>
-          <p><a class="btn" href="https://example.com/donoghue-v-stevenson.html" target="_blank" rel="noopener">Read case</a></p>
-        </article>
-        <article class="item" data-title="Carlill v Carbolic Smoke Ball" data-tags="contract offer acceptance">
-          <h4>Carlill v Carbolic Smoke Ball [1893]</h4>
-          <p><a class="btn" href="https://example.com/carlill.pdf" target="_blank" rel="noopener">Read case</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section id="summaries" class="section-block" data-section="summaries">
-      <h2>Summaries <span class="pill">Quick Reads</span></h2>
-      <div class="list">
-        <article class="item" data-title="Tort: Negligence summary" data-tags="tort negligence civil">
-          <h4>Tort: Negligence — Quick Summary</h4>
-          <p><a class="btn" href="https://example.com/neg-summary.pdf" target="_blank" rel="noopener">Download PDF</a></p>
-        </article>
-        <article class="item" data-title="Civil Procedure roadmap" data-tags="civil procedure flowchart">
-          <h4>Civil Procedure: Roadmap</h4>
-          <p><a class="btn" href="https://example.com/cpc-roadmap.png" target="_blank" rel="noopener">Open image</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section id="workshops" class="section-block" data-section="workshops">
-      <h2>Workshops <span class="pill">Practice</span></h2>
-      <div class="list">
-        <article class="item" data-title="Workshop 1 Drafting" data-tags="civil drafting procedure">
-          <h4>Workshop 1: Drafting</h4>
-          <p><a class="btn" href="https://example.com/workshop1.pdf" target="_blank" rel="noopener">Open PDF</a></p>
-        </article>
-        <article class="item" data-title="Workshop 2 Evidence" data-tags="evidence objections criminal">
-          <h4>Workshop 2: Evidence</h4>
-          <p><a class="btn" href="https://example.com/workshop2.pdf" target="_blank" rel="noopener">Open PDF</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section id="exams" class="section-block" data-section="exams">
-      <h2>Exams <span class="pill">Past Papers</span></h2>
-      <div class="list">
-        <article class="item" data-title="Criminal Law 2022" data-tags="criminal exam">
-          <h4>Criminal Law — 2022</h4>
-          <p><a class="btn" href="https://example.com/crim-2022.pdf" target="_blank" rel="noopener">Download</a></p>
-        </article>
-        <article class="item" data-title="Civil Procedure 2021" data-tags="civil exam procedure">
-          <h4>Civil Procedure — 2021</h4>
-          <p><a class="btn" href="https://example.com/civproc-2021.pdf" target="_blank" rel="noopener">Download</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section id="ia" class="section-block" data-section="ia">
-      <h2>I.A <span class="pill">Individual Assessment</span></h2>
-      <div class="list">
-        <article class="item" data-title="Friday Hunter #1" data-tags="IA civil drafting">
-          <h4>Friday Hunter #1</h4>
-          <p class="muted">Weekly IA practice: pleadings & drafting.</p>
-          <p><a class="btn" href="https://example.com/ia-week1.pdf" target="_blank" rel="noopener">Open PDF</a></p>
-        </article>
-        <article class="item" data-title="Friday Hunter #2" data-tags="IA evidence objections">
-          <h4>Friday Hunter #2</h4>
-          <p class="muted">Evidence objections and responses.</p>
-          <p><a class="btn" href="https://example.com/ia-week2.pdf" target="_blank" rel="noopener">Open PDF</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section id="category-b" class="section-block" data-section="category-b">
-      <h2>Category B <span class="pill">Legal Writing & Conduct</span></h2>
-      <div class="list">
-        <article class="item" data-title="Professional Conduct Notes" data-tags="category b professional conduct ethics">
-          <h4>Professional Conduct Notes</h4>
-          <p><a class="btn" href="https://example.com/prof-conduct.pdf" target="_blank" rel="noopener">Open PDF</a></p>
-        </article>
-        <article class="item" data-title="ADR Quick Guide" data-tags="category b adr mediation arbitration">
-          <h4>ADR Quick Guide</h4>
-          <p><a class="btn" href="https://example.com/adr-quick-guide.pdf" target="_blank" rel="noopener">Open PDF</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section id="trial-advocacy" class="section-block" data-section="trial-advocacy">
-      <h2>Trial Advocacy <span class="pill">Skills</span></h2>
-      <div class="list">
-        <article class="item" data-title="Examination in Chief" data-tags="trial advocacy EIC courtroom">
-          <h4>Examination-in-Chief Toolkit</h4>
-          <p><a class="btn" href="https://example.com/eic-toolkit.pdf" target="_blank" rel="noopener">Open PDF</a></p>
-        </article>
-        <article class="item" data-title="Cross Examination" data-tags="trial advocacy cross-examination impeachment">
-          <h4>Cross-Examination Cheatsheet</h4>
-          <p><a class="btn" href="https://example.com/cross-exam.pdf" target="_blank" rel="noopener">Open PDF</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section id="documents" class="section-block" data-section="documents">
-      <h2>Documents <span class="pill">Templates</span></h2>
-      <div class="list">
-        <article class="item" data-title="Pleadings Bundle" data-tags="documents pleadings templates civil">
-          <h4>Pleadings Bundle (Civil)</h4>
-          <p><a class="btn" href="https://example.com/pleadings-bundle.zip" target="_blank" rel="noopener">Download ZIP</a></p>
-        </article>
-        <article class="item" data-title="Corporate Forms" data-tags="documents corporate registers resolutions">
-          <h4>Corporate Forms Pack</h4>
-          <p><a class="btn" href="https://example.com/corporate-forms.zip" target="_blank" rel="noopener">Download ZIP</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section id="bar-bites" class="section-block" data-section="bar-bites">
-      <h2>Bar Bites <span class="pill">Motivation</span></h2>
-      <div class="list">
-        <article class="item" data-title="Mindset for the Bar" data-tags="bar bites motivation study">
-          <h4>Mindset for the Bar</h4>
-          <p class="muted">Short reads to keep you sharp and steady.</p>
-          <p><a class="btn" href="https://example.com/bar-bites-mindset.pdf" target="_blank" rel="noopener">Open PDF</a></p>
-        </article>
-        <article class="item" data-title="Time Boxing" data-tags="bar bites productivity planning">
-          <h4>Time-Boxing Your Week</h4>
-          <p><a class="btn" href="https://example.com/time-boxing.pdf" target="_blank" rel="noopener">Open PDF</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section id="audio" class="section-block" data-section="audio">
-      <h2>Audio <span class="pill">Bar Bites</span></h2>
-      <div class="list">
-        <article class="item" data-title="Hearsay exceptions" data-tags="evidence audio criminal">
-          <h4>Hearsay exceptions (6 min)</h4>
-          <audio controls preload="none">
-            <source src="https://example.com/hearsay.mp3" type="audio/mpeg">
-          </audio>
-        </article>
-        <article class="item">
-          <h4>Coming soon</h4>
-          <p class="muted">Uploads resume <b>Oct 15</b>. Get notified: <a href="mailto:you@example.com?subject=Notify%20me%20when%20audio%20is%20live">email us</a>.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="services" class="section-block" data-section="services">
-      <h2>Legal Services</h2>
-      <div class="card">
-        <h3>What we offer</h3>
-        <ul>
-          <li>Document review & drafting (contracts, pleadings)</li>
-          <li>Legal research & memo writing</li>
-          <li>Consultations (by appointment)</li>
-        </ul>
-        <p><a class="btn" href="mailto:you@example.com?subject=Consultation%20request">Book a consult</a></p>
-      </div>
-    </section>
-
-    <!-- SEARCH -->
-    <section id="search" class="section-block" data-section="search">
-      <h2>Search results</h2>
-      <p id="resultCount" class="muted">Type a search above to filter content across sections.</p>
-      <div id="resultList" class="list"></div>
-    </section>
-  </main>
+    <div class="grid" id="grid"></div>
+  </section>
 
   <footer>
-    <div class="container">
-      <p>&copy; <span id="year"></span> Lion Hunter. All rights reserved.</p>
-    </div>
+    <p>© <span id="year"></span> Liz Car Assessories. All rights reserved.</p>
   </footer>
 
-  <!-- LION BOT -->
-  <button id="lionBtn" title="Chat with Lion Bot">🦁</button>
-  <div id="lionChat" aria-live="polite" aria-label="Lion Bot chat">
-    <div class="lion-head">Lion Bot</div>
-    <div class="lion-body" id="lionMsgs"></div>
-    <div class="lion-send">
-      <textarea id="lionInput" placeholder="Type a message…"></textarea>
-      <button id="lionSend">Send</button>
-    </div>
-  </div>
+  <aside id="drawer" class="drawer">
+    <header>
+      <strong>Your Cart</strong>
+      <button id="closeDrawer" class="button">Close</button>
+    </header>
+    <main id="cartLines"></main>
+    <footer>
+      <div id="grandTotal">Total: UGX 0</div>
+      <!-- Hidden fallback button (we use the floating FAB instead) -->
+      <a id="checkoutBtn" href="#" class="button primary" target="_blank" style="display:none">Checkout on WhatsApp</a>
+      <div class="muted">Mode: <span id="cartMode">Retail</span></div>
+    </footer>
+  </aside>
+
+  <!-- Floating WhatsApp Checkout -->
+  <a id="checkoutFab" class="fab" href="#" target="_blank" aria-label="Checkout on WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M19.11 17.56c-.26-.13-1.52-.75-1.76-.84s-.41-.13-.58.13-.66.84-.81 1.01-.3.19-.56.06a8.94 8.94 0 0 1-2.64-1.63 9.9 9.9 0 0 1-1.84-2.28c-.19-.32 0-.49.13-.62.13-.13.26-.32.39-.45.13-.13.19-.26.32-.45.13-.19.06-.36 0-.49-.06-.13-.58-1.39-.8-1.89-.21-.51-.43-.44-.58-.45h-.5a.96.96 0 0 0-.69.32c-.24.26-.9.88-.9 2.14s.92 2.49 1.05 2.66c.13.17 1.81 2.76 4.39 3.87.61.26 1.08.41 1.45.52.61.19 1.16.16 1.6.1.49-.07 1.52-.62 1.74-1.22.21-.58.21-1.08.15-1.22-.06-.13-.24-.2-.5-.33zM16 3C9.37 3 4 8.37 4 15c0 2.12.55 4.1 1.52 5.83L4 29l8.33-1.46A12.95 12.95 0 0 0 16 27c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22.33c-1.84 0-3.55-.54-4.98-1.46l-.36-.23-4.94.86.86-4.81-.24-.39A9.36 9.36 0 1 1 25.36 20a9.33 9.33 0 0 1-9.36 5.33z"/></svg>
+    <span>Checkout</span>
+  </a>
 
   <script>
-    /* Mobile menu */
-    const hamb = document.getElementById('hamb');
-    const menu = document.getElementById('menu');
-    hamb?.addEventListener('click', ()=>{
-      const open = menu.classList.toggle('open');
-      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+    const WHATSAPP_NUMBER = '256754760472';
 
-    /* Section filter:
-       - Initial: show ONLY 'discussions' + the app grid
-       - 'Start': show hero + app grid (hide content sections)
-       - Else: show only that section (hide app grid for focus)
-    */
-    const sections = Array.from(document.querySelectorAll('main .section-block'));
-    const apps = document.getElementById('apps');
-
-    function setActiveLink(targetId){
-      document.querySelectorAll('#menu a').forEach(a=>{
-        const tgt = a.dataset.show || '';
-        a.classList.toggle('active', tgt === targetId || (targetId==='start' && tgt==='start'));
-      });
+    // Base folder for local images
+    const IMG_BASE = 'images.html';
+    function withBase(path){
+      if (/^https?:\/\//i.test(path)) return path; // absolute URL stays
+      const base = IMG_BASE.endsWith('/') ? IMG_BASE : IMG_BASE + '/';
+      return base + path.split('/').map(encodeURIComponent).join('/');
     }
 
-    function showOnly(id){
-      // hide all content sections first
-      sections.forEach(sec => sec.classList.add('hide'));
-
-      if(id === 'start'){
-        document.getElementById('start')?.classList.remove('hide');
-        document.getElementById('discussions')?.classList.add('hide'); // keep only dashboard feel
-        apps.style.display = 'block';
-        setActiveLink('start');
-        window.scrollTo({top:0, behavior:'smooth'});
-        return;
-      }
-
-      // Normal section view
-      const target = document.getElementById(id);
-      if(target){ target.classList.remove('hide'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
-      apps.style.display = 'none'; // focus mode
-      setActiveLink(id);
-
-      // Close mobile menu
-      menu.classList.remove('open');
-      hamb.setAttribute('aria-expanded','false');
-    }
-
-    // Quick launch tiles
-    document.querySelectorAll('#apps .app').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const go = btn.getAttribute('data-go');
-        showOnly(go);
-        history.replaceState(null, '', '#'+go);
-      });
-    });
-
-    // Hook up nav clicks
-    menu.addEventListener('click', (e)=>{
-      const a = e.target.closest('a'); if(!a) return;
-      const show = a.dataset.show || 'start';
-      e.preventDefault();
-      showOnly(show);
-      history.replaceState(null, '', '#'+show);
-    });
-
-    // Initial view: only Calendar + App Grid (no long scroll)
-    sections.forEach(s => s.classList.add('hide'));
-    document.getElementById('discussions')?.classList.remove('hide');
-    apps.style.display = 'block';
-    setActiveLink('discussions');
-
-    // Respect hash on load (except we keep dashboard for 'start')
-    const initialHash = (location.hash || '').replace('#','');
-    if(initialHash && document.getElementById(initialHash)){
-      showOnly(initialHash);
-    }
-
-    /* Search */
-    const q = document.getElementById('q');
-    const qGo = document.getElementById('qGo');
-    const resultList = document.getElementById('resultList');
-    const resultCount = document.getElementById('resultCount');
-    const ALL = Array.from(document.querySelectorAll('.item')).map(el=>({
-      el, title:(el.dataset.title||'').toLowerCase(), tags:(el.dataset.tags||'').toLowerCase(), html:el.outerHTML
-    }));
-    function doSearch(){
-      const term = (q.value||'').trim().toLowerCase();
-      if(!term){
-        resultList.innerHTML = '';
-        resultCount.textContent = 'Type a search above to filter content across sections.';
-        showOnly('start'); return;
-      }
-      const matches = ALL.filter(x => x.title.includes(term) || x.tags.includes(term));
-      resultList.innerHTML = matches.map(m => m.html).join('') || '<p class="muted">No matches. Try another keyword.</p>';
-      resultCount.textContent = `${matches.length} result${matches.length===1?'':'s'} for "${term}"`;
-      showOnly('search');
-    }
-    qGo.addEventListener('click', (e)=>{ e.preventDefault(); doSearch(); });
-    q.addEventListener('keydown', (e)=>{ if(e.key==='Enter') doSearch(); });
-
-    // External link safety & year
-    document.querySelectorAll('a[target="_blank"]').forEach(a=>a.setAttribute('rel','noopener'));
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    /* Timetable popup */
-    const WEEK_LINKS = [
-      { label: "Week 1 (Family)",    url: "https://drive.google.com/drive/folders/1p4CqiLEgrcY0m-yCBDDB0zbLBQh5nZia?usp=sharing" },
-      { label: "Week 2 (Civil)",     url: "https://docs.google.com/spreadsheets/d/EXAMPLE2/preview" },
-      { label: "Week 3 (Corporate)", url: "https://drive.google.com/file/d/EXAMPLE3/preview" },
-      { label: "Week 4 (Criminal)",  url: "https://docs.google.com/document/d/EXAMPLE4/preview" },
-      { label: "Week 5 (Land)",      url: "https://docs.google.com/document/d/EXAMPLE5/preview" }
+    const PRODUCTS = [
+      {id:'pBroom', name:'Car Back Seat Storage Back', retailPrice:80000, wholesalePrice:75000, moq:10, category:'accessories', unit:'piece',  img:'https://i.postimg.cc/qR4KSLvG/CAR.jpg', desc:'Heavy-duty broom head in multiple colors. Fits standard handles.'},
+      {id:'pDurakill', name:'Car Silicone Cup Holder Pad ', retailPrice:40000, wholesalePrice:30000, moq:12, category:'home', unit:'can', img:'https://i.postimg.cc/gksGHHCW/cup-holder.jpg', desc:'Car Silicone Cup Holder Pad Black Round Non -Slip Waterproof Coster Mat .'},
+      {id:'pHarpic', name:'Car Seat Headrest Hooks )', retailPrice:16000, wholesalePrice:14000, moq:12, category:'home', unit:'bottle', img:'https://i.postimg.cc/4xrtXGBw/hooks.jpg', desc:'Powerful toilet cleaner for tough stains and germs.'},
+      {id:'pMop', name:'Microfiber Floor Mop (Squeeze Type)', retailPrice:45000, wholesalePrice:40000, moq:4, category:'accessories', unit:'set', img:'https://i.postimg.cc/QCYg5yrM/airaters.jpg', desc:'High-absorbency microfiber mop with extendable handle.'},
+      {id:'pKilltox', name:'Super Killtox Insecticide Aerosol', retailPrice:15000, wholesalePrice:13000, moq:12, category:'home', unit:'can', img:'https://i.postimg.cc/jjYHzfBy/phone-holder.jpg', desc:'Universal formula for home pest control.'},
+      {id:'pToiletBrush', name:'Toilet Brush & Holder Set (805)', retailPrice:20000, wholesalePrice:17000, moq:6, category:'accessories', unit:'set', img:'https://i.postimg.cc/6qxqPVLh/bins.jpg', desc:'Durable toilet brush with drip-catching holder.'},
+    ,
+      {id:'pVim', name:'Vim Scouring Powder 500g', retailPrice:8000, wholesalePrice:7000, moq:24, category:'home', unit:'tin', img:'https://i.postimg.cc/6pzyjGmk/triangle.jpg', desc:'Classic lemon scouring powder for pots, pans & sinks.'},
+      {id:'pSoftener', name:'Fabric Softener 2L', retailPrice:26000, wholesalePrice:23000, moq:8, category:'laundry', unit:'bottle', img:'https://i.postimg.cc/2yv12csG/First-AID-Kit.jpg', desc:'Keeps clothes soft and reduces static.'},
+      {id:'pFloorCleaner', name:'Disinfectant Floor Cleaner 5L', retailPrice:42000, wholesalePrice:38000, moq:6, category:'home', unit:'jerrycan', img:'https://i.postimg.cc/L859N0Fp/car-nip-Holders.jpg', desc:'Long-lasting freshness, kills 99.9% germs.'}
     ];
-    const timetableBtn  = document.getElementById('timetableBtn');
-    const timetablePop  = document.getElementById('timetablePop');
-    const timetableWrap = document.querySelector('.imgwrap');
-    const timetableList = document.getElementById('timetableList');
-    if (timetableList) {
-      WEEK_LINKS.forEach(item => {
-        const row = document.createElement('div');
-        row.className = 'timetable-item';
-        const title = document.createElement('span'); title.textContent = item.label;
-        const open = document.createElement('a'); open.textContent = 'Open';
-        open.href = item.url; open.target = '_blank'; open.rel = 'noopener';
-        row.appendChild(title); row.appendChild(open);
-        timetableList.appendChild(row);
+
+    // Elements
+    const grid = document.getElementById('grid');
+    const cartBtn = document.getElementById('cartBtn');
+    const drawer = document.getElementById('drawer');
+    const closeDrawer = document.getElementById('closeDrawer');
+    const cartLines = document.getElementById('cartLines');
+    const grandTotal = document.getElementById('grandTotal');
+    const checkoutBtn = document.getElementById('checkoutBtn'); // hidden fallback
+    const checkoutFab = document.getElementById('checkoutFab');
+    const cartCount = document.getElementById('cartCount');
+    const cartMode = document.getElementById('cartMode');
+    const drawerFooter = document.querySelector('#drawer footer');
+    const modeTabs = document.getElementById('modeTabs');
+
+    // State
+    let mode = 'retail';
+    let cart = new Map();
+
+    // Utils
+    const fmtUGX = v => new Intl.NumberFormat('en-UG', {style:'currency', currency:'UGX', maximumFractionDigits:0}).format(v);
+    const priceOf = (p) => mode==='retail' ? p.retailPrice : p.wholesalePrice;
+    const minQty  = (p) => mode==='retail' ? 1 : (p.moq||1);
+
+    // Toggle behaviour
+    function setMode(newMode){
+      mode = newMode;
+      document.body.setAttribute('data-mode', mode);
+      modeTabs.querySelectorAll('button[data-mode]').forEach(btn=>{
+        btn.setAttribute('aria-pressed', btn.dataset.mode === mode ? 'true' : 'false');
       });
+      cartMode.textContent = mode==='retail' ? 'Retail' : 'Wholesale';
+      render();
     }
-    function openTimetable(){
-      timetablePop.style.display = 'block';
-      timetableBtn.setAttribute('aria-expanded','true');
-      document.addEventListener('click', onClickAway, {capture:true});
-      document.addEventListener('keydown', onEsc);
-    }
-    function closeTimetable(){
-      timetablePop.style.display = 'none';
-      timetableBtn.setAttribute('aria-expanded','false');
-      document.removeEventListener('click', onClickAway, {capture:true});
-      document.removeEventListener('keydown', onEsc);
-    }
-    function onClickAway(e){ if(!timetableWrap.contains(e.target)) closeTimetable(); }
-    function onEsc(e){ if(e.key==='Escape') closeTimetable(); }
-    timetableBtn?.addEventListener('click', e=>{
-      e.stopPropagation();
-      (timetablePop.style.display === 'block') ? closeTimetable() : openTimetable();
+    modeTabs.addEventListener('click', (e)=>{
+      const b = e.target.closest('button[data-mode]');
+      if (!b) return;
+      setMode(b.dataset.mode);
     });
 
-    /* Login placeholder */
-    document.getElementById('loginBtn')?.addEventListener('click', (e)=>{
-      e.preventDefault();
-      alert("🔒 Premium services coming soon!");
-    });
-
-    /* LION BOT (simple local) */
-    const lionBtn  = document.getElementById('lionBtn');
-    const lionChat = document.getElementById('lionChat');
-    const lionMsgs = document.getElementById('lionMsgs');
-    const lionInp  = document.getElementById('lionInput');
-    const lionSend = document.getElementById('lionSend');
-
-    function addMsg(text, cls){
-      const div = document.createElement('div');
-      div.className = `lion-row ${cls}`;
-      div.textContent = text;
-      lionMsgs.appendChild(div);
-      lionMsgs.scrollTop = lionMsgs.scrollHeight;
+    // Render products
+    function render(){
+      grid.innerHTML = PRODUCTS.map(p=>{
+        const pr = priceOf(p);
+        const imgSrc = withBase(p.img);
+        return `<div class="card">
+          <img src="${imgSrc}" alt="${p.name}" loading="lazy"
+               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1585421514284-efb74c2b9d6b?q=80&w=800&auto=format&fit=crop';">
+          <div class="body">
+            <h3>${p.name} ${mode==='wholesale'? `<span class="moq">MOQ ${minQty(p)}</span>`:''}</h3>
+            <p class="muted">${p.desc}</p>
+            <div class="price">${fmtUGX(pr)} ${mode==='retail'? '(Retail)':'(Wholesale)'} ${mode==='wholesale'? `<span class="moq">MOQ ${minQty(p)}</span>`:''}</div>
+            <div class="qty"><label>Qty: <input type="number" id="qty-${p.id}" value="${minQty(p)}" min="${minQty(p)}" step="${minQty(p)}"></label> <span class="muted">/ ${p.unit}</span></div>
+            <button class="button" onclick="addToCart('${p.id}')">Add to Cart</button>
+          </div>
+        </div>`;
+      }).join('');
     }
 
-    lionBtn.addEventListener('click', ()=>{
-      const open = lionChat.style.display === 'block';
-      lionChat.style.display = open ? 'none' : 'block';
-      if(!open) lionInp.focus();
-    });
+    // Cart ops
+    function addToCart(id){
+      const product = PRODUCTS.find(x=>x.id===id);
+      const qtyInput = document.getElementById(`qty-${id}`);
+      let qty = parseInt(qtyInput.value)||minQty(product);
+      if(qty < minQty(product)) qty = minQty(product);
+      const unitPrice = priceOf(product);
+      const key = id+':'+mode;
+      const existing = cart.get(key);
+      cart.set(key, {product, qty:(existing?existing.qty:0)+qty, unitPrice, mode});
+      updateCartUI();
+      openDrawer();
+    }
 
-    lionSend.addEventListener('click', ()=>{
-      const text = (lionInp.value || '').trim();
-      if(!text) return;
-      addMsg(text, 'lion-u'); lionInp.value = '';
-      setTimeout(()=>{
-        addMsg("Roar! 🦁 Thanks for your message. Ask me about Laws, I.A, or Trial Advocacy — full AI chat coming soon.", 'lion-a');
-      }, 300);
-    });
+    function updateCartUI(){
+      cartLines.innerHTML='';
+      let total=0; let count=0;
+      cart.forEach(({product, qty, unitPrice, mode})=>{
+        const lineTotal = unitPrice*qty;
+        total+=lineTotal; count+=qty;
+        const div = document.createElement('div');
+        div.style.borderBottom='1px dashed var(--line)';
+        div.style.padding='6px 0';
+        div.innerHTML = `<strong>${product.name}</strong><br><span class="muted">${mode==='retail'?'Retail':'Wholesale'} • ${fmtUGX(unitPrice)} × ${qty} = </span> <strong>${fmtUGX(lineTotal)}</strong>`;
+        cartLines.appendChild(div);
+      });
+      grandTotal.textContent = 'Total: '+fmtUGX(total);
+      cartCount.style.display = count>0? 'inline-block':'none';
+      cartCount.textContent = count;
 
-    lionInp.addEventListener('keydown', e=>{
-      if(e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); lionSend.click(); }
-    });
+      const href = cartToWhatsApp();
+      checkoutFab.href = href;
+      checkoutBtn.href = href; // fallback
+
+      updateFabVisibility();
+    }
+
+    function cartToWhatsApp(){
+      if(cart.size===0) return `https://wa.me/${25675476047}?text=Hello%20Orji%20Supplies`;
+      let lines=[]; let total=0;
+      cart.forEach(({product, qty, unitPrice, mode})=>{
+        total+=unitPrice*qty;
+        lines.push(`• ${product.name} x${qty} @ ${fmtUGX(unitPrice)} (${mode})`);
+      });
+      const msg = `Hello Liz  Assessories, here is my order:\n${lines.join('\n')}\nTotal: ${fmtUGX(total)}`;
+      return `https://wa.me/${25675476047}?text=${encodeURIComponent(msg)}`;
+    }
+
+    // Drawer + FAB
+    function positionFab(){
+      if(!drawer.classList.contains('open')) { checkoutFab.style.bottom = '16px'; return; }
+      const h = drawerFooter.getBoundingClientRect().height || 72;
+      checkoutFab.style.bottom = (h + 16) + 'px';
+    }
+    function updateFabVisibility(){
+      const visible = cart.size > 0 && drawer.classList.contains('open');
+      checkoutFab.style.display = visible ? 'flex' : 'none';
+      if (visible) positionFab();
+    }
+    function openDrawer(){
+      drawer.classList.add('open');
+      positionFab();
+      updateFabVisibility();
+    }
+    closeDrawer.onclick=()=>{
+      drawer.classList.remove('open');
+      updateFabVisibility();
+    };
+    cartBtn.onclick=()=>{
+      drawer.classList.toggle('open');
+      updateFabVisibility();
+    };
+
+    // Init
+    document.getElementById('year').textContent = new Date().getFullYear();
+    window.addEventListener('resize', positionFab);
+    render(); // initial render
   </script>
 </body>
 </html>
