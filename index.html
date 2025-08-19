@@ -290,14 +290,14 @@
     }
 
     function cartToWhatsApp(){
-      if(cart.size===0) return `https://wa.me/${25675476047}?text=Hello%20Orji%20Supplies`;
+      if(cart.size===0) return `https://wa.me/${256754760472}?text=Hello%20Liz%20Assessories`;
       let lines=[]; let total=0;
       cart.forEach(({product, qty, unitPrice, mode})=>{
         total+=unitPrice*qty;
         lines.push(`• ${product.name} x${qty} @ ${fmtUGX(unitPrice)} (${mode})`);
       });
       const msg = `Hello Liz  Assessories, here is my order:\n${lines.join('\n')}\nTotal: ${fmtUGX(total)}`;
-      return `https://wa.me/${25675476047}?text=${encodeURIComponent(msg)}`;
+      return `https://wa.me/${256754760472}?text=${encodeURIComponent(msg)}`;
     }
 
     // Drawer + FAB
