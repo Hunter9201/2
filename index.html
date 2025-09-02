@@ -54,7 +54,7 @@
       position:relative;
       width:100%;
       background:#f1f5f9;
-      aspect-ratio: 4 / 3;      /* keeps height consistent on all screens */
+      aspect-ratio: 4 / 3;      /* consistent height on all screens */
       overflow:hidden;
     }
     .slide{
@@ -192,8 +192,8 @@
   <script>
     const WHATSAPP_NUMBER = '256754760472';
 
-    // If you’ll ever serve local images, set a folder (not a file) here.
-    const IMG_BASE = 'images'; // e.g. 'images' -> images/my.png
+    // Optional: local images folder (use a folder, not a file)
+    const IMG_BASE = 'images';
     function withBase(path){
       if(/^https?:\/\//i.test(path)) return path;
       const base = IMG_BASE.endsWith('/') ? IMG_BASE : IMG_BASE + '/';
@@ -201,19 +201,20 @@
     }
 
     // ===== Products =====
-    // Provide `imgs:[...]` for custom sequence (recommended),
-    // or just `img:` and it will auto-duplicate to 4.
-    const PRODUCTS = [ {
-        id:'carWireless Charger',
-        name:'car Wireless Charger',
+    // You can provide imgs:[...] (1–4+). If fewer than 4, the script pads/loops them.
+    const PRODUCTS = [
+      {
+        id:'carWirelessCharger',
+        name:'Car Wireless Charger',
         retailPrice:120000, wholesalePrice:115000, moq:10,
         category:'accessories', unit:'piece',
         imgs:[
           'https://i.postimg.cc/VvMBGXv5/Whats-App-Image-2025-09-02-at-15-14-30-283e26a3.jpg',
           'https://i.postimg.cc/qMsx2cW5/Whats-App-Image-2025-09-02-at-15-14-30-ce96bf4c.jpg',
-          'https://i.postimg.cc/Qdjkm93x/Phone-Holders.jpg',
-          
-        ],desc:'15 W Wireless Mega Charger .'
+          'https://i.postimg.cc/Qdjkm93x/Phone-Holders.jpg'
+        ],
+        desc:'15 W wireless Mag/mega charger for cars.'
+      },
       {
         id:'pBackSeat',
         name:'Car Back Seat Storage Bag',
@@ -317,6 +318,7 @@
 
     function sanitizeImgs(p){
       let arr = Array.isArray(p.imgs) && p.imgs.length ? p.imgs.slice(0,4) : (p.img ? [p.img] : []);
+      // If fewer than 4 images, loop/pad with the first one
       while(arr.length < 4){ arr.push(arr[0] || 'https://images.unsplash.com/photo-1585421514284-efb74c2b9d6b?q=80&w=800&auto=format&fit=crop'); }
       return arr.map(u=>withBase(u));
     }
@@ -381,7 +383,7 @@
       initAllSliders();
     }
 
-    // ===== Simple slider logic (auto-play, hover pause, swipe) =====
+    // ===== Slider logic (auto-play, hover pause, swipe) =====
     const SLIDER_INTERVAL_MS = 3000;
     function initAllSliders(){
       document.querySelectorAll('.slider').forEach(initSlider);
@@ -416,7 +418,7 @@
       prevBtn.addEventListener('click', ()=>{ pause(); prev(); resume(); });
       nextBtn.addEventListener('click', ()=>{ pause(); next(); resume(); });
 
-      // Dot click (optional)
+      // Dot click
       slider.querySelector('.dots').addEventListener('click', (e)=>{
         const d = e.target.closest('.dot');
         if(!d) return;
