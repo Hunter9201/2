@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0ea5e9" />
   <title>Mutesi Elizabeth – Car Accessories</title>
   <meta name="description" content="Umutesi Car Accessories: Quality car accessories. Order quickly via WhatsApp." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,7 +55,7 @@
       position:relative;
       width:100%;
       background:#f1f5f9;
-      aspect-ratio: 4 / 3;      /* consistent height on all screens */
+      aspect-ratio: 4 / 3; /* consistent height on all screens */
       overflow:hidden;
     }
     .slide{
@@ -62,7 +63,7 @@
       opacity:0; transition:opacity .45s ease;
       display:flex;
     }
-    .slide.active{ opacity:1 }
+    .slide.active{opacity:1}
     .slide img{
       width:100%; height:100%;
       object-fit:cover; display:block;
@@ -79,7 +80,8 @@
       background:rgba(15,23,42,.35);
       box-shadow:0 0 0 1px rgba(255,255,255,.5) inset;
     }
-    .dot.active{ background:#fff }
+    .dot.active{background:#fff}
+
     /* Prev/Next (hidden on mobile by default) */
     .navBtn{
       position:absolute; top:50%; transform:translateY(-50%);
@@ -88,9 +90,9 @@
       display:grid; place-items:center; cursor:pointer; z-index:2;
       box-shadow:0 4px 10px rgba(2,6,23,.12);
     }
-    .navBtn svg{ width:18px; height:18px }
-    .navPrev{ left:8px } .navNext{ right:8px }
-    @media (hover:none){ .navBtn{ display:none } } /* hide buttons on touch-only devices */
+    .navBtn svg{width:18px; height:18px}
+    .navPrev{left:8px} .navNext{right:8px}
+    @media (hover:none){ .navBtn{display:none} } /* hide buttons on touch-only devices */
 
     footer{margin-top:40px;border-top:1px solid var(--line);padding:20px;background:#fff}
 
@@ -114,17 +116,82 @@
     .mode-tabs button:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(14,165,233,.45)}
 
     /* WhatsApp FAB */
-    .fab{position:fixed;right:16px;bottom:16px;display:none;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:var(--wa);color:#fff;font-weight:800;text-decoration:none;box-shadow:0 10px 20px rgba(2,6,23,.18);z-index:120}
+    .fab{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      display:none;
+      align-items:center; gap:8px;
+      padding:12px 16px; border-radius:999px;
+      background:var(--wa); color:#fff; font-weight:800; text-decoration:none;
+      box-shadow:0 10px 20px rgba(2,6,23,.18); z-index:120;
+    }
     .fab:hover{filter:brightness(.96)}
     .fab svg{width:20px;height:20px}
 
-    /* Mobile layout polish */
-    @media (max-width:860px){ .hero{grid-template-columns:1fr} }
-    @media (max-width:420px){
-      .grid{grid-template-columns:1fr}
-      .mode-tabs{width:100%;justify-content:space-between}
-      .button{width:100%}
+    /* --- Mobile polish overrides --- */
+
+    /* Prevent iOS auto-zoom when focusing inputs */
+    input, select, textarea, button { font-size: 16px; }
+
+    /* Better image behavior on narrow screens */
+    img { max-width: 100%; height: auto; }
+
+    /* Make header feel native on scroll + ensure it's above sliders */
+    header {
+      backdrop-filter: saturate(180%) blur(8px);
+      background: rgba(255,255,255,.92);
+      z-index: 1000;
     }
+
+    /* Keep content from hugging the edges on small phones */
+    @media (max-width: 960px){
+      .hero { padding: 16px; }
+      .controls { padding: 0 16px; }
+      .grid { padding: 16px; gap: 12px; }
+    }
+
+    /* Two columns on mid phones; one on very small screens */
+    @media (max-width: 640px){
+      .grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 380px){
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    /* Make CTA buttons full width when space is tight */
+    @media (max-width: 480px){
+      .button { width: 100%; }
+      .nav-actions { gap: 8px; }
+    }
+
+    /* Dots slightly larger for thumbs */
+    @media (max-width: 480px){
+      .dot { width: 8px; height: 8px; }
+    }
+
+    /* Respect notches / home indicators for the floating button */
+    .fab {
+      bottom: max(16px, env(safe-area-inset-bottom));
+      right: max(16px, env(safe-area-inset-right));
+    }
+
+    /* When drawer is open, float the FAB above the footer + safe area */
+    .drawer.open ~ .fab {
+      bottom: calc(16px + env(safe-area-inset-bottom));
+    }
+
+    /* Typography that scales nicely across devices */
+    h1 { font-size: clamp(22px, 4.5vw, 34px); line-height: 1.15; }
+    h3 { font-size: clamp(14px, 2.8vw, 18px); line-height: 1.25; }
+    .muted { font-size: clamp(12px, 2.8vw, 14px); }
+
+    /* Improve card tap targets and spacing on mobile */
+    .card .body { padding: 12px; }
+    .qty input { width: 100%; max-width: 120px; }
+
+    /* Avoid layout shift when images load */
+    .slide img { background-color: #eef2f7; }
   </style>
 </head>
 <body data-mode="retail">
@@ -201,7 +268,7 @@
     }
 
     // ===== Products =====
-    // You can provide imgs:[...] (1–4+). If fewer than 4, the script pads/loops them.
+    // Provide imgs:[...] (1–4+). If fewer than 4, script pads/loops to 4.
     const PRODUCTS = [
       {
         id:'carWirelessCharger',
@@ -304,7 +371,6 @@
     const checkoutFab = document.getElementById('checkoutFab');
     const cartCount = document.getElementById('cartCount');
     const cartMode = document.getElementById('cartMode');
-    const drawerFooter = document.querySelector('#drawer footer');
     const modeTabs = document.getElementById('modeTabs');
 
     // ===== State =====
@@ -501,7 +567,8 @@
 
     // ===== Init =====
     document.getElementById('year').textContent = new Date().getFullYear();
-    window.addEventListener('resize', positionFab);
+    window.addEventListener('resize', positionFab, {passive:true});
+    window.addEventListener('orientationchange', ()=>setTimeout(positionFab, 200), {passive:true});
     render();
   </script>
 </body>
