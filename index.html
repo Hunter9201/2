@@ -2,29 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self';
+      base-uri 'self';
+      form-action 'self' https://wa.me;
+      frame-ancestors 'none';
+      img-src 'self' https://i.postimg.cc https://images.unsplash.com data:;
+      script-src 'self';
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src https://fonts.gstatic.com;
+      connect-src 'self';
+      upgrade-insecure-requests"
+  />
+  <meta http-equiv="Referrer-Policy" content="no-referrer" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0ea5e9" />
-  <title> Flair Car Accessories</title>
-  <meta name="description" content="Flair Car Accessories Accessories: Quality car accessories. Order quickly via WhatsApp." />
+  <title>Flair Car Accessories</title>
+  <meta name="description" content="Flair Car Accessories: Quality car accessories. Order quickly via WhatsApp." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-
   <style>
     :root{
-      --brand:#0ea5e9;
-      --brand-d:#0284c7;
-      --ink:#0f172a;
-      --muted:#64748b;
-      --line:#e2e8f0;
-      --bg:#f8fafc;
-      --wa:#25D366;
-      --card:#fff;
+      --brand:#0ea5e9; --brand-d:#0284c7; --ink:#0f172a; --muted:#64748b;
+      --line:#e2e8f0; --bg:#f8fafc; --wa:#25D366; --card:#fff;
     }
     *{box-sizing:border-box}
     body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;background:var(--bg);color:var(--ink)}
-    header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:50}
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:1000;backdrop-filter:saturate(180%) blur(8px)}
     .nav{display:flex;justify-content:space-between;align-items:center;padding:12px 18px}
     .brand{font-weight:800;font-size:20px;display:flex;align-items:center;gap:10px}
     .brand .logo{width:36px;height:36px;background:var(--brand);display:grid;place-items:center;color:#fff;border-radius:8px}
@@ -46,53 +55,22 @@
     .qty{margin:8px 0}
     .moq{display:inline-block;font-size:11px;background:#d1fae5;color:#065f46;border:1px solid #a7f3d0;border-radius:999px;padding:2px 8px;margin-left:6px}
 
-    /* --- Slider (one image visible, auto-play) --- */
-    .slider{
-      position:relative;
-      width:100%;
-      background:#f1f5f9;
-      aspect-ratio: 4 / 3; /* consistent height on all screens */
-      overflow:hidden;
-    }
-    .slide{
-      position:absolute; inset:0;
-      opacity:0; transition:opacity .45s ease;
-      display:flex;
-    }
+    /* Slider */
+    .slider{position:relative;width:100%;background:#f1f5f9;aspect-ratio:4/3;overflow:hidden}
+    .slide{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;display:flex}
     .slide.active{opacity:1}
-    .slide img{
-      width:100%; height:100%;
-      object-fit:cover; display:block;
-      background:#eef2f7;
-    }
-    /* Dots */
-    .dots{
-      position:absolute; left:0; right:0; bottom:6px;
-      display:flex; justify-content:center; gap:6px; z-index:2;
-      pointer-events:none;
-    }
-    .dot{
-      width:7px; height:7px; border-radius:50%;
-      background:rgba(15,23,42,.35);
-      box-shadow:0 0 0 1px rgba(255,255,255,.5) inset;
-    }
+    .slide img{width:100%;height:100%;object-fit:cover;display:block;background:#eef2f7}
+    .dots{position:absolute;left:0;right:0;bottom:6px;display:flex;justify-content:center;gap:6px;z-index:2;pointer-events:none}
+    .dot{width:7px;height:7px;border-radius:50%;background:rgba(15,23,42,.35);box-shadow:0 0 0 1px rgba(255,255,255,.5) inset}
     .dot.active{background:#fff}
-
-    /* Prev/Next (hidden on mobile by default) */
-    .navBtn{
-      position:absolute; top:50%; transform:translateY(-50%);
-      width:34px; height:34px; border-radius:50%;
-      border:0; background:rgba(255,255,255,.85);
-      display:grid; place-items:center; cursor:pointer; z-index:2;
-      box-shadow:0 4px 10px rgba(2,6,23,.12);
-    }
-    .navBtn svg{width:18px; height:18px}
-    .navPrev{left:8px} .navNext{right:8px}
-    @media (hover:none){ .navBtn{display:none} } /* hide buttons on touch-only devices */
+    .navBtn{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:0;background:rgba(255,255,255,.85);display:grid;place-items:center;cursor:pointer;z-index:2;box-shadow:0 4px 10px rgba(2,6,23,.12)}
+    .navBtn svg{width:18px;height:18px}
+    .navPrev{left:8px}.navNext{right:8px}
+    @media (hover:none){ .navBtn{display:none} }
 
     footer{margin-top:40px;border-top:1px solid var(--line);padding:20px;background:#fff}
 
-    /* Drawer (cart) */
+    /* Drawer */
     .drawer{position:fixed;top:0;right:-400px;width:360px;max-width:90vw;height:100vh;background:#fff;border-left:1px solid var(--line);transition:right .2s;z-index:100;display:flex;flex-direction:column}
     .drawer.open{right:0}
     .drawer header{padding:12px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}
@@ -100,10 +78,7 @@
     .drawer footer{padding:12px;border-top:1px solid var(--line);position:relative;background:#fff}
 
     /* Mode toggle */
-    .mode-tabs{
-      position:relative;display:inline-flex;align-items:center;gap:6px;
-      background:#0f172a0d;border:1px solid #cbd5e1;padding:6px;border-radius:999px
-    }
+    .mode-tabs{position:relative;display:inline-flex;align-items:center;gap:6px;background:#0f172a0d;border:1px solid #cbd5e1;padding:6px;border-radius:999px}
     .mode-tabs .thumb{position:absolute;top:6px;bottom:6px;width:50%;border-radius:999px;background:var(--brand);z-index:0;transition:transform .25s ease,background-color .25s ease}
     [data-mode="retail"] .mode-tabs .thumb{transform:translateX(0%);background:var(--brand)}
     [data-mode="wholesale"] .mode-tabs .thumb{transform:translateX(100%);background:#16a34a}
@@ -112,107 +87,49 @@
     .mode-tabs button:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(14,165,233,.45)}
 
     /* WhatsApp FAB */
-    .fab{
-      position:fixed;
-      right:16px;
-      bottom:16px;
-      display:none;
-      align-items:center; gap:8px;
-      padding:12px 16px; border-radius:999px;
-      background:var(--wa); color:#fff; font-weight:800; text-decoration:none;
-      box-shadow:0 10px 20px rgba(2,6,23,.18); z-index:120;
-    }
+    .fab{position:fixed;right:16px;bottom:max(16px, env(safe-area-inset-bottom));display:none;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:var(--wa);color:#fff;font-weight:800;text-decoration:none;box-shadow:0 10px 20px rgba(2,6,23,.18);z-index:120}
     .fab:hover{filter:brightness(.96)}
     .fab svg{width:20px;height:20px}
+    .drawer.open ~ .fab{bottom:calc(16px + env(safe-area-inset-bottom))}
 
-    /* --- Mobile polish overrides --- */
-
-    /* Prevent iOS auto-zoom when focusing inputs */
-    input, select, textarea, button { font-size: 16px; }
-
-    /* Better image behavior on narrow screens */
-    img { max-width: 100%; height: auto; }
-
-    /* Make header feel native on scroll + ensure it's above sliders */
-    header {
-      backdrop-filter: saturate(180%) blur(8px);
-      background: rgba(255,255,255,.92);
-      z-index: 1000;
-    }
-
-    /* Keep content from hugging the edges on small phones */
-    @media (max-width: 960px){
-      .hero { padding: 16px; }
-      .controls { padding: 0 16px; }
-      .grid { padding: 16px; gap: 12px; }
-    }
-
-    /* Two columns on mid phones; one on very small screens */
-    @media (max-width: 640px){
-      .grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    }
-    @media (max-width: 380px){
-      .grid { grid-template-columns: 1fr; }
-    }
-
-    /* Make CTA buttons full width when space is tight */
-    @media (max-width: 480px){
-      .button { width: 100%; }
-      .nav-actions { gap: 8px; }
-    }
-
-    /* Dots slightly larger for thumbs */
-    @media (max-width: 480px){
-      .dot { width: 8px; height: 8px; }
-    }
-
-    /* Respect notches / home indicators for the floating button */
-    .fab {
-      bottom: max(16px, env(safe-area-inset-bottom));
-      right: max(16px, env(safe-area-inset-right));
-    }
-
-    /* When drawer is open, float the FAB above the footer + safe area */
-    .drawer.open ~ .fab {
-      bottom: calc(16px + env(safe-area-inset-bottom));
-    }
-
-    /* Typography that scales nicely across devices */
-    h1 { font-size: clamp(22px, 4.5vw, 34px); line-height: 1.15; }
-    h3 { font-size: clamp(14px, 2.8vw, 18px); line-height: 1.25; }
-    .muted { font-size: clamp(12px, 2.8vw, 14px); }
-
-    /* Improve card tap targets and spacing on mobile */
-    .card .body { padding: 12px; }
-    .qty input { width: 100%; max-width: 120px; }
-
-    /* Avoid layout shift when images load */
-    .slide img { background-color: #eef2f7; }
+    /* Responsive tweaks */
+    @media (max-width:960px){ .hero{padding:16px} .controls{padding:0 16px} .grid{padding:16px;gap:12px} }
+    @media (max-width:640px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+    @media (max-width:380px){ .grid{grid-template-columns:1fr} }
+    @media (max-width:480px){ .button{width:100%} .nav-actions{gap:8px} .dot{width:8px;height:8px} }
+    h1{font-size:clamp(22px,4.5vw,34px);line-height:1.15}
+    h3{font-size:clamp(14px,2.8vw,18px);line-height:1.25}
+    .muted{font-size:clamp(12px,2.8vw,14px)}
+    input,select,textarea,button{font-size:16px}
+    img{max-width:100%;height:auto}
+    .slide img{background-color:#eef2f7}
   </style>
 </head>
 <body data-mode="retail">
   <header>
     <div class="nav">
-      <div class="brand"><div class="logo">O</div> Flair Car Accessories</div>
+      <div class="brand"><div class="logo" aria-hidden="true">O</div><span>Flair Car Accessories</span></div>
       <div class="nav-actions">
         <a href="#catalog" class="button primary">Browse Products</a>
-        <button id="cartBtn" class="button">Cart <span id="cartCount" style="background:#fb7185;color:#fff;border-radius:50%;padding:2px 6px;font-size:12px;display:none">0</span></button>
+        <button id="cartBtn" class="button" type="button" aria-haspopup="dialog" aria-controls="drawer">
+          Cart <span id="cartCount" style="background:#fb7185;color:#fff;border-radius:50%;padding:2px 6px;font-size:12px;display:none">0</span>
+        </button>
       </div>
     </div>
   </header>
 
   <section class="hero">
     <div>
-      <h1> Quality Car Accessories</h1>
-      <p> Quick delivery in Kampala & beyond.</p>
+      <h1>Quality Car Accessories</h1>
+      <p>Quick delivery in Kampala &amp; beyond.</p>
       <a href="#catalog" class="button primary">Shop Now</a>
     </div>
-    <img src="https://i.postimg.cc/FzHzvCch/liz-car-Assessories.png" alt="Liz Car Accessories" loading="eager" width="1200" height="700">
+    <img src="https://i.postimg.cc/FzHzvCch/liz-car-Assessories.png" alt="Flair Car Accessories banner" loading="eager" width="1200" height="700" referrerpolicy="no-referrer">
   </section>
 
-  <section id="catalog">
+  <section id="catalog" aria-labelledby="catalog-title">
     <div class="controls">
-      <div><strong>Catalog</strong> <span class="muted">– choose buying mode</span></div>
+      <div><strong id="catalog-title">Catalog</strong> <span class="muted">– choose buying mode</span></div>
       <div class="mode-tabs" id="modeTabs" aria-label="Buying mode" role="group">
         <span class="thumb" aria-hidden="true"></span>
         <button type="button" data-mode="retail" aria-pressed="true" title="Buy single units at retail price">
@@ -226,18 +143,18 @@
       </div>
     </div>
 
-    <div class="grid" id="grid"></div>
+    <div class="grid" id="grid" role="list"></div>
   </section>
 
   <footer>
-    <p>© <span id="year"></span> Liz Car Accessories. All rights reserved.</p>
+    <p>© <span id="year"></span> Flair Car Accessories. All rights reserved.</p>
   </footer>
 
   <!-- Cart Drawer -->
-  <aside id="drawer" class="drawer" aria-label="Cart drawer">
+  <aside id="drawer" class="drawer" aria-label="Cart drawer" role="dialog" aria-modal="true" aria-hidden="true">
     <header>
       <strong>Your Cart</strong>
-      <button id="closeDrawer" class="button">Close</button>
+      <button id="closeDrawer" class="button" type="button" aria-label="Close cart">Close</button>
     </header>
     <main id="cartLines"></main>
     <footer>
@@ -247,117 +164,90 @@
   </aside>
 
   <!-- Floating WhatsApp Checkout -->
-  <a id="checkoutFab" class="fab" href="#" target="_blank" aria-label="ORDER NOW">
+  <a id="checkoutFab" class="fab" href="#" target="_blank" rel="noopener noreferrer" aria-label="ORDER NOW">
     <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M19.11 17.56c-.26-.13-1.52-.75-1.76-.84s-.41-.13-.58.13-.66.84-.81 1.01-.3.19-.56.06a8.94 8.94 0 0 1-2.64-1.63 9.9 9.9 0 0 1-1.84-2.28c-.19-.32 0-.49.13-.62.13-.13.26-.32.39-.45.13-.13.19-.26.32-.45.13-.19.06-.36 0-.49-.06-.13-.58-1.39-.8-1.89-.21-.51-.43-.44-.58-.45h-.5a.96.96 0 0 0-.69.32c-.24.26-.9.88-.9 2.14s.92 2.49 1.05 2.66c.13.17 1.81 2.76 4.39 3.87.61.26 1.08.41 1.45.52.61.19 1.16.16 1.6.1.49-.07 1.52-.62 1.74-1.22.21-.58.21-1.08.15-1.22-.06-.13-.24-.2-.5-.33zM16 3C9.37 3 4 8.37 4 15c0 2.12.55 4.1 1.52 5.83L4 29l8.33-1.46A12.95 12.95 0 0 0 16 27c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22.33c-1.84 0-3.55-.54-4.98-1.46l-.36-.23-4.94.86.86-4.81-.24-.39A9.36 9.36 0 1 1 25.36 20a9.33 9.33 0 0 1-9.36 5.33z"/></svg>
     <span>Order</span>
   </a>
 
   <script>
-    const WHATSAPP_NUMBER = '256754760472';
+    // ---------- Security helpers ----------
+    const TRUSTED_IMG_HOSTS = new Set([
+      location.hostname, 'i.postimg.cc', 'images.unsplash.com'
+    ]);
+    function safeURL(url) {
+      try {
+        const u = new URL(url, location.origin);
+        if (u.protocol !== 'https:' && u.protocol !== 'http:') return null;
+        if (u.origin === location.origin) return u.href;
+        if (u.hostname && TRUSTED_IMG_HOSTS.has(u.hostname)) return u.href;
+        return null;
+      } catch { return null; }
+    }
+    function setText(el, text){ el.textContent = (text ?? '').toString(); }
 
-    // Optional: local images folder (use a folder, not a file)
-    const IMG_BASE = 'images';
+    // ---------- Config / Data ----------
+    const WHATSAPP_NUMBER = '256754760472';
+    const IMG_BASE = 'images'; // only used for relative paths
+
     function withBase(path){
       if(/^https?:\/\//i.test(path)) return path;
       const base = IMG_BASE.endsWith('/') ? IMG_BASE : IMG_BASE + '/';
       return base + path.split('/').map(encodeURIComponent).join('/');
     }
 
-    // ===== Products =====
-    // Provide imgs:[...] (1–4+). If fewer than 4, script pads/loops to 4.
-    const PRODUCTS = [
-      {
-        id:'carWirelessCharger',
-        name:'Car Wireless Charger',
-        retailPrice:120000, wholesalePrice:115000, moq:10,
-        category:'accessories', unit:'piece',
+    const PRODUCTS = Object.freeze([
+      { id:'carWirelessCharger', name:'Car Wireless Charger',
+        retailPrice:120000, wholesalePrice:115000, moq:10, category:'accessories', unit:'piece',
         imgs:[
           'https://i.postimg.cc/VvMBGXv5/Whats-App-Image-2025-09-02-at-15-14-30-283e26a3.jpg',
           'https://i.postimg.cc/qMsx2cW5/Whats-App-Image-2025-09-02-at-15-14-30-ce96bf4c.jpg',
           'https://i.postimg.cc/Qdjkm93x/Phone-Holders.jpg'
         ],
-        desc:'15 W wireless Mag/mega charger for cars.'
-      },
-      {
-        id:'pBackSeat',
-        name:'Car Back Seat Storage Bag',
-        retailPrice:80000, wholesalePrice:75000, moq:10,
-        category:'accessories', unit:'piece',
+        desc:'15 W wireless Mag/mega charger for cars.' },
+      { id:'pBackSeat', name:'Car Back Seat Storage Bag',
+        retailPrice:80000, wholesalePrice:75000, moq:10, category:'accessories', unit:'piece',
         imgs:[
           'https://i.postimg.cc/qR4KSLvG/CAR.jpg',
           'https://i.postimg.cc/tJ9LpR6q/Whats-App-Image-2025-09-02-at-16-27-52-ab1e8e20.jpg',
           'https://i.postimg.cc/3wgSN5Yd/Whats-App-Image-2025-09-02-at-16-27-51-cac41dd5.jpg',
           'https://i.postimg.cc/qR4KSLvG/CAR.jpg'
         ],
-        desc:'Back seat organizer with multi-pockets and tablet slot.'
-      },
-      {
-        id:'pCupPad',
-        name:'Car Silicone Cup Holder Pad',
-        retailPrice:40000, wholesalePrice:30000, moq:12,
-        category:'accessories', unit:'piece',
+        desc:'Back seat organizer with multi-pockets and tablet slot.' },
+      { id:'pCupPad', name:'Car Silicone Cup Holder Pad',
+        retailPrice:40000, wholesalePrice:30000, moq:12, category:'accessories', unit:'piece',
         img:'https://i.postimg.cc/gksGHHCW/cup-holder.jpg',
-        desc:'Non-slip, waterproof round coaster mat for cup holders.'
-      },
-      {
-        id:'pHooks',
-        name:'Car Seat Headrest Hooks',
-        retailPrice:16000, wholesalePrice:14000, moq:12,
-        category:'accessories', unit:'pair',
+        desc:'Non-slip, waterproof round coaster mat for cup holders.' },
+      { id:'pHooks', name:'Car Seat Headrest Hooks',
+        retailPrice:16000, wholesalePrice:14000, moq:12, category:'accessories', unit:'pair',
         img:'https://i.postimg.cc/4xrtXGBw/hooks.jpg',
-        desc:'Heavy-duty hooks for bags, groceries & handbags.'
-      },
-      {
-        id:'pPhoneMount',
-        name:'Adjustable Phone Holder',
-        retailPrice:45000, wholesalePrice:40000, moq:4,
-        category:'accessories', unit:'piece',
+        desc:'Heavy-duty hooks for bags, groceries & handbags.' },
+      { id:'pPhoneMount', name:'Adjustable Phone Holder',
+        retailPrice:45000, wholesalePrice:40000, moq:4, category:'accessories', unit:'piece',
         img:'https://i.postimg.cc/jjYHzfBy/phone-holder.jpg',
-        desc:'Dashboard/windshield mount with strong suction cup.'
-      },
-      {
-        id:'pBin',
-        name:'Mini Car Trash Bin',
-        retailPrice:20000, wholesalePrice:17000, moq:6,
-        category:'accessories', unit:'piece',
+        desc:'Dashboard/windshield mount with strong suction cup.' },
+      { id:'pBin', name:'Mini Car Trash Bin',
+        retailPrice:20000, wholesalePrice:17000, moq:6, category:'accessories', unit:'piece',
         img:'https://i.postimg.cc/6qxqPVLh/bins.jpg',
-        desc:'Compact bin with spring lid for a tidy interior.'
-      },
-      {
-        id:'pTriangle',
-        name:'Warning Triangle (Foldable)',
-        retailPrice:24000, wholesalePrice:21000, moq:6,
-        category:'accessories', unit:'set',
+        desc:'Compact bin with spring lid for a tidy interior.' },
+      { id:'pTriangle', name:'Warning Triangle (Foldable)',
+        retailPrice:24000, wholesalePrice:21000, moq:6, category:'accessories', unit:'set',
         img:'https://i.postimg.cc/6pzyjGmk/triangle.jpg',
-        desc:'High-visibility reflective emergency triangle.'
-      },
-      {
-        id:'pAid',
-        name:'Car First Aid Kit',
-        retailPrice:45000, wholesalePrice:40000, moq:6,
-        category:'accessories', unit:'kit',
+        desc:'High-visibility reflective emergency triangle.' },
+      { id:'pAid', name:'Car First Aid Kit',
+        retailPrice:45000, wholesalePrice:40000, moq:6, category:'accessories', unit:'kit',
         img:'https://i.postimg.cc/2yv12csG/First-AID-Kit.jpg',
-        desc:'Compact kit meeting common roadside needs.'
-      },
-      {
-        id:'pAirVent',
-        name:'Air Vent Fragrance Clips (2pcs)',
-        retailPrice:18000, wholesalePrice:15000, moq:12,
-        category:'accessories', unit:'pack',
+        desc:'Compact kit meeting common roadside needs.' },
+      { id:'pAirVent', name:'Air Vent Fragrance Clips (2pcs)',
+        retailPrice:18000, wholesalePrice:15000, moq:12, category:'accessories', unit:'pack',
         img:'https://i.postimg.cc/QCYg5yrM/airaters.jpg',
-        desc:'Long-lasting fresh scent, easy vent clip.'
-      },
-      {
-        id:'pNip',
-        name:'Car Phone Nip Holders (Set)',
-        retailPrice:42000, wholesalePrice:38000, moq:6,
-        category:'accessories', unit:'set',
+        desc:'Long-lasting fresh scent, easy vent clip.' },
+      { id:'pNip', name:'Car Phone Nip Holders (Set)',
+        retailPrice:42000, wholesalePrice:38000, moq:6, category:'accessories', unit:'set',
         img:'https://i.postimg.cc/L859N0Fp/car-nip-Holders.jpg',
-        desc:'Secure grips for multiple phone sizes.'
-      }
-    ];
+        desc:'Secure grips for multiple phone sizes.' }
+    ]);
 
-    // ===== Elements =====
+    // ---------- State ----------
     const grid = document.getElementById('grid');
     const cartBtn = document.getElementById('cartBtn');
     const drawer = document.getElementById('drawer');
@@ -369,50 +259,27 @@
     const cartMode = document.getElementById('cartMode');
     const modeTabs = document.getElementById('modeTabs');
 
-    // ===== State =====
     let mode = 'retail';
     let cart = new Map();
 
-    // ===== Utils =====
+    // ---------- Utils ----------
     const fmtUGX = v => new Intl.NumberFormat('en-UG',{style:'currency',currency:'UGX',maximumFractionDigits:0}).format(v);
     const priceOf = (p) => mode==='retail' ? p.retailPrice : p.wholesalePrice;
     const minQty  = (p) => mode==='retail' ? 1 : (p.moq||1);
 
     function sanitizeImgs(p){
       let arr = Array.isArray(p.imgs) && p.imgs.length ? p.imgs.slice(0,4) : (p.img ? [p.img] : []);
-      // If fewer than 4 images, loop/pad with the first one
       while(arr.length < 4){ arr.push(arr[0] || 'https://images.unsplash.com/photo-1585421514284-efb74c2b9d6b?q=80&w=800&auto=format&fit=crop'); }
-      return arr.map(u=>withBase(u));
+      return arr.map(u=>withBase(u)).map(u=>safeURL(u) || 'https://images.unsplash.com/photo-1585421514284-efb74c2b9d6b?q=80&w=800&auto=format&fit=crop');
     }
 
-    function renderSliderHTML(imgs, pid){
-      const slides = imgs.map((src,i)=>`
-        <div class="slide ${i===0?'active':''}" role="group" aria-label="Image ${i+1} of ${imgs.length}">
-          <img src="${src}" alt="" loading="${i===0?'eager':'lazy'}"
-            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1585421514284-efb74c2b9d6b?q=80&w=800&auto=format&fit=crop';">
-        </div>`).join('');
-      const dots = imgs.map((_,i)=>`<span class="dot ${i===0?'active':''}" data-i="${i}"></span>`).join('');
-      return `
-        <div class="slider" data-pid="${pid}">
-          <button class="navBtn navPrev" aria-label="Previous image" type="button">
-            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-          </button>
-          <button class="navBtn navNext" aria-label="Next image" type="button">
-            <svg viewBox="0 0 24 24"><path fill="currentColor" d="m10 6 1.41 1.41L7.83 11H20v2H7.83l3.58 3.59L10 18l-6-6z"/></svg>
-          </button>
-          ${slides}
-          <div class="dots" aria-hidden="true">${dots}</div>
-        </div>`;
-    }
-
-    // ===== Mode toggle =====
     function setMode(newMode){
       mode = newMode;
       document.body.setAttribute('data-mode', mode);
       modeTabs.querySelectorAll('button[data-mode]').forEach(btn=>{
         btn.setAttribute('aria-pressed', btn.dataset.mode===mode ? 'true':'false');
       });
-      cartMode.textContent = mode==='retail' ? 'Retail' : 'Wholesale';
+      setText(cartMode, mode==='retail' ? 'Retail' : 'Wholesale');
       render();
     }
     modeTabs.addEventListener('click',(e)=>{
@@ -420,36 +287,137 @@
       if(!b) return; setMode(b.dataset.mode);
     });
 
-    // ===== Render products =====
+    // ---------- Rendering (DOM-only, no innerHTML) ----------
     function render(){
-      grid.innerHTML = PRODUCTS.map(p=>{
-        const pr = priceOf(p);
+      grid.replaceChildren();
+      PRODUCTS.forEach(p=>{
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        // Slider
+        const slider = document.createElement('div');
+        slider.className = 'slider';
+        slider.dataset.pid = p.id;
+
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'navBtn navPrev';
+        prevBtn.type = 'button';
+        prevBtn.setAttribute('aria-label','Previous image');
+        prevBtn.innerHTML = '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>';
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'navBtn navNext';
+        nextBtn.type = 'button';
+        nextBtn.setAttribute('aria-label','Next image');
+        nextBtn.innerHTML = '<svg viewBox="0 0 24 24"><path fill="currentColor" d="m10 6 1.41 1.41L7.83 11H20v2H7.83l3.58 3.59L10 18l-6-6z"/></svg>';
+
+        slider.appendChild(prevBtn);
+        slider.appendChild(nextBtn);
+
         const imgs = sanitizeImgs(p);
-        return `
-          <div class="card">
-            ${renderSliderHTML(imgs, p.id)}
-            <div class="body">
-              <h3>${p.name} ${mode==='wholesale'? `<span class="moq">MOQ ${minQty(p)}</span>`:''}</h3>
-              <p class="muted">${p.desc}</p>
-              <div class="price">${fmtUGX(pr)} ${mode==='retail'?'(Retail)':'(Wholesale)'} ${mode==='wholesale'? `<span class="moq">MOQ ${minQty(p)}</span>`:''}</div>
-              <div class="qty">
-                <label>Qty:
-                  <input type="number" id="qty-${p.id}" value="${minQty(p)}" min="${minQty(p)}" step="${minQty(p)}" inputmode="numeric" pattern="[0-9]*">
-                </label>
-                <span class="muted">/ ${p.unit}</span>
-              </div>
-              <button class="button" onclick="addToCart('${p.id}')">Add to Cart</button>
-            </div>
-          </div>`;
-      }).join('');
-      initAllSliders();
+        const dotsWrap = document.createElement('div');
+        dotsWrap.className = 'dots';
+        const slides = [];
+
+        imgs.forEach((src, i)=>{
+          const slide = document.createElement('div');
+          slide.className = 'slide' + (i===0 ? ' active' : '');
+          const img = document.createElement('img');
+          img.loading = i===0 ? 'eager' : 'lazy';
+          img.alt = '';
+          img.referrerPolicy = 'no-referrer';
+          img.decoding = 'async';
+          img.src = src;
+          img.onerror = function(){ this.onerror=null; this.src='https://images.unsplash.com/photo-1585421514284-efb74c2b9d6b?q=80&w=800&auto=format&fit=crop'; };
+          slide.appendChild(img);
+          slider.appendChild(slide);
+          slides.push(slide);
+
+          const dot = document.createElement('span');
+          dot.className = 'dot' + (i===0 ? ' active' : '');
+          dot.dataset.i = String(i);
+          dotsWrap.appendChild(dot);
+        });
+        slider.appendChild(dotsWrap);
+
+        // Body
+        const body = document.createElement('div');
+        body.className = 'body';
+
+        const h3 = document.createElement('h3');
+        setText(h3, p.name);
+        if(mode==='wholesale'){
+          const moq = document.createElement('span');
+          moq.className = 'moq';
+          setText(moq, 'MOQ ' + minQty(p));
+          h3.appendChild(document.createTextNode(' '));
+          h3.appendChild(moq);
+        }
+
+        const desc = document.createElement('p');
+        desc.className = 'muted';
+        setText(desc, p.desc);
+
+        const price = document.createElement('div');
+        price.className = 'price';
+        setText(price, `${fmtUGX(priceOf(p))} ${mode==='retail'?'(Retail)':'(Wholesale)'} `);
+        if(mode==='wholesale'){
+          const moq2 = document.createElement('span');
+          moq2.className = 'moq';
+          setText(moq2, 'MOQ ' + minQty(p));
+          price.appendChild(moq2);
+        }
+
+        const qtyWrap = document.createElement('div');
+        qtyWrap.className = 'qty';
+        const label = document.createElement('label');
+        setText(label, 'Qty: ');
+        const input = document.createElement('input');
+        input.type = 'number';
+        input.id = 'qty-' + p.id;
+        input.value = String(minQty(p));
+        input.min = String(minQty(p));
+        input.step = String(minQty(p));
+        input.inputMode = 'numeric';
+        input.pattern = '[0-9]*';
+        input.addEventListener('change', ()=>{
+          const min = minQty(p);
+          let v = parseInt(input.value||min,10);
+          if(!Number.isFinite(v) || v < min) v = min;
+          if(v > 1000) v = 1000; // guard
+          // snap to step for wholesale
+          const step = min;
+          if(step>1){ v = Math.max(step, Math.round(v/step)*step); }
+          input.value = String(v);
+        });
+        const unit = document.createElement('span');
+        unit.className = 'muted';
+        setText(unit, ' / ' + p.unit);
+        label.appendChild(input);
+        qtyWrap.appendChild(label);
+        qtyWrap.appendChild(unit);
+
+        const addBtn = document.createElement('button');
+        addBtn.className = 'button';
+        setText(addBtn, 'Add to Cart');
+        addBtn.type = 'button';
+        addBtn.addEventListener('click', ()=> addToCart(p.id));
+
+        body.appendChild(h3);
+        body.appendChild(desc);
+        body.appendChild(price);
+        body.appendChild(qtyWrap);
+        body.appendChild(addBtn);
+
+        card.appendChild(slider);
+        card.appendChild(body);
+        grid.appendChild(card);
+
+        initSlider(slider); // per-card
+      });
     }
 
-    // ===== Slider logic (auto-play, hover pause, swipe) =====
+    // ---------- Slider logic ----------
     const SLIDER_INTERVAL_MS = 3000;
-    function initAllSliders(){
-      document.querySelectorAll('.slider').forEach(initSlider);
-    }
     function initSlider(slider){
       let i = 0;
       const slides = [...slider.querySelectorAll('.slide')];
@@ -465,23 +433,19 @@
       function next(){ show(i+1) }
       function prev(){ show(i-1) }
 
-      // autoplay
       let timer = setInterval(next, SLIDER_INTERVAL_MS);
-      function pause(){ clearInterval(timer); timer=null; }
+      function pause(){ if(timer){ clearInterval(timer); timer=null; } }
       function resume(){ if(!timer) timer=setInterval(next, SLIDER_INTERVAL_MS); }
 
       slider.addEventListener('mouseenter', pause);
       slider.addEventListener('mouseleave', resume);
-
-      // Pause autoplay when tab hidden (saves battery)
       document.addEventListener('visibilitychange', ()=>{ document.hidden ? pause() : resume(); });
 
-      // Buttons
       prevBtn.addEventListener('click', ()=>{ pause(); prev(); resume(); });
       nextBtn.addEventListener('click', ()=>{ pause(); next(); resume(); });
 
-      // Dot click
-      slider.querySelector('.dots').addEventListener('click', (e)=>{
+      const dotsWrap = slider.querySelector('.dots');
+      dotsWrap.addEventListener('click', (e)=>{
         const d = e.target.closest('.dot');
         if(!d) return;
         pause(); show(parseInt(d.dataset.i,10)); resume();
@@ -491,20 +455,33 @@
       let sx=0, sy=0, dx=0, dy=0, touching=false;
       slider.addEventListener('touchstart', (e)=>{ const t=e.touches[0]; sx=t.clientX; sy=t.clientY; touching=true; pause(); }, {passive:true});
       slider.addEventListener('touchmove', (e)=>{ if(!touching) return; const t=e.touches[0]; dx=t.clientX-sx; dy=t.clientY-sy; }, {passive:true});
-      slider.addEventListener('touchend', ()=>{
-        if(!touching) return;
-        touching=false;
-        if(Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)){ dx>0 ? prev() : next(); }
-        dx=dy=0; resume();
-      });
+      slider.addEventListener('touchend', ()=>{ if(!touching) return; touching=false; if(Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)){ dx>0 ? prev() : next(); } dx=dy=0; resume(); });
     }
 
-    // ===== Cart ops =====
+    // ---------- Cart ----------
+    function openDrawer(){
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden','false');
+      positionFab(); updateFabVisibility();
+    }
+    function closeDrawerFn(){
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden','true');
+      updateFabVisibility();
+    }
+    closeDrawer.addEventListener('click', closeDrawerFn);
+    cartBtn.addEventListener('click', ()=>{ drawer.classList.toggle('open'); drawer.getAttribute('aria-hidden')==='true' ? drawer.setAttribute('aria-hidden','false') : drawer.setAttribute('aria-hidden','true'); updateFabVisibility(); });
+
     function addToCart(id){
       const product = PRODUCTS.find(x=>x.id===id);
       const qtyInput = document.getElementById(`qty-${id}`);
-      let qty = parseInt(qtyInput.value)||minQty(product);
-      if(qty < minQty(product)) qty = minQty(product);
+      const min = minQty(product);
+      let qty = parseInt(qtyInput?.value ?? min,10);
+      if(!Number.isFinite(qty) || qty < min) qty = min;
+      if(qty > 1000) qty = 1000; // practical guard
+      const step = min;
+      if(step>1){ qty = Math.max(step, Math.round(qty/step)*step); qtyInput.value = String(qty); }
+
       const unitPrice = priceOf(product);
       const key = id+':'+mode;
       const existing = cart.get(key);
@@ -514,42 +491,54 @@
     }
 
     function updateCartUI(){
-      cartLines.innerHTML='';
+      cartLines.replaceChildren();
       let total=0; let count=0;
       cart.forEach(({product,qty,unitPrice,mode})=>{
         const lineTotal = unitPrice*qty;
         total+=lineTotal; count+=qty;
-        const div = document.createElement('div');
-        div.style.borderBottom='1px dashed var(--line)';
-        div.style.padding='6px 0';
-        div.innerHTML = `<strong>${product.name}</strong><br>
-          <span class="muted">${mode==='retail'?'Retail':'Wholesale'} • ${fmtUGX(unitPrice)} × ${qty} = </span>
-          <strong>${fmtUGX(lineTotal)}</strong>`;
-        cartLines.appendChild(div);
+
+        const wrap = document.createElement('div');
+        wrap.style.borderBottom='1px dashed var(--line)';
+        wrap.style.padding='6px 0';
+
+        const strong = document.createElement('strong');
+        setText(strong, product.name);
+
+        const br = document.createElement('br');
+        const span = document.createElement('span');
+        span.className = 'muted';
+        setText(span, `${mode==='retail'?'Retail':'Wholesale'} • ${fmtUGX(unitPrice)} × ${qty} = `);
+
+        const totalStrong = document.createElement('strong');
+        setText(totalStrong, fmtUGX(lineTotal));
+
+        wrap.appendChild(strong); wrap.appendChild(br); wrap.appendChild(span); wrap.appendChild(totalStrong);
+        cartLines.appendChild(wrap);
       });
-      grandTotal.textContent = 'Total: '+fmtUGX(total);
+      setText(grandTotal, 'Total: ' + fmtUGX(total));
       cartCount.style.display = count>0? 'inline-block':'none';
-      cartCount.textContent = count;
-      const href = cartToWhatsApp();
-      checkoutFab.href = href;
+      cartCount.textContent = String(count);
+      checkoutFab.href = cartToWhatsApp();
       updateFabVisibility();
     }
 
     function cartToWhatsApp(){
-      if(cart.size===0) return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hello Liz Accessories')}`;
+      if(cart.size===0){
+        return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hello Flair Car Accessories')}`;
+      }
       let lines=[]; let total=0;
       cart.forEach(({product,qty,unitPrice,mode})=>{
         total+=unitPrice*qty;
         lines.push(`• ${product.name} x${qty} @ ${fmtUGX(unitPrice)} (${mode})`);
       });
-      const msg = `Hello Flair Car AccessoriesAccessories, here is my order:\n${lines.join('\n')}\nTotal: ${fmtUGX(total)}`;
+      const msg = `Hello Flair Car Accessories, here is my order:\n${lines.join('\n')}\nTotal: ${fmtUGX(total)}`;
       return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
     }
 
-    // ===== Drawer + FAB =====
     function positionFab(){
       if(!drawer.classList.contains('open')){ checkoutFab.style.bottom='16px'; return; }
-      const h = (document.querySelector('#drawer footer').getBoundingClientRect().height||72);
+      const footer = document.querySelector('#drawer footer');
+      const h = (footer && footer.getBoundingClientRect().height) || 72;
       checkoutFab.style.bottom = (h+16)+'px';
     }
     function updateFabVisibility(){
@@ -557,11 +546,8 @@
       checkoutFab.style.display = visible ? 'flex' : 'none';
       if(visible) positionFab();
     }
-    function openDrawer(){ drawer.classList.add('open'); positionFab(); updateFabVisibility(); }
-    closeDrawer.onclick=()=>{ drawer.classList.remove('open'); updateFabVisibility(); };
-    cartBtn.onclick=()=>{ drawer.classList.toggle('open'); updateFabVisibility(); };
 
-    // ===== Init =====
+    // ---------- Init ----------
     document.getElementById('year').textContent = new Date().getFullYear();
     window.addEventListener('resize', positionFab, {passive:true});
     window.addEventListener('orientationchange', ()=>setTimeout(positionFab, 200), {passive:true});
