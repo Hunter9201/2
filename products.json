@@ -1,20 +1,5 @@
 [
   {
-    "id": "car-wireless-charger-1757376993471",
-    "name": "Car Wireless Charger",
-    "category": "accessories",
-    "retailPrice": 12456,
-    "wholesalePrice": 24567,
-    "unit": "piece",
-    "moq": 1,
-    "desc": "wireless",
-    "imgs": [
-      "https://raw.githubusercontent.com/hunter9201/2/main/images/car-wireless-charger-1757376993471-1.jpg",
-      "https://raw.githubusercontent.com/hunter9201/2/main/images/car-wireless-charger-1757376993471-2.jpg",
-      "https://raw.githubusercontent.com/hunter9201/2/main/images/car-wireless-charger-1757376993471-3.jpg"
-    ]
-  },
-  {
     "id": "car-tissue-holders-1757407998076",
     "name": "Car tissue holders",
     "category": "accessories",
