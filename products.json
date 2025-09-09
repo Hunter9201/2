@@ -146,5 +146,18 @@
       "https://raw.githubusercontent.com/hunter9201/2/main/images/car-back-seat-storage-bags-1757441793062-2.jpg",
       "https://raw.githubusercontent.com/hunter9201/2/main/images/car-back-seat-storage-bags-1757441793062-3.jpg"
     ]
+  },
+  {
+    "id": "first-aid-bag-1757442289589",
+    "name": "First aid bag",
+    "category": "accessories",
+    "retailPrice": 65000,
+    "wholesalePrice": 0,
+    "unit": "Piece",
+    "moq": 1,
+    "desc": "Car first aid bag",
+    "imgs": [
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/first-aid-bag-1757442289589-1.jpg"
+    ]
   }
 ]
