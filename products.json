@@ -131,5 +131,20 @@
       "https://raw.githubusercontent.com/hunter9201/2/main/images/foldable-triangular-reflector-1757441518891-1.jpg",
       "https://raw.githubusercontent.com/hunter9201/2/main/images/foldable-triangular-reflector-1757441518891-2.jpg"
     ]
+  },
+  {
+    "id": "car-back-seat-storage-bags-1757441793062",
+    "name": "Car back seat storage bags",
+    "category": "accessories",
+    "retailPrice": 155000,
+    "wholesalePrice": 0,
+    "unit": "Piece",
+    "moq": 1,
+    "desc": "Car back seat storage",
+    "imgs": [
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/car-back-seat-storage-bags-1757441793062-1.jpg",
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/car-back-seat-storage-bags-1757441793062-2.jpg",
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/car-back-seat-storage-bags-1757441793062-3.jpg"
+    ]
   }
 ]
