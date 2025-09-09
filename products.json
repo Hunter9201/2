@@ -1,20 +1,5 @@
 [
   {
-    "id": "car-tissue-holders-1757407998076",
-    "name": "Car tissue holders",
-    "category": "accessories",
-    "retailPrice": 50000,
-    "wholesalePrice": 0,
-    "unit": "Piece",
-    "moq": 1,
-    "desc": "Car tissue boxes",
-    "imgs": [
-      "https://raw.githubusercontent.com/hunter9201/2/main/images/car-tissue-holders-1757407998076-1.jpg",
-      "https://raw.githubusercontent.com/hunter9201/2/main/images/car-tissue-holders-1757407998076-2.jpg",
-      "https://raw.githubusercontent.com/hunter9201/2/main/images/car-tissue-holders-1757407998076-3.jpg"
-    ]
-  },
-  {
     "id": "car-tissue-holders-1757411346689",
     "name": "Car tissue holders",
     "category": "accessories",
