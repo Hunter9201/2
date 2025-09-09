@@ -11,5 +11,16 @@
     "imgs": [
       "https://raw.githubusercontent.com/hunter9201/2/main/images/4567676-1757375658242-1.jpg"
     ]
+  },
+  {
+    "id": "wwr-1757376473001",
+    "name": "wwr",
+    "category": "accessories",
+    "retailPrice": 4567,
+    "wholesalePrice": 4567,
+    "unit": "piece",
+    "moq": 1,
+    "desc": "so nice , so good",
+    "imgs": []
   }
 ]
