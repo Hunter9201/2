@@ -1,16 +1,5 @@
 [
   {
-    "id": "car-tissue-holders-1757411346689",
-    "name": "Car tissue holders",
-    "category": "accessories",
-    "retailPrice": 50000,
-    "wholesalePrice": 0,
-    "unit": "Piece",
-    "moq": 1,
-    "desc": "Car tissue holders",
-    "imgs": []
-  },
-  {
     "id": "car-wireless-chargers-holders-1757411503681",
     "name": "Car wireless chargers/ holders",
     "category": "accessories",
