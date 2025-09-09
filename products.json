@@ -22,5 +22,21 @@
     "moq": 1,
     "desc": "so nice , so good",
     "imgs": []
+  },
+  {
+    "id": "every-thing-1757376804417",
+    "name": "every thing",
+    "category": "accessories",
+    "retailPrice": 12000,
+    "wholesalePrice": 18999,
+    "unit": "piece",
+    "moq": 1,
+    "desc": "all cars",
+    "imgs": [
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/every-thing-1757376804417-1.jpg",
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/every-thing-1757376804417-2.jpg",
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/every-thing-1757376804417-3.jpg",
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/every-thing-1757376804417-4.jpg"
+    ]
   }
 ]
