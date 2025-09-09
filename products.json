@@ -1,18 +1,5 @@
 [
   {
-    "id": "4567676-1757375658242",
-    "name": "4567676",
-    "category": "accessories",
-    "retailPrice": 46578789,
-    "wholesalePrice": 789890,
-    "unit": "piece",
-    "moq": 1,
-    "desc": "",
-    "imgs": [
-      "https://raw.githubusercontent.com/hunter9201/2/main/images/4567676-1757375658242-1.jpg"
-    ]
-  },
-  {
     "id": "wwr-1757376473001",
     "name": "wwr",
     "category": "accessories",
