@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Security (works on static hosts via meta). If you later externalize JS/CSS, tighten this. -->
+  <!-- Security tuned for GitHub Pages + raw image previews + local products.json -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     base-uri 'self';
     frame-ancestors 'none';
-    img-src 'self' https://i.postimg.cc https://images.unsplash.com data:;
+    img-src 'self' data: https://raw.githubusercontent.com https://i.postimg.cc https://images.unsplash.com;
     script-src 'self' 'unsafe-inline';
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     font-src https://fonts.gstatic.com;
@@ -62,6 +62,7 @@
     .chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
 
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;padding:16px}
+    .empty{padding:24px;border:1px dashed var(--line);border-radius:12px;text-align:center;background:#fff;color:var(--muted)}
     .card{background:var(--card);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;overflow:hidden;transition:transform .2s}
     .card:hover{transform:translateY(-3px)}
     .card .body{padding:12px}
@@ -132,9 +133,7 @@
       <div class="brand"><div class="logo" aria-hidden="true">F</div><span>Flair Car Accessories</span></div>
       <div class="nav-actions">
         <a href="#catalog" class="button primary">Browse Products</a>
-        <button id="wishBtn" class="iconbtn" title="Wishlist" aria-label="Wishlist">
-          ❤️
-        </button>
+        <button id="wishBtn" class="iconbtn" title="Wishlist" aria-label="Wishlist">❤️</button>
         <button id="cartBtn" class="button" type="button" aria-haspopup="dialog" aria-controls="drawer">
           Cart <span id="cartCount" style="background:var(--rose);color:#fff;border-radius:50%;padding:2px 6px;font-size:12px;display:none">0</span>
         </button>
@@ -190,7 +189,7 @@
   </section>
 
   <footer>
-    <p>© <span id="year"></span> Flair Car Accessories. .</p>
+    <p>© <span id="year"></span> Flair Car Accessories.</p>
   </footer>
 
   <!-- Cart Drawer -->
@@ -224,78 +223,30 @@
   <script>
     // ---------- Settings ----------
     const WHATSAPP_NUMBER = '256754760472';
-    const IMG_BASE = 'images';
+    const IMG_BASE = 'images';                 // for relative image names in products.json
+    const PRODUCTS_URL = 'products.json';      // served by GitHub Pages from your repo
     const FREE_DELIVERY_THRESHOLD = 250000;
 
     // ---------- Security helpers ----------
-    const TRUSTED_IMG_HOSTS = new Set([location.hostname, 'i.postimg.cc', 'images.unsplash.com']);
+    const TRUSTED_IMG_HOSTS = new Set([location.hostname, 'i.postimg.cc', 'images.unsplash.com', 'raw.githubusercontent.com']);
     function safeURL(url) {
       try {
         const u = new URL(url, location.origin);
         if (u.protocol !== 'https:' && u.protocol !== 'http:') return null;
-        if (u.origin === location.origin) return u.href;
-        if (u.hostname && TRUSTED_IMG_HOSTS.has(u.hostname)) return u.href;
+        if (u.origin === location.origin) return u.href;                 // local /images or products
+        if (u.hostname && TRUSTED_IMG_HOSTS.has(u.hostname)) return u.href; // raw.githubusercontent.com, etc.
         return null;
       } catch { return null; }
     }
     function withBase(path){
-      if(/^https?:\/\//i.test(path)) return path;
+      if(/^https?:\/\//i.test(path)) return path;       // absolute (e.g., raw.githubusercontent.com)
       const base = IMG_BASE.endsWith('/') ? IMG_BASE : IMG_BASE + '/';
-      return base + path.split('/').map(encodeURIComponent).join('/');
+      return base + String(path||'').split('/').map(encodeURIComponent).join('/');
     }
 
     // ---------- Data ----------
-    const PRODUCTS = Object.freeze([
-      { id:'carWirelessCharger', name:'Car Wireless Charger',
-        retailPrice:120000, wholesalePrice:115000, moq:10, category:'accessories', unit:'piece',
-        imgs:[
-          'https://i.postimg.cc/VvMBGXv5/Whats-App-Image-2025-09-02-at-15-14-30-283e26a3.jpg',
-          'https://i.postimg.cc/qMsx2cW5/Whats-App-Image-2025-09-02-at-15-14-30-ce96bf4c.jpg',
-          'https://i.postimg.cc/Qdjkm93x/Phone-Holders.jpg'
-        ],
-        desc:'15 W wireless Mag/mega charger for cars.' },
-      { id:'pBackSeat', name:'Car Back Seat Storage Bag',
-        retailPrice:80000, wholesalePrice:75000, moq:10, category:'accessories', unit:'piece',
-        imgs:[
-          'https://i.postimg.cc/qR4KSLvG/CAR.jpg',
-          'https://i.postimg.cc/tJ9LpR6q/Whats-App-Image-2025-09-02-at-16-27-52-ab1e8e20.jpg',
-          'https://i.postimg.cc/3wgSN5Yd/Whats-App-Image-2025-09-02-at-16-27-51-cac41dd5.jpg',
-          'https://i.postimg.cc/qR4KSLvG/CAR.jpg'
-        ],
-        desc:'Back seat organizer with multi-pockets and tablet slot.' },
-      { id:'pCupPad', name:'Car Silicone Cup Holder Pad',
-        retailPrice:40000, wholesalePrice:30000, moq:12, category:'accessories', unit:'piece',
-        img:'https://i.postimg.cc/gksGHHCW/cup-holder.jpg',
-        desc:'Non-slip, waterproof round coaster mat for cup holders.' },
-      { id:'pHooks', name:'Car Seat Headrest Hooks',
-        retailPrice:16000, wholesalePrice:14000, moq:12, category:'accessories', unit:'pair',
-        img:'https://i.postimg.cc/4xrtXGBw/hooks.jpg',
-        desc:'Heavy-duty hooks for bags, groceries & handbags.' },
-      { id:'pPhoneMount', name:'Adjustable Phone Holder',
-        retailPrice:45000, wholesalePrice:40000, moq:4, category:'accessories', unit:'piece',
-        img:'https://i.postimg.cc/jjYHzfBy/phone-holder.jpg',
-        desc:'Dashboard/windshield mount with strong suction cup.' },
-      { id:'pBin', name:'Mini Car Trash Bin',
-        retailPrice:20000, wholesalePrice:17000, moq:6, category:'accessories', unit:'piece',
-        img:'https://i.postimg.cc/6qxqPVLh/bins.jpg',
-        desc:'Compact bin with spring lid for a tidy interior.' },
-      { id:'pTriangle', name:'Warning Triangle (Foldable)',
-        retailPrice:24000, wholesalePrice:21000, moq:6, category:'accessories', unit:'set',
-        img:'https://i.postimg.cc/6pzyjGmk/triangle.jpg',
-        desc:'High-visibility reflective emergency triangle.' },
-      { id:'pAid', name:'Car First Aid Kit',
-        retailPrice:45000, wholesalePrice:40000, moq:6, category:'accessories', unit:'kit',
-        img:'https://i.postimg.cc/2yv12csG/First-AID-Kit.jpg',
-        desc:'Compact kit meeting common roadside needs.' },
-      { id:'pAirVent', name:'Air Vent Fragrance Clips (2pcs)',
-        retailPrice:18000, wholesalePrice:15000, moq:12, category:'accessories', unit:'pack',
-        img:'https://i.postimg.cc/QCYg5yrM/airaters.jpg',
-        desc:'Long-lasting fresh scent, easy vent clip.' },
-      { id:'pNip', name:'Car Phone Nip Holders (Set)',
-        retailPrice:42000, wholesalePrice:38000, moq:6, category:'accessories', unit:'set',
-        img:'https://i.postimg.cc/L859N0Fp/car-nip-Holders.jpg',
-        desc:'Secure grips for multiple phone sizes.' }
-    ]);
+    /** products are loaded from products.json written by the Admin panel */
+    let PRODUCTS = [];
 
     // ---------- Elements ----------
     const chips = document.getElementById('chips');
@@ -328,8 +279,8 @@
 
     // ---------- Utils ----------
     const fmtUGX = v => new Intl.NumberFormat('en-UG',{style:'currency',currency:'UGX',maximumFractionDigits:0}).format(v);
-    const priceOf = (p) => mode==='retail' ? p.retailPrice : p.wholesalePrice;
-    const minQty  = (p) => mode==='retail' ? 1 : (p.moq||1);
+    const priceOf = (p) => mode==='retail' ? (Number(p.retailPrice)||0) : (Number(p.wholesalePrice)||0);
+    const minQty  = (p) => mode==='retail' ? 1 : (Number(p.moq)||1);
 
     function showToast(msg){ toastEl.textContent = msg; toastEl.classList.add('show'); setTimeout(()=>toastEl.classList.remove('show'), 1500); }
     function persist(){ localStorage.setItem('cart', JSON.stringify([...cart])); localStorage.setItem('mode', mode); localStorage.setItem('wishlist', JSON.stringify([...wishlist])); }
@@ -341,6 +292,28 @@
     }
 
     function debounce(fn,ms){ let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), ms); }; }
+
+    // ---------- Load products.json ----------
+    async function loadProducts(){
+      // Cache-buster helps when GitHub Pages delays file refresh
+      const url = PRODUCTS_URL + '?_=' + Date.now();
+      const r = await fetch(url, {cache:'no-store'});
+      if(!r.ok) throw new Error('Failed to load products.json: ' + r.status);
+      const data = await r.json();
+      if(!Array.isArray(data)) throw new Error('products.json must be an array');
+      // Normalize records
+      PRODUCTS = data.map(x => ({
+        id: x.id || String(Math.random()).slice(2),
+        name: x.name || 'Unnamed',
+        category: x.category || 'other',
+        retailPrice: Number(x.retailPrice)||0,
+        wholesalePrice: Number(x.wholesalePrice)||0,
+        unit: x.unit || 'piece',
+        moq: Number(x.moq)||1,
+        desc: x.desc || '',
+        imgs: Array.isArray(x.imgs) ? x.imgs : (x.img ? [x.img] : [])
+      }));
+    }
 
     // ---------- Mode toggle ----------
     function setMode(newMode){
@@ -381,7 +354,7 @@
     }
 
     function filteredAndSorted(){
-      const q = searchInput.value.trim().toLowerCase();
+      const q = (searchInput.value||'').trim().toLowerCase();
       let list = PRODUCTS.filter(p=>{
         const hitQ = !q || p.name.toLowerCase().includes(q) || (p.desc||'').toLowerCase().includes(q);
         const hitC = activeCat==='all' || (p.category||'other') === activeCat;
@@ -401,6 +374,16 @@
     function render(){
       grid.replaceChildren();
       const list = filteredAndSorted();
+
+      if (!list.length){
+        const empty = document.createElement('div');
+        empty.className = 'empty';
+        empty.textContent = 'No products yet. Please check back soon.';
+        grid.appendChild(empty);
+        updateFloatingBtn();
+        return;
+      }
+
       list.forEach(p=>grid.appendChild(buildCard(p)));
       updateFloatingBtn();
     }
@@ -522,7 +505,7 @@
       });
       const unit = document.createElement('span');
       unit.className = 'muted';
-      unit.textContent = ' / ' + p.unit;
+      unit.textContent = ' / ' + (p.unit || 'piece');
       label.appendChild(input);
       qtyWrap.appendChild(label);
       qtyWrap.appendChild(unit);
@@ -602,6 +585,7 @@
 
     function addToCart(id){
       const product = PRODUCTS.find(x=>x.id===id);
+      if(!product) return;
       const qtyInput = document.getElementById(`qty-${id}`);
       const min = minQty(product);
       let qty = parseInt(qtyInput?.value ?? min,10);
@@ -690,20 +674,24 @@
       freeProgress.style.background = left>0 ? 'linear-gradient(90deg,#16a34a,#0ea5e9)' : '#16a34a';
     }
 
-    // ---------- Events ----------
+    // ---------- Init ----------
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Build chips and set initial mode
-    buildCategoryChips();
-    setMode(mode); // also renders
-
-    // Search & sort
     searchInput.addEventListener('input', debounce(render, 120));
     sortSel.addEventListener('change', render);
     buyerName.addEventListener('input', ()=>{ const href = cartToWhatsApp(); checkoutFab.href = href; floatCheckout.href = href; });
 
-    // Initial cart UI
-    updateCartUI();
+    (async function init(){
+      try{
+        await loadProducts();         // get products.json written by Admin page
+      }catch(e){
+        console.error(e);
+        PRODUCTS = [];                // enforce: no hardcoded products
+      }
+      buildCategoryChips();
+      setMode(mode);                  // also renders
+      updateCartUI();
+    })();
   </script>
 </body>
 </html>
