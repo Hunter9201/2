@@ -1,16 +1,5 @@
 [
   {
-    "id": "wwr-1757376473001",
-    "name": "wwr",
-    "category": "accessories",
-    "retailPrice": 4567,
-    "wholesalePrice": 4567,
-    "unit": "piece",
-    "moq": 1,
-    "desc": "so nice , so good",
-    "imgs": []
-  },
-  {
     "id": "car-wireless-charger-1757376993471",
     "name": "Car Wireless Charger",
     "category": "accessories",
