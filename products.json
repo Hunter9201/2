@@ -38,5 +38,20 @@
       "https://raw.githubusercontent.com/hunter9201/2/main/images/every-thing-1757376804417-3.jpg",
       "https://raw.githubusercontent.com/hunter9201/2/main/images/every-thing-1757376804417-4.jpg"
     ]
+  },
+  {
+    "id": "car-wireless-charger-1757376993471",
+    "name": "Car Wireless Charger",
+    "category": "accessories",
+    "retailPrice": 12456,
+    "wholesalePrice": 24567,
+    "unit": "piece",
+    "moq": 1,
+    "desc": "wireless",
+    "imgs": [
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/car-wireless-charger-1757376993471-1.jpg",
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/car-wireless-charger-1757376993471-2.jpg",
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/car-wireless-charger-1757376993471-3.jpg"
+    ]
   }
 ]
