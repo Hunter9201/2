@@ -87,5 +87,20 @@
       "https://raw.githubusercontent.com/hunter9201/2/main/images/car-wireless-charger-1757440079757-2.jpg",
       "https://raw.githubusercontent.com/hunter9201/2/main/images/car-wireless-charger-1757440079757-3.jpg"
     ]
+  },
+  {
+    "id": "fresca-premium-sticks-wild-berry-1757440507511",
+    "name": "Fresca premium sticks wild berry",
+    "category": "accessories",
+    "retailPrice": 45000,
+    "wholesalePrice": 0,
+    "unit": "Piece",
+    "moq": 1,
+    "desc": "Fresca premium sticks wild berry air freshener",
+    "imgs": [
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/fresca-premium-sticks-wild-berry-1757440507511-1.jpg",
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/fresca-premium-sticks-wild-berry-1757440507511-2.jpg",
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/fresca-premium-sticks-wild-berry-1757440507511-3.jpg"
+    ]
   }
 ]
