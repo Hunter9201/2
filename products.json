@@ -189,5 +189,18 @@
       "https://raw.githubusercontent.com/hunter9201/2/main/images/car-seat-gap-organizer-1757771639983-2.jpg",
       "https://raw.githubusercontent.com/hunter9201/2/main/images/car-seat-gap-organizer-1757771639983-3.jpg"
     ]
+  },
+  {
+    "id": "wow-1767556885235",
+    "name": "wow",
+    "category": "accessories",
+    "retailPrice": 1000,
+    "wholesalePrice": 1000,
+    "unit": "piece",
+    "moq": 1,
+    "desc": "alright",
+    "imgs": [
+      "https://raw.githubusercontent.com/hunter9201/2/main/images/wow-1767556885235-1.jpg"
+    ]
   }
 ]
