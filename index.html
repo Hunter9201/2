@@ -409,7 +409,8 @@
   async function fetchLegalDocs() {
     try {
       pdfGrid.innerHTML = `<div class="loading-spinner"><div class="animate-spin border-4 border-amber-600 border-t-transparent rounded-full w-8 h-8 mx-auto"></div><p>Loading Uganda legal archive...</p></div>`;
-      const res = await fetch(`documents.json?t=${Date.now()}`, { cache: "no-store" });
+      // ✅ FETCH FROM THE EXACT GITHUB REPOSITORY
+      const res = await fetch(`https://hunter9201.github.io/advocate/documents.json?t=${Date.now()}`, { cache: "no-store" });
       if (!res.ok) throw new Error("HTTP " + res.status);
       const data = await res.json();
       if (!Array.isArray(data)) throw new Error("Invalid format");
@@ -426,7 +427,7 @@
       lastSyncSpan.innerHTML = `<i class="far fa-clock"></i> Last sync: ${new Date().toLocaleTimeString()}`;
     } catch (err) {
       console.warn(err);
-      pdfGrid.innerHTML = `<div class="empty-state"><i class="fas fa-landmark text-4xl"></i><h3 class="mt-2">Repository unreachable</h3><p>Could not load documents.json. Ensure file exists.</p><button onclick="location.reload()" class="mt-3 bg-[#0a1c2f] text-white px-4 py-1 rounded-full">Retry</button></div>`;
+      pdfGrid.innerHTML = `<div class="empty-state"><i class="fas fa-landmark text-4xl"></i><h3 class="mt-2">Repository unreachable</h3><p>Could not load documents from GitHub repository. Ensure the file exists at https://hunter9201.github.io/advocate/documents.json</p><button onclick="location.reload()" class="mt-3 bg-[#0a1c2f] text-white px-4 py-1 rounded-full">Retry</button></div>`;
     }
   }
 
@@ -464,11 +465,13 @@
     filtered.forEach(doc => {
       const card = document.createElement("div");
       card.className = "pdf-card";
-      card.onclick = () => window.open(encodeURI(doc.filename), "_blank");
+      // Use the URL from the JSON file or construct from filename
+      const fileUrl = doc.url || `https://hunter9201.github.io/advocate/${encodeURIComponent(doc.filename)}`;
+      card.onclick = () => window.open(fileUrl, "_blank");
       const highlight = (text) => currentSearch ? text.replace(new RegExp(`(${currentSearch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, "gi"), '<span class="highlight">$1</span>') : text;
       card.innerHTML = `
         <div class="pdf-header"><div class="pdf-cat"><i class="fas ${getIcon(doc.category)}"></i> ${categoryMap[doc.category] || doc.category}</div><div class="pdf-title">${highlight(doc.title)}</div><div class="text-xs opacity-80 mt-1">📅 ${doc.year}</div></div>
-        <div class="pdf-body"><div class="pdf-desc">${highlight(doc.description.substring(0, 120))}</div><div class="pdf-meta"><span><i class="fas fa-file-pdf"></i> ${doc.size}</span><span>📄 ${doc.pages} pgs</span></div></div>
+        <div class="pdf-body"><div class="pdf-desc">${highlight(doc.description.substring(0, 120))}</div><div class="pdf-meta"><span><i class="fas fa-file-pdf"></i> ${doc.size} MB</span><span>📄 ${doc.pages} pgs</span></div></div>
         <div class="bg-[#0a1c2f] text-white text-center py-2 text-sm font-semibold">Read Statute →</div>
       `;
       pdfGrid.appendChild(card);
