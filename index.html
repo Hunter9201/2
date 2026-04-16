@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>🦁 THE LION HUNTER · Juris Uganda Vault</title>
-  <meta name="google-site-verification" content="google47c9c1017e180e8f">
-  <meta name="description" content="The Lion Hunter – legal portal with integrated Uganda legal library. Passcode protected.">
-  <meta property="og:image" content="https://i.ibb.co/zVxt3D2Y/LDC-LEGAL-COMPANION.jpg">
-  <link rel="icon" href="https://i.postimg.cc/k4QT4G8c/Lion.jpg?v=1" type="image/jpeg">
-
+  <meta name="google-site-verification" content="google47c9c1017e180e8f" />
+  <meta name="description" content="The Lion Hunter – legal portal with integrated Uganda legal library. Passcode protected." />
+  <meta property="og:image" content="https://i.ibb.co/zVxt3D2Y/LDC-LEGAL-COMPANION.jpg" />
+  <link rel="icon" href="https://i.postimg.cc/k4QT4G8c/Lion.jpg?v=1" type="image/jpeg" />
+  
   <!-- Analytics & Clarity (original) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KCLCFN2CV4"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);} gtag('js',new Date()); gtag('config','G-KCLCFN2CV4');</script>
   <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","srhjtupxnp");</script>
-
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Tailwind (lightweight) + Font Awesome + Google Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
   <style>
-    /* ---------- LION HUNTER DASHBOARD STYLES (unchanged) ---------- */
+    /* ---------- GLOBAL VARIABLES & RESET ---------- */
     :root {
       --brand-navy: #0a1c2f;
       --brand-gold: #c5a572;
       --brand-gold-dark: #a77f46;
       --brand-stone: #f4efe7;
+      --brand-slate: #2c3e4e;
       --card-white: #ffffff;
       --shadow-lg: 0 25px 35px -12px rgba(0, 0, 0, 0.2);
       --transition-smooth: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
@@ -37,8 +38,7 @@
       color: #1f2a3e;
       min-height: 100vh;
     }
-
-    /* ---------- PASSCODE OVERLAY ---------- */
+    /* ---------- PASSCODE OVERLAY (elevated) ---------- */
     #passcode-overlay {
       position: fixed;
       top: 0;
@@ -56,15 +56,15 @@
       backdrop-filter: blur(2px);
     }
     #passcode-card {
-      background: white;
+      background: var(--card-white);
       border-radius: 40px;
       max-width: 420px;
       width: 90%;
       padding: 2.2rem 1.8rem;
       text-align: center;
-      box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2);
+      box-shadow: var(--shadow-lg);
       border: 1px solid rgba(197,165,114,0.6);
-      animation: fadeUp 0.5s cubic-bezier(0.2,0.9,0.4,1.1);
+      animation: fadeUp 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
     #passcode-input {
@@ -94,11 +94,11 @@
     #main-content { display: block; }
     body.unlocked #main-content { display: block; }
     body.unlocked #passcode-overlay { opacity: 0; pointer-events: none; visibility: hidden; }
-
-    /* Lion Hunter dashboard specific */
+    
+    /* ---------- LION HUNTER DASHBOARD STYLES (refined) ---------- */
     .site-header {
-      background: linear-gradient(135deg, #0a1c2f 0%, #112b44 100%);
-      border-bottom: 3px solid #c5a572;
+      background: linear-gradient(135deg, var(--brand-navy) 0%, #112b44 100%);
+      border-bottom: 3px solid var(--brand-gold);
       position: sticky;
       top: 0;
       z-index: 90;
@@ -111,14 +111,14 @@
     }
     .hero-fade-out { opacity: 0; }
     .menu-icon { position: absolute; top: 12px; right: 20px; font-size: 28px; color: white; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); padding: 6px 12px; border-radius: 40px; cursor: pointer; z-index: 1001; }
-    .nav-container { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #0a1c2f; padding-top: 70px; transition: right 0.3s ease; z-index: 1000; box-shadow: -8px 0 24px rgba(0,0,0,0.2); }
+    .nav-container { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: var(--brand-navy); padding-top: 70px; transition: right 0.3s ease; z-index: 1000; box-shadow: -8px 0 24px rgba(0,0,0,0.2); }
     .nav-container.open { right: 0; }
     .nav-container a { display: block; color: #f0e6d2; text-decoration: none; padding: 1rem 1.5rem; font-weight: 600; border-bottom: 1px solid rgba(197,165,114,0.3); transition: 0.2s; }
-    .nav-container a:hover { background: #c5a572; color: #0a1c2f; padding-left: 2rem; }
+    .nav-container a:hover { background: var(--brand-gold); color: var(--brand-navy); padding-left: 2rem; }
     .login-hero-btn, .timetable-badge { background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); padding: 8px 16px; border-radius: 40px; font-weight: 700; color: white; cursor: pointer; transition: 0.2s; }
     .login-hero-btn { position: absolute; top: 14px; left: 16px; z-index: 1002; }
     .timetable-wrap { position: absolute; top: 70px; left: 16px; z-index: 1002; }
-    .timetable-pop { position: absolute; top: 45px; left: 0; background: white; width: 280px; border-radius: 20px; box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2); padding: 12px; display: none; z-index: 1003; }
+    .timetable-pop { position: absolute; top: 45px; left: 0; background: white; width: 280px; border-radius: 20px; box-shadow: var(--shadow-lg); padding: 12px; display: none; z-index: 1003; }
     .apps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -128,28 +128,27 @@
       padding: 0 1rem;
     }
     @media (min-width: 640px) { .apps-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 480px) { .apps-grid { gap: 0.8rem; } }
     .app-card {
       background: white;
       border-radius: 24px;
       padding: 1rem 0.5rem;
       text-align: center;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.2,0.9,0.4,1.1);
+      transition: var(--transition-smooth);
       box-shadow: 0 8px 18px rgba(0,0,0,0.05);
       border: 1px solid rgba(197,165,114,0.3);
       text-decoration: none;
     }
-    .app-card:hover { transform: translateY(-6px); box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2); border-color: #c5a572; }
+    .app-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--brand-gold); }
     .app-icon { width: 70px; height: 70px; margin: 0 auto 10px; background: linear-gradient(145deg, #338eda, #0b64c0); border-radius: 28px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; box-shadow: 0 10px 18px rgba(0,0,0,0.1); }
-    .app-label { font-weight: 700; font-size: 0.75rem; color: #0a1c2f; }
+    .app-label { font-weight: 700; font-size: 0.75rem; color: var(--brand-navy); }
     .widget-calendar { background: white; border-radius: 28px; padding: 1rem; grid-column: span 2; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
-    .motto-card { background: linear-gradient(115deg, #e3eef9, #d4e2f0); border-radius: 28px; padding: 1.5rem; margin: 1.5rem auto; max-width: 1100px; text-align: center; font-weight: 600; color: #0a1c2f; }
-    footer { background: #0a1c2f; color: #ccc; text-align: center; padding: 1.2rem; margin-top: 2rem; }
-    .lion-chat-btn { animation: gentlePulse 2s infinite; }
-    @keyframes gentlePulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-
-    /* ---------- JURIS UGANDA OVERLAY (exact standalone styles, scoped) ---------- */
-    #jurisOverlay {
+    .motto-card { background: linear-gradient(115deg, #e3eef9, #d4e2f0); border-radius: 28px; padding: 1.5rem; margin: 1.5rem auto; max-width: 1100px; text-align: center; font-weight: 600; color: var(--brand-navy); }
+    footer { background: var(--brand-navy); color: #ccc; text-align: center; padding: 1.2rem; margin-top: 2rem; }
+    
+    /* ---------- FULLSCREEN LEGAL LIBRARY OVERLAY (covers everything) ---------- */
+    .legal-library-overlay {
       position: fixed;
       top: 0;
       left: 0;
@@ -158,310 +157,93 @@
       background: linear-gradient(145deg, #f4efe7 0%, #eae3d7 100%);
       z-index: 2000;
       overflow-y: auto;
+      padding: 1.5rem;
       display: none;
+      box-shadow: none;
     }
-    #jurisOverlay.active { display: block; }
-    /* Copy all Juris Uganda styles inside #jurisOverlay to preserve exact look */
-    #jurisOverlay :root {
-      --law-navy: #0a1c2f;
-      --law-gold: #c5a572;
-      --law-gold-dark: #a77f46;
-      --law-marble: #fef9ef;
-      --law-burgundy: #7a2e3a;
-      --law-stone: #e8e2d4;
-      --law-slate: #2c3e4e;
-      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.03);
-      --shadow-md: 0 15px 30px -12px rgba(0, 0, 0, 0.15);
-      --shadow-hover: 0 25px 35px -12px rgba(0, 0, 0, 0.2);
-      --transition-smooth: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      --border-radius-card: 1.2rem;
+    .legal-library-overlay.active {
+      display: block;
     }
-    #jurisOverlay * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    #jurisOverlay {
-      font-family: 'Inter', sans-serif;
-      color: #1f2a3e;
-      line-height: 1.5;
-    }
-    #jurisOverlay .site-header {
-      background: linear-gradient(135deg, var(--law-navy) 0%, #112b44 100%);
-      color: white;
-      border-bottom: 3px solid var(--law-gold);
-      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(2px);
-    }
-    #jurisOverlay .header-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 1.2rem 2rem;
+    .library-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 1.2rem;
-    }
-    #jurisOverlay .logo-container {
-      display: flex;
-      align-items: center;
       gap: 1rem;
+      border-bottom: 2px solid var(--brand-gold);
+      padding-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
-    #jurisOverlay .law-icon {
-      font-size: 2.5rem;
-      filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.2));
-    }
-    #jurisOverlay .logo-text h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.2rem, 5vw, 1.8rem);
-      font-weight: 700;
-      background: linear-gradient(120deg, #fff, var(--law-gold));
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-    #jurisOverlay .logo-text .tagline {
-      font-size: clamp(0.7rem, 3vw, 0.85rem);
-      opacity: 0.85;
-    }
-    #jurisOverlay .header-search {
-      flex: 1;
-      max-width: 480px;
-      min-width: 200px;
-    }
-    #jurisOverlay .header-search-wrapper {
-      position: relative;
-    }
-    #jurisOverlay .header-search-input {
-      width: 100%;
-      padding: 0.9rem 1rem 0.9rem 3rem;
+    .back-btn {
+      background: var(--brand-navy);
+      color: white;
       border: none;
-      border-radius: 60px;
-      font-size: clamp(0.85rem, 4vw, 0.95rem);
-      background: rgba(255,255,255,0.95);
-      color: var(--law-navy);
-      font-weight: 500;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    #jurisOverlay .header-search-input:focus {
-      outline: none;
-      background: white;
-      box-shadow: 0 0 0 3px rgba(197,165,114,0.4), 0 4px 12px rgba(0,0,0,0.1);
-    }
-    #jurisOverlay .header-search-icon {
-      position: absolute;
-      left: 1.2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--law-gold-dark);
-      font-size: 1.2rem;
-    }
-    #jurisOverlay .header-clear-search {
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #e2e0db;
-      border: none;
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-    }
-    #jurisOverlay .refresh-button {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(197,165,114,0.5);
-      padding: 0.7rem 1.3rem;
-      border-radius: 40px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: white;
-      cursor: pointer;
-    }
-    #jurisOverlay .refresh-button:hover {
-      background: var(--law-gold);
-      transform: translateY(-2px);
-    }
-    #jurisOverlay .main-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    #jurisOverlay .legal-stats {
-      background: rgba(10,28,47,0.75);
-      backdrop-filter: blur(8px);
-      border-radius: 60px;
-      padding: 0.5rem 1.5rem;
-      margin: 1.2rem 0 1.8rem;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      color: white;
-    }
-    #jurisOverlay .stats-left {
-      display: flex;
-      gap: 1.8rem;
-      font-weight: 500;
-    }
-    #jurisOverlay .search-query-badge {
-      background: var(--law-gold);
-      padding: 0.2rem 1rem;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--law-navy);
-    }
-    #jurisOverlay .pdf-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.8rem;
-      margin-top: 1rem;
-    }
-    @media (max-width: 768px) {
-      #jurisOverlay .pdf-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
-    }
-    @media (max-width: 480px) {
-      #jurisOverlay .pdf-grid { gap: 0.6rem; }
-    }
-    #jurisOverlay .pdf-card {
-      background: white;
-      border-radius: var(--border-radius-card);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition-smooth);
-      border: 1px solid rgba(197,165,114,0.3);
-      cursor: pointer;
-    }
-    #jurisOverlay .pdf-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--law-gold);
-    }
-    #jurisOverlay .pdf-card-header {
-      background: linear-gradient(115deg, var(--law-navy) 0%, #1f3a4e 100%);
-      padding: clamp(0.8rem, 3vw, 1.2rem) clamp(0.7rem, 2.5vw, 1.2rem) clamp(0.6rem, 2vw, 1rem);
-      position: relative;
-    }
-    #jurisOverlay .pdf-category {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(197,165,114,0.2);
-      padding: 0.2rem 0.8rem;
-      border-radius: 30px;
-      font-size: clamp(0.6rem, 2.8vw, 0.7rem);
-      font-weight: 600;
-      color: #f3e1be;
-    }
-    #jurisOverlay .pdf-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(0.85rem, 4vw, 1.25rem);
-      font-weight: 700;
-      color: white;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    #jurisOverlay .pdf-meta {
-      display: flex;
-      gap: 0.6rem;
-      font-size: clamp(0.55rem, 2.5vw, 0.7rem);
-      color: #cddce9;
-      margin-top: 0.4rem;
-    }
-    #jurisOverlay .pdf-card-body {
-      padding: clamp(0.7rem, 3vw, 1.2rem);
-      background: white;
-    }
-    #jurisOverlay .pdf-description {
-      color: #2c3e4e;
-      font-size: clamp(0.65rem, 3vw, 0.85rem);
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      margin-bottom: 0.8rem;
-    }
-    #jurisOverlay .pdf-details {
-      display: flex;
-      justify-content: space-between;
-      font-size: clamp(0.55rem, 2.5vw, 0.7rem);
-      background: #f8f4ec;
-      padding: 0.4rem 0.6rem;
-      border-radius: 40px;
-    }
-    #jurisOverlay .pdf-button {
-      width: 100%;
-      background: var(--law-navy);
-      color: white;
-      font-weight: 600;
-      padding: clamp(0.5rem, 2.5vw, 0.9rem);
-      text-align: center;
-      border-top: 1px solid rgba(197,165,114,0.3);
-      pointer-events: none;
-    }
-    #jurisOverlay .badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: var(--law-gold);
-      color: var(--law-navy);
-      font-weight: bold;
-      padding: 2px 6px;
-      border-radius: 20px;
-      font-size: 0.65rem;
-    }
-    #jurisOverlay .loading, #jurisOverlay .empty-state, #jurisOverlay .error-state {
-      text-align: center;
-      padding: 3rem;
-      grid-column: 1/-1;
-    }
-    #jurisOverlay .law-spinner {
-      display: inline-block;
-      width: 54px;
-      height: 54px;
-      border: 4px solid rgba(197,165,114,0.3);
-      border-top: 4px solid var(--law-gold);
-      border-radius: 50%;
-      animation: spin 0.9s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    #jurisOverlay .site-footer {
-      background: var(--law-navy);
-      border-top: 4px solid var(--law-gold);
-      margin-top: 3rem;
-      padding: 2rem 1rem;
-      text-align: center;
-      color: #ccc;
-    }
-    #jurisOverlay .highlight {
-      background: #fdebb3;
-      padding: 0 2px;
-      border-radius: 4px;
-      font-weight: 600;
-    }
-    #closeJurisOverlay {
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(4px);
       padding: 0.6rem 1.2rem;
       border-radius: 40px;
-      color: white;
       font-weight: 600;
       cursor: pointer;
-      border: none;
+      transition: 0.2s;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    #closeJurisOverlay:hover { background: var(--law-gold); color: var(--law-navy); }
+    .back-btn:hover { background: var(--brand-gold); color: #1f2a3e; transform: translateY(-2px); }
+    .stats-bar {
+      background: rgba(10, 28, 47, 0.8);
+      backdrop-filter: blur(8px);
+      border-radius: 80px;
+      padding: 0.5rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1rem 0 1.2rem;
+    }
+    .filter-pill {
+      background: #e9e2d4;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      color: var(--brand-navy);
+    }
+    .filter-pill.active, .filter-pill:hover { background: var(--brand-gold); color: white; }
+    .pdf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) { .pdf-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; } }
+    @media (max-width: 550px) { .pdf-grid { grid-template-columns: 1fr; } }
+    .pdf-card {
+      background: white;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+      cursor: pointer;
+      border: 1px solid rgba(197,165,114,0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .pdf-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--brand-gold); }
+    .pdf-header { background: linear-gradient(115deg, var(--brand-navy) 0%, #1f3a4e 100%); padding: 0.8rem 1rem; color: white; }
+    .pdf-cat { display: inline-block; background: rgba(197,165,114,0.25); padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.65rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .pdf-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; margin: 0.3rem 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .pdf-body { padding: 0.8rem; }
+    .pdf-desc { font-size: 0.75rem; color: #2c3e4e; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 0.6rem; }
+    .pdf-meta { display: flex; justify-content: space-between; font-size: 0.65rem; background: #f8f4ec; padding: 0.4rem 0.6rem; border-radius: 40px; }
+    .highlight { background: #fdebb3; color: #2c3e2f; padding: 0 2px; border-radius: 4px; font-weight: 600; }
+    .loading-spinner { text-align: center; padding: 2rem; grid-column: 1/-1; }
+    .empty-state { text-align: center; padding: 2rem; background: rgba(255,248,235,0.9); border-radius: 2rem; grid-column: 1/-1; }
+    .lion-chat-btn { animation: gentlePulse 2s infinite; }
+    @keyframes gentlePulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
   </style>
 </head>
 <body>
@@ -479,8 +261,9 @@
   </div>
 </div>
 
-<!-- MAIN LION HUNTER CONTENT -->
+<!-- MAIN UNLOCKED CONTENT (dashboard + everything except library overlay) -->
 <div id="main-content">
+  <!-- alert banner -->
   <div class="bg-gradient-to-r from-[#283e51] to-[#4b79a1] text-white rounded-xl w-[95%] max-w-5xl mx-auto mt-4 px-4 py-2 flex justify-between items-center">
     <span>📅 Lion Hunt | Nonstop Discussions</span>
     <a href="Discussions.html" class="bg-yellow-300 text-black px-4 py-1 rounded-full font-bold text-sm">View Calendar</a>
@@ -513,6 +296,7 @@
     <a href="services.html">👩‍⚖️ Legal Services</a>
   </nav>
 
+  <!-- DASHBOARD VIEW -->
   <div id="dashboardView">
     <main class="max-w-6xl mx-auto px-4 py-6">
       <div class="apps-grid">
@@ -523,6 +307,7 @@
           <div id="miniEvents" class="mt-2 text-sm">Loading events...</div>
           <a href="Discussions.html" class="inline-block mt-3 bg-[#0f3057] text-white px-4 py-1 rounded-full text-sm">Join session →</a>
         </div>
+        <!-- LAW ICON (triggers fullscreen library overlay) -->
         <div class="app-card cursor-pointer" id="lawsIconTrigger">
           <div class="app-icon">📜</div>
           <span class="app-label">Laws</span>
@@ -547,6 +332,7 @@
 
   <footer>© 2025 Lion Hunt · Juris Uganda integrated library · Built for the Bar Hunters</footer>
 
+  <!-- floating chat -->
   <button id="lionChatBtn" class="fixed bottom-6 left-6 w-14 h-14 bg-amber-500 rounded-full shadow-xl text-white text-3xl flex items-center justify-center lion-chat-btn">🦁</button>
   <div id="lionChatContainer" class="fixed left-6 bottom-24 w-80 bg-white rounded-2xl shadow-2xl border border-amber-300 overflow-hidden transition-all duration-300 max-h-0 opacity-0">
     <div class="bg-amber-500 text-white font-bold p-3 text-center">Lion Hunt Assistant</div>
@@ -555,68 +341,34 @@
   </div>
 </div>
 
-<!-- JURIS UGANDA OVERLAY (exact standalone content) -->
-<div id="jurisOverlay">
-  <header class="site-header">
-    <div class="header-container">
-      <div class="logo-container">
-        <div class="law-icon"><i class="fas fa-gavel"></i> <i class="fas fa-scale-balanced"></i></div>
-        <div class="logo-text">
-          <h1>JURIS UGANDA</h1>
-          <div class="tagline">Themis Lex · Statutes & Authorities</div>
-        </div>
-      </div>
-      <div class="header-search">
-        <div class="header-search-wrapper">
-          <i class="fas fa-search header-search-icon"></i>
-          <input type="text" class="header-search-input" id="searchInput" placeholder="Search by title, category, description, year...">
-          <button class="header-clear-search" id="clearSearch" style="display: none;" aria-label="Clear">×</button>
-        </div>
-      </div>
-      <button id="refreshDataBtn" class="refresh-button"><i class="fas fa-sync-alt"></i> Refresh Library</button>
-      <button id="closeJurisOverlay" class="close-overlay-btn"><i class="fas fa-arrow-left"></i> Back to Den</button>
-    </div>
-  </header>
-
-  <main class="main-container">
-    <div class="legal-stats" id="legalStats">
-      <div class="stats-left">
-        <span><i class="fas fa-balance-scale"></i> <strong id="totalDocsCount">0</strong> Legal Instruments</span>
-        <span><i class="fas fa-book-open"></i> <span id="displayedDocsCount">0</span> displayed</span>
-        <span id="lastSyncTime" class="last-sync"><i class="far fa-clock"></i> Last sync: never</span>
-      </div>
-      <div id="activeSearchBadge" class="search-query-badge" style="display: none;">
-        <i class="fas fa-filter"></i> <span id="searchTermBadge"></span>
-      </div>
-    </div>
-
-    <div class="pdf-grid" id="pdfGrid">
-      <div class="loading">
-        <div class="law-spinner"></div>
-        <p><i class="fas fa-landmark"></i> Summoning legal documents...</p>
-      </div>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-logo">
-        <i class="fas fa-gavel"></i><i class="fas fa-scale-balanced"></i>
-        <h3>Uganda Legal Repository</h3>
-        <p>Authoritative collection of Acts, Regulations & Judicature guidelines</p>
-      </div>
-      <div class="copyright">
-        © 2025 Juris Uganda — Documents auto-sync from <a href="https://hunter9201.github.io/advocate/documents.json" target="_blank">documents.json</a> · Lex in Omnibus
-      </div>
-    </div>
-  </footer>
+<!-- FULLSCREEN LEGAL LIBRARY OVERLAY (separate, covers whole page) -->
+<div id="legalLibraryOverlay" class="legal-library-overlay">
+  <div class="library-header">
+    <div><i class="fas fa-gavel text-2xl text-[#c5a572]"></i> <span class="font-serif text-2xl font-bold">JURIS UGANDA</span><span class="text-sm ml-2">Statutes & Authorities</span></div>
+    <button id="closeLibraryOverlayBtn" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Den</button>
+  </div>
+  <div class="stats-bar">
+    <span><i class="fas fa-balance-scale"></i> <strong id="totalDocsCount">0</strong> Legal Instruments</span>
+    <span><i class="fas fa-book-open"></i> <span id="displayedDocsCount">0</span> displayed</span>
+    <span id="lastSyncTime"><i class="far fa-clock"></i> Syncing...</span>
+  </div>
+  <div class="relative mb-3">
+    <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
+    <input type="text" id="librarySearchInput" placeholder="Search by title, category, year..." class="w-full pl-10 pr-12 py-3 rounded-full border border-gray-300 shadow-sm">
+    <button id="clearLibrarySearchBtn" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-red-600">✖</button>
+  </div>
+  <div class="filter-pills" id="filterPillsContainer">
+    <span class="filter-pill active" data-cat="all">All</span>
+  </div>
+  <div class="pdf-grid" id="pdfGrid"><div class="loading-spinner"><div class="inline-block w-8 h-8 border-4 border-amber-600 border-t-transparent rounded-full animate-spin"></div><p class="mt-2">Summoning legal documents...</p></div></div>
 </div>
 
 <script>
-  // ========== PASSCODE ==========
+  // ======================= PASSCODE =======================
   (function() {
     const PASS = "Lion2025";
     if (sessionStorage.getItem("lion_unlocked") === "true") document.body.classList.add("unlocked");
+    const overlay = document.getElementById("passcode-overlay");
     const input = document.getElementById("passcode-input");
     const errDiv = document.getElementById("passcode-error");
     const btn = document.getElementById("passcode-btn");
@@ -631,212 +383,130 @@
     input.onkeypress = e => { if (e.key === "Enter") unlock(); };
   })();
 
-  // ========== OPEN/CLOSE JURIS OVERLAY ==========
-  const jurisOverlay = document.getElementById("jurisOverlay");
-  const openJuris = () => { jurisOverlay.classList.add("active"); if (!window.jurisInitialized) { fetchDocuments(); window.jurisInitialized = true; } else { renderDocuments(); } };
-  const closeJuris = () => { jurisOverlay.classList.remove("active"); };
-  document.getElementById("lawsIconTrigger")?.addEventListener("click", openJuris);
-  document.getElementById("navLawsTrigger")?.addEventListener("click", (e) => { e.preventDefault(); openJuris(); });
-  document.getElementById("closeJurisOverlay")?.addEventListener("click", closeJuris);
+  // ========== FULLSCREEN LIBRARY OVERLAY CONTROLS ==========
+  const overlayLibrary = document.getElementById("legalLibraryOverlay");
+  const openLibrary = () => { overlayLibrary.classList.add("active"); if (!libraryInitialized) { fetchLegalDocs(); libraryInitialized = true; } else { renderLibrary(); } };
+  const closeLibrary = () => { overlayLibrary.classList.remove("active"); };
+  document.getElementById("lawsIconTrigger")?.addEventListener("click", openLibrary);
+  document.getElementById("navLawsTrigger")?.addEventListener("click", (e) => { e.preventDefault(); openLibrary(); });
+  document.getElementById("closeLibraryOverlayBtn")?.addEventListener("click", closeLibrary);
+  
+  // ========== LEGAL LIBRARY DYNAMICS (fullscreen) ==========
+  let allDocs = [];
+  let currentSearch = "";
+  let currentCategory = "all";
+  let libraryInitialized = false;
+  const pdfGrid = document.getElementById("pdfGrid");
+  const libSearch = document.getElementById("librarySearchInput");
+  const clearSearchBtnLib = document.getElementById("clearLibrarySearchBtn");
+  const totalSpan = document.getElementById("totalDocsCount");
+  const displayedSpan = document.getElementById("displayedDocsCount");
+  const lastSyncSpan = document.getElementById("lastSyncTime");
+  const filterContainer = document.getElementById("filterPillsContainer");
 
-  // ========== JURIS UGANDA SCRIPT (exactly as standalone, but using GitHub URL) ==========
-  const pdfGrid = document.getElementById('pdfGrid');
-  const searchInput = document.getElementById('searchInput');
-  const clearSearchBtn = document.getElementById('clearSearch');
-  const refreshBtn = document.getElementById('refreshDataBtn');
-  const totalDocsSpan = document.getElementById('totalDocsCount');
-  const displayedDocsSpan = document.getElementById('displayedDocsCount');
-  const activeSearchBadge = document.getElementById('activeSearchBadge');
-  const searchTermBadge = document.getElementById('searchTermBadge');
-  const lastSyncSpan = document.getElementById('lastSyncTime');
+  const categoryMap = { constitutional:"⚖️ Constitution", criminal:"🔪 Criminal", civil:"📜 Civil", commercial:"💼 Commercial", family:"👨‍👩‍👧 Family", property:"🏛️ Property", evidence:"📋 Evidence", procedure:"⚙️ Procedure", judicature:"🏛️ Judicature", magistrate:"⚖️ Magistrate", administrative:"📁 Admin", employment:"👔 Employment", international:"🌍 Intl. Law", other:"📘 Other" };
 
-  let allDocuments = [];
-  let currentSearch = '';
-  let debounceTimer;
-  let isFetching = false;
-
-  const categoryMap = {
-    constitutional: "⚖️ Constitution", criminal: "🔪 Criminal", civil: "📜 Civil",
-    commercial: "💼 Commercial", family: "👨‍👩‍👧 Family", property: "🏛️ Property",
-    evidence: "📋 Evidence", procedure: "⚙️ Procedure", judicature: "🏛️ Judicature",
-    magistrate: "⚖️ Magistrate", administrative: "📁 Admin", employment: "👔 Employment",
-    international: "🌍 Intl. Law", other: "📘 Other Acts"
-  };
-  function getCategoryDisplay(cat) {
-    if (!cat) return "📄 General Document";
-    const lc = String(cat).toLowerCase();
-    return categoryMap[lc] || cat.charAt(0).toUpperCase() + cat.slice(1);
-  }
-  function getCategoryIcon(cat) {
-    const iconMap = {
-      constitutional:"fa-gavel", criminal:"fa-handcuffs", civil:"fa-scale-balanced",
-      commercial:"fa-chart-line", family:"fa-heart", property:"fa-building",
-      evidence:"fa-search", procedure:"fa-tasks", judicature:"fa-gavel",
-      magistrate:"fa-balance-scale", administrative:"fa-folder-open",
-      employment:"fa-briefcase", international:"fa-globe", other:"fa-book"
-    };
-    const lc = String(cat||'').toLowerCase();
-    return iconMap[lc] || "fa-file-alt";
-  }
-
-  async function fetchDocuments() {
-    if (isFetching) return false;
-    isFetching = true;
+  async function fetchLegalDocs() {
     try {
-      showLoadingState();
-      const cacheBuster = `?t=${Date.now()}`;
-      // Load from GitHub repository as previously requested
-      const response = await fetch(`https://hunter9201.github.io/advocate/documents.json${cacheBuster}`, {
-        cache: 'no-store',
-        headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate' }
-      });
-      if (!response.ok) throw new Error(`HTTP ${response.status}: Could not fetch documents.json`);
-      const data = await response.json();
-      if (!Array.isArray(data)) throw new Error('Invalid data format (expected array)');
-      const validDocs = data.filter(doc => doc && doc.id && doc.title && doc.filename).map(doc => {
-        if (!doc.category) doc.category = 'other';
-        if (!doc.description) doc.description = `Official legal document from Uganda.`;
-        if (!doc.year) doc.year = 'N/A';
-        if (!doc.size) doc.size = '—';
-        if (!doc.pages) doc.pages = '?';
-        return doc;
-      });
-      if (validDocs.length === 0 && data.length > 0) throw new Error('No valid documents found after normalization');
-      allDocuments = validDocs;
-      const now = new Date();
-      lastSyncSpan.innerHTML = `<i class="far fa-clock"></i> Last sync: ${now.toLocaleTimeString()}`;
-      renderDocuments(true);
-      updateStatsUI();
-      return true;
+      pdfGrid.innerHTML = `<div class="loading-spinner"><div class="animate-spin border-4 border-amber-600 border-t-transparent rounded-full w-8 h-8 mx-auto"></div><p>Loading Uganda legal archive...</p></div>`;
+      // ✅ FETCH FROM THE EXACT GITHUB REPOSITORY
+      const res = await fetch(`https://hunter9201.github.io/advocate/documents.json?t=${Date.now()}`, { cache: "no-store" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+      if (!Array.isArray(data)) throw new Error("Invalid format");
+      allDocs = data.filter(d => d && d.id && d.title && d.filename).map(d => ({
+        ...d,
+        category: d.category || "other",
+        description: d.description || "Official Ugandan legal instrument.",
+        year: d.year || "N/A",
+        size: d.size || "—",
+        pages: d.pages || "?"
+      }));
+      updateFilterPills();
+      renderLibrary();
+      lastSyncSpan.innerHTML = `<i class="far fa-clock"></i> Last sync: ${new Date().toLocaleTimeString()}`;
     } catch (err) {
-      console.error('Fetch error:', err);
-      showErrorState(err.message);
-      updateStatsUIOnError();
-      return false;
-    } finally { isFetching = false; }
+      console.warn(err);
+      pdfGrid.innerHTML = `<div class="empty-state"><i class="fas fa-landmark text-4xl"></i><h3 class="mt-2">Repository unreachable</h3><p>Could not load documents from GitHub repository. Ensure the file exists at https://hunter9201.github.io/advocate/documents.json</p><button onclick="location.reload()" class="mt-3 bg-[#0a1c2f] text-white px-4 py-1 rounded-full">Retry</button></div>`;
+    }
   }
 
-  function showLoadingState() {
-    pdfGrid.innerHTML = `<div class="loading"><div class="law-spinner"></div><p><i class="fas fa-gavel"></i> Loading legislative archive...</p></div>`;
+  function updateFilterPills() {
+    const cats = ["all", ...new Set(allDocs.map(d => d.category).filter(Boolean))];
+    filterContainer.innerHTML = cats.map(cat => `<span class="filter-pill ${currentCategory === cat ? 'active' : ''}" data-cat="${cat}">${cat === 'all' ? '📚 All' : categoryMap[cat] || cat}</span>`).join('');
+    document.querySelectorAll(".filter-pill").forEach(pill => {
+      pill.addEventListener("click", () => {
+        currentCategory = pill.dataset.cat;
+        renderLibrary();
+        document.querySelectorAll(".filter-pill").forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+      });
+    });
   }
-  function showErrorState(msg) {
-    pdfGrid.innerHTML = `<div class="error-state"><i class="fas fa-landmark"></i><h3 style="color: #7a2e3a;">Judicial Notice: Unavailable</h3><p>${msg}</p><p style="margin-top:0.8rem;">Ensure documents.json exists at <strong>https://hunter9201.github.io/advocate/documents.json</strong></p><button onclick="fetchDocuments()" class="refresh-button" style="margin-top:1rem; background:#0a1c2f;"><i class="fas fa-redo-alt"></i> Retry</button></div>`;
-  }
-  function updateStatsUI() {
-    totalDocsSpan.innerText = allDocuments.length;
-    const filteredCount = getFilteredDocuments().length;
-    displayedDocsSpan.innerText = filteredCount;
-    if (currentSearch.trim() !== '') {
-      activeSearchBadge.style.display = 'inline-flex';
-      searchTermBadge.innerText = `“${currentSearch}”`;
-    } else { activeSearchBadge.style.display = 'none'; }
-  }
-  function updateStatsUIOnError() {
-    totalDocsSpan.innerText = '0'; displayedDocsSpan.innerText = '0';
-    activeSearchBadge.style.display = 'none';
-    lastSyncSpan.innerHTML = `<i class="far fa-clock"></i> Last sync: failed`;
-  }
-  function getFilteredDocuments() {
-    if (!currentSearch.trim()) return [...allDocuments];
-    const term = currentSearch.toLowerCase();
-    return allDocuments.filter(doc => 
-      (doc.title?.toLowerCase().includes(term)) ||
-      (doc.description?.toLowerCase().includes(term)) ||
-      (doc.category?.toLowerCase().includes(term)) ||
-      (doc.year?.toString().includes(term)) ||
-      (doc.filename?.toLowerCase().includes(term))
-    );
-  }
-  function highlightText(text, term) {
-    if (!term || !text) return text || '';
-    const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-    return text.toString().replace(regex, '<span class="highlight">$1</span>');
-  }
-  function openPDF(doc) {
-    const fileUrl = doc.url || `https://hunter9201.github.io/advocate/${encodeURIComponent(doc.filename)}`;
-    window.open(fileUrl, '_blank');
-  }
-  function renderDocuments(immediate = false) {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => {
-      const filtered = getFilteredDocuments();
-      if (filtered.length === 0 && allDocuments.length > 0) {
-        pdfGrid.innerHTML = `<div class="empty-state"><i class="fas fa-search"></i><h3>No precedent matches</h3><p>No document found for <strong>“${currentSearch}”</strong>. Try a different legal term.</p></div>`;
-        updateStatsUI(); return;
-      }
-      if (allDocuments.length === 0 && filtered.length === 0) {
-        pdfGrid.innerHTML = `<div class="empty-state"><i class="fas fa-file-alt"></i><h3>Library vacant</h3><p>Upload documents via admin panel (documents.json).</p></div>`;
-        updateStatsUI(); return;
-      }
-      pdfGrid.innerHTML = '';
-      filtered.sort((a,b) => (a.title || '').localeCompare(b.title || ''));
-      for (const doc of filtered) {
-        const card = document.createElement('div');
-        card.className = 'pdf-card';
-        card.addEventListener('click', () => openPDF(doc));
-        const catDisplay = getCategoryDisplay(doc.category);
-        const iconClass = getCategoryIcon(doc.category);
-        const highlightedTitle = currentSearch ? highlightText(doc.title, currentSearch) : (doc.title || 'Untitled');
-        const highlightedDesc = currentSearch ? highlightText(doc.description, currentSearch) : (doc.description || 'Official document from Uganda legal corpus.');
-        const formattedDate = doc.date ? new Date(doc.date).toLocaleDateString('en-GB', { year:'numeric', month:'short', day:'numeric' }) : 'Unknown';
-        card.innerHTML = `
-          <div class="pdf-card-header">
-            ${doc.updated ? '<span class="badge"><i class="fas fa-sync-alt"></i> Updated</span>' : ''}
-            <div class="pdf-category"><i class="fas ${iconClass}"></i> ${catDisplay}</div>
-            <h3 class="pdf-title">${highlightedTitle}</h3>
-            <div class="pdf-meta"><span><i class="fas fa-calendar-alt"></i> Year: ${doc.year || 'N/A'}</span><span><i class="fas fa-calendar-plus"></i> ${formattedDate}</span></div>
-          </div>
-          <div class="pdf-card-body">
-            <p class="pdf-description">${highlightedDesc}</p>
-            <div class="pdf-details"><span><i class="fas fa-file-pdf"></i> ${doc.size || '—'}</span><span><i class="fas fa-receipt"></i> ${doc.pages || '?'} pages</span><span><i class="fas fa-tag"></i> ${catDisplay}</span></div>
-          </div>
-          <div class="pdf-card-footer"><div class="pdf-button"><i class="fas fa-balance-scale"></i> Read Statute <i class="fas fa-arrow-right"></i></div></div>
-        `;
-        pdfGrid.appendChild(card);
-      }
-      updateStatsUI();
-    }, immediate ? 0 : 280);
-  }
-  function updateSearchUI() {
-    clearSearchBtn.style.display = searchInput.value.trim() ? 'flex' : 'none';
-  }
-  async function hardRefresh() {
-    refreshBtn.disabled = true;
-    refreshBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Syncing Lex...';
-    currentSearch = ''; searchInput.value = ''; updateSearchUI();
-    await fetchDocuments();
-    refreshBtn.disabled = false;
-    refreshBtn.innerHTML = '<i class="fas fa-sync-alt"></i> Refresh Library';
-  }
-  function setupEvents() {
-    searchInput.addEventListener('input', () => { currentSearch = searchInput.value.trim(); updateSearchUI(); renderDocuments(); });
-    clearSearchBtn.addEventListener('click', () => { searchInput.value = ''; currentSearch = ''; updateSearchUI(); renderDocuments(); searchInput.focus(); });
-    refreshBtn.addEventListener('click', hardRefresh);
-    setInterval(() => { if (!isFetching) fetchDocuments().catch(console.warn); }, 180000);
-  }
-  function init() { setupEvents(); fetchDocuments(); }
-  init();
 
-  // ========== LION HUNTER LEGACY FEATURES (menu, calendar, chat, slideshow) ==========
+  function getFilteredDocs() {
+    let filtered = [...allDocs];
+    if (currentSearch.trim()) {
+      const term = currentSearch.toLowerCase();
+      filtered = filtered.filter(d => d.title.toLowerCase().includes(term) || d.description.toLowerCase().includes(term) || d.category.toLowerCase().includes(term) || d.year.includes(term));
+    }
+    if (currentCategory !== "all") filtered = filtered.filter(d => d.category === currentCategory);
+    return filtered;
+  }
+
+  function renderLibrary() {
+    if (!pdfGrid) return;
+    const filtered = getFilteredDocs();
+    totalSpan.innerText = allDocs.length;
+    displayedSpan.innerText = filtered.length;
+    if (filtered.length === 0 && allDocs.length) { pdfGrid.innerHTML = `<div class="empty-state"><i class="fas fa-search"></i><h3>No matches</h3><p>Try different keywords or category</p></div>`; return; }
+    if (allDocs.length === 0) { pdfGrid.innerHTML = `<div class="empty-state"><i class="fas fa-file-alt"></i><h3>Library empty</h3><p>Upload documents.json to populate.</p></div>`; return; }
+    pdfGrid.innerHTML = "";
+    filtered.forEach(doc => {
+      const card = document.createElement("div");
+      card.className = "pdf-card";
+      // Use the URL from the JSON file or construct from filename
+      const fileUrl = doc.url || `https://hunter9201.github.io/advocate/${encodeURIComponent(doc.filename)}`;
+      card.onclick = () => window.open(fileUrl, "_blank");
+      const highlight = (text) => currentSearch ? text.replace(new RegExp(`(${currentSearch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, "gi"), '<span class="highlight">$1</span>') : text;
+      card.innerHTML = `
+        <div class="pdf-header"><div class="pdf-cat"><i class="fas ${getIcon(doc.category)}"></i> ${categoryMap[doc.category] || doc.category}</div><div class="pdf-title">${highlight(doc.title)}</div><div class="text-xs opacity-80 mt-1">📅 ${doc.year}</div></div>
+        <div class="pdf-body"><div class="pdf-desc">${highlight(doc.description.substring(0, 120))}</div><div class="pdf-meta"><span><i class="fas fa-file-pdf"></i> ${doc.size} MB</span><span>📄 ${doc.pages} pgs</span></div></div>
+        <div class="bg-[#0a1c2f] text-white text-center py-2 text-sm font-semibold">Read Statute →</div>
+      `;
+      pdfGrid.appendChild(card);
+    });
+  }
+
+  function getIcon(cat) { const map = { constitutional:"fa-gavel", criminal:"fa-handcuffs", civil:"fa-scale-balanced", commercial:"fa-chart-line", family:"fa-heart", property:"fa-building", evidence:"fa-search", procedure:"fa-tasks", judicature:"fa-gavel", magistrate:"fa-balance-scale" }; return map[cat] || "fa-file-alt"; }
+
+  libSearch?.addEventListener("input", (e) => { currentSearch = e.target.value; renderLibrary(); clearSearchBtnLib.style.display = currentSearch ? "block" : "none"; });
+  clearSearchBtnLib?.addEventListener("click", () => { libSearch.value = ""; currentSearch = ""; renderLibrary(); clearSearchBtnLib.style.display = "none"; libSearch.focus(); });
+
+  // ========== LEGACY LION HUNTER FEATURES ==========
   function toggleMenu() { document.getElementById("navMenu")?.classList.toggle("open"); }
   document.querySelectorAll("#navMenu a").forEach(a => a.addEventListener("click", () => document.getElementById("navMenu")?.classList.remove("open")));
-  const ttBtn = document.getElementById("timetableBtn"), ttPop = document.getElementById("timetablePop");
-  ttBtn?.addEventListener("click", (e) => { e.stopPropagation(); ttPop.style.display = ttPop.style.display === "block" ? "none" : "block"; });
-  document.addEventListener("click", () => { if (ttPop) ttPop.style.display = "none"; });
+  const timetableBtn = document.getElementById("timetableBtn"), popup = document.getElementById("timetablePop");
+  timetableBtn?.addEventListener("click", (e) => { e.stopPropagation(); popup.style.display = popup.style.display === "block" ? "none" : "block"; });
+  document.addEventListener("click", () => { if (popup) popup.style.display = "none"; });
   document.getElementById("loginBtn")?.addEventListener("click", () => alert("🔒 Premium access coming soon."));
-  const today = new Date(); document.getElementById("miniDate").innerText = today.toLocaleDateString(undefined, { month:"short", day:"numeric", year:"numeric" });
-  document.getElementById("miniDow").innerText = today.toLocaleDateString(undefined, { weekday:"long" });
+  const today = new Date(); document.getElementById("miniDate").innerText = today.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+  document.getElementById("miniDow").innerText = today.toLocaleDateString(undefined, { weekday: "long" });
   document.getElementById("miniEvents").innerHTML = `<iframe class="w-full h-32 rounded-lg" src="https://calendar.google.com/calendar/embed?src=lionhunter920%40gmail.com&ctz=Africa%2FKampala&mode=AGENDA"></iframe>`;
-  const heroImgs = ["https://i.ibb.co/zVxt3D2Y/LDC-LEGAL-COMPANION.jpg","https://i.postimg.cc/28k9C3Nw/younglawyer.png","https://i.postimg.cc/xdQqJrj9/books.jpg"]; let idx=0;
-  setInterval(() => { idx = (idx+1)%heroImgs.length; const img = document.getElementById("heroImg"); if(img) { img.classList.add("hero-fade-out"); setTimeout(() => { img.src = heroImgs[idx]; img.classList.remove("hero-fade-out"); }, 200); } }, 5000);
+  const heroImgs = ["https://i.ibb.co/zVxt3D2Y/LDC-LEGAL-COMPANION.jpg","https://i.postimg.cc/28k9C3Nw/younglawyer.png","https://i.postimg.cc/xdQqJrj9/books.jpg"]; let idxHero = 0;
+  setInterval(() => { idxHero = (idxHero+1)%heroImgs.length; const img = document.getElementById("heroImg"); if(img) { img.classList.add("hero-fade-out"); setTimeout(() => { img.src = heroImgs[idxHero]; img.classList.remove("hero-fade-out"); }, 200); } }, 5000);
+  // chat
   const chatBtn = document.getElementById("lionChatBtn"), chatContainer = document.getElementById("lionChatContainer");
-  chatBtn?.addEventListener("click", () => { const open = chatContainer.style.maxHeight === "400px"; chatContainer.style.maxHeight = open ? "0" : "400px"; chatContainer.style.opacity = open ? "0" : "1"; });
+  chatBtn?.addEventListener("click", () => { const isOpen = chatContainer.style.maxHeight === "400px"; chatContainer.style.maxHeight = isOpen ? "0" : "400px"; chatContainer.style.opacity = isOpen ? "0" : "1"; });
   const chatSend = document.getElementById("chatSendBtn"), chatInput = document.getElementById("chatInput"), chatMsgs = document.getElementById("chatMessages");
   function addMsg(text, isUser) { const div = document.createElement("div"); div.className = `p-2 rounded-xl max-w-[85%] ${isUser ? "bg-amber-500 text-white self-end ml-auto" : "bg-gray-200 text-gray-800"}`; div.innerText = text; chatMsgs.appendChild(div); chatMsgs.scrollTop = chatMsgs.scrollHeight; }
   chatSend?.addEventListener("click", () => { const txt = chatInput.value.trim(); if(!txt) return; addMsg(txt, true); chatInput.value = ""; setTimeout(() => addMsg("🦁 Roar! Legal assistant will be fully active soon. For now, explore the library.", false), 500); });
+  // gate pre-september links (demo)
   if (new Date() < new Date("2025-09-01")) {
     document.querySelectorAll("a[href*='workshop'], a[href*='Documents'], a[href*='exams']").forEach(link => link.addEventListener("click", (e) => { e.preventDefault(); alert("📖 This section unlocks 1 September 2025."); }));
   }
+  // Ensure dashboard visible on load
+  if (overlayLibrary) overlayLibrary.classList.remove("active");
 </script>
 </body>
 </html>
